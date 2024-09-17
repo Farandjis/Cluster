@@ -65,3 +65,44 @@ Ce document rassemble toutes les informations importantes que nous devrons respe
 <br><br><br><br><br><br><br>
 
 ------------------------------------------------------------------------------------------------------------------------
+
+
+### <a name="p4"></a>IV – La technologie employée
+- <b><a name="p4a"></a>a) Quelles sont les exigences technologiques pour ce système ?</b>
+
+  L'application devra utiliser : SQL, HTML, CSS et PHP<br>
+    - SQL est le langage utilisé pour l'utilisation d'un SGBD comme MariaDB<br>
+    - HTML et CSS permettent la création des pages web du site internet.<br>
+    - PHP permet de son côté de personnaliser les pages en fonction de l'utilisateur et des données de l'application.<br>
+
+  Le serveur devra être protégé des intrusions notamment SSH à l'aide du logiciel fail2ban, et devra faire automatiquement des archives des journaux d'activités à l'aide du logiciel KRON. 
+
+  <br>
+  MariaDB est le Système de Gestion de Base de Données (SGBD) proposé par le client.<br>
+  <br>
+  Nous utiliserons les logiciels PHPStorm, WebStorm de Jetbrains.<br>
+  Ces outils ne sont pas contraints mais nous permettrons d’améliorer la qualité du code rendu.<br>
+<br>
+
+- <b><a name="p4b"></a>b) Avec quels systèmes ce système s’interfacera-t-il et avec quelles exigences ?</b>
+
+  Afin de garantir le bon fonctionnement de l’application web finale, il faudra s’assurer que le serveur web soit prêt à l’utilisation sur une carte micro SD.<br>
+  De plus, il sera nécessaire d’assurer le bon fonctionnement du site web sur les postes présents dans les salles machines de l’IUT de Vélizy.<br>
+  La carte SD se devra de contenir un serveur web (Apache est conseillé) ainsi qu’un serveur SGBD.<br>
+  Aussi, le serveur contenant l’application web sera porté sur un cluster Raspberry Pi 0 et sera accessible par connexion SSH.<br>
+  La plateforme TIX doit permettre de configurer à distance fail2ban et de gérer ses prisons. Apache doit donc être capable d'interagir avec le système pour fail2ban.
+
+<br><br><br><br><br><br><br>
+------------------------------------------------------------------------------------------------------------------------
+
+
+### <a name="p5"></a>V – Autres exigences
+
+
+- <b><a name="p5a"></a>a) Processus de développement</b>
+
+    - <u><a name="p5ai"></a>i. Qui sont les participants au projet ?</u><br>
+
+      Les membres de notre équipe sont les principaux participants au projet.
+      Notre équipe est constituée de Tom BOGAERT, Matthieu FARANDJIS, William HERUBEL, Baptiste FOURNIÉ et Florent VASSEUR--BERLIOUX.<br>
+      <br>
