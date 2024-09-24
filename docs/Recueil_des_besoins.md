@@ -32,6 +32,7 @@ This document contains all the important information we need to know in order to
 ### [IV – La technologie employée](#p4)
 - <b>[a) Quelles sont les exigences technologiques pour ce système ?](#p4a)</b>
 - <b>[b) Avec quels systèmes ce système s’interfacera-t-il et avec quelles exigences ?](#p4b)</b>
+- <b>[c) Quel materiel est utilisé pour porter le système ?](#p4c)</b>
 ### [V – Autres exigences](#p5)
 - <b>[a) Processus de développement](#p5a)</b>
     - <u>[i. Qui sont les participants au projet ?](#p5ai)</u>
@@ -67,30 +68,50 @@ This document contains all the important information we need to know in order to
 ------------------------------------------------------------------------------------------------------------------------
 
 
-### <a name="p4"></a>IV – La technologie employée
-- <b><a name="p4a"></a>a) Quelles sont les exigences technologiques pour ce système ?</b>
 
-  L'application devra utiliser : SQL, HTML, CSS et PHP<br>
-    - SQL est le langage utilisé pour l'utilisation d'un SGBD comme MariaDB<br>
+<a name="p4"></a>IV – La technologie employée
+
+   - <b><a name="p4a"></a>a) Quelles sont les exigences technologiques pour ce système ?</b>
+
+L'application devra utiliser : SQL, HTML, CSS et un autre langage de programmation pour la partie algorithmique. Cet autre langage sera décidé en fonction des exigences de nos professeurs.<br>
+    - SQL est le langage utilisé pour l'utilisation d'un SGBD comme MariaDB.<br>
     - HTML et CSS permettent la création des pages web du site internet.<br>
-    - PHP permet de son côté de personnaliser les pages en fonction de l'utilisateur et des données de l'application.<br>
+    - Le dernier langage permet l'implémentation des algorithmes mathématiques.<br>
 
-  Le serveur devra être protégé des intrusions notamment SSH à l'aide du logiciel fail2ban, et devra faire automatiquement des archives des journaux d'activités à l'aide du logiciel KRON. 
+Le serveur devra être protégé des intrusions, notamment SSH, à l'aide du logiciel fail2ban et devra faire automatiquement des archives des journaux d'activités à l'aide du logiciel CRON.<br>
+Nous utiliserons les logiciels PHPStorm et WebStorm de Jetbrains.<br> Ces outils ne sont pas obligatoires, mais ils permettront d’améliorer la qualité du code rendu.<br>
 
-  <br>
-  MariaDB est le Système de Gestion de Base de Données (SGBD) proposé par le client.<br>
-  <br>
-  Nous utiliserons les logiciels PHPStorm, WebStorm de Jetbrains.<br>
-  Ces outils ne sont pas contraints mais nous permettrons d’améliorer la qualité du code rendu.<br>
 <br>
 
-- <b><a name="p4b"></a>b) Avec quels systèmes ce système s’interfacera-t-il et avec quelles exigences ?</b>
+   - <b><a name="p4b"></a>b) Quels systèmes seront interfacés avec ce système, et quelles seront leurs exigences ?</b>
 
-  Afin de garantir le bon fonctionnement de l’application web finale, il faudra s’assurer que le serveur web soit prêt à l’utilisation sur une carte micro SD.<br>
-  De plus, il sera nécessaire d’assurer le bon fonctionnement du site web sur les postes présents dans les salles machines de l’IUT de Vélizy.<br>
-  La carte SD se devra de contenir un serveur web (Apache est conseillé) ainsi qu’un serveur SGBD.<br>
-  Aussi, le serveur contenant l’application web sera porté sur un cluster Raspberry Pi 0 et sera accessible par connexion SSH.<br>
-  La plateforme TIX doit permettre de configurer à distance fail2ban et de gérer ses prisons. Apache doit donc être capable d'interagir avec le système pour fail2ban.
+Afin de garantir le bon fonctionnement de l’application web finale, il faudra s’assurer que le serveur web soit prêt à l’utilisation sur une carte micro SD.<br>
+De plus, il sera nécessaire d’assurer le bon fonctionnement du site web sur les postes présents dans les salles machines de l’IUT de Vélizy.<br>
+La carte SD devra contenir un serveur web (Apache est conseillé) ainsi qu’un serveur SGBD.<br>
+Aussi, le serveur contenant l’application web sera porté sur un cluster Raspberry Pi 0 et sera accessible par connexion SSH.<br>
+La plateforme doit permettre de configurer à distance fail2ban et de gérer ses prisons. Apache doit donc être capable d'interagir avec le système pour fail2ban.
+
+<br>
+
+   - <b><a name="p4c"></a>c) Quel matériel est utilisé pour porter le système ?</b>
+
+Nous travaillons sur un Cluster de Raspberry Pi 0 utilisant un Raspberry Pi 4 et un Cluster HAT.
+
+Chaque Raspberry Pi 0 contient :
+    - <b>CPU</b> : Broadcom BCM2835, un processeur ARM11 à cœur unique cadencé à 1 GHz.
+    - <b>RAM</b> : 512 Mo de mémoire SDRAM LPDDR2.
+    - <b>Stockage</b> : Carte micro SD.
+    - <b>Périphériques</b> : Ports Micro USB, Connecteur CSI, Port Mini HDMI.
+
+Le Raspberry Pi 4 contient :
+    - <b>CPU</b> : Broadcom BCM2711, un processeur ARM Cortex-A72 à quatre cœurs cadencé à 1,5 GHz.
+    - <b>RAM</b> : 4 Go.
+    - <b>Stockage</b> : Carte micro SD.
+    - <b>Périphériques</b> : Ports USB, Ethernet Gigabit, ports micro-HDMI, Jack audio 3,5 mm.
+    - <b>Autres</b> : Wi-Fi 802.11ac, Bluetooth 5.0, Alimentation via USB-C.
+
+Le Cluster HAT contient :
+    - <b>Périphériques</b> : Ports USB.
 
 <br><br><br><br><br><br><br>
 ------------------------------------------------------------------------------------------------------------------------
