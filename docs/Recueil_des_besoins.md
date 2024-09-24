@@ -160,6 +160,63 @@ Un guide d'utilisation du site doit être disponible, tout comme la transcriptio
 - <b><a name="p5e"> </a>e) Maintenance et portabilité</b><br><br>
 La portabilité et la maintenance de l'application web seront notamment vérifiées en passant par le validateur de W3C. Il permet de s'assurer de la compatibilité de la plateforme avec tous les navigateurs et de vérifier que le code est conforme aux exigences actuelles. PHP et MariaDB fonctionnent aussi bien sur un serveur Windows que sur un serveur Linux. Nous devrons mener des tests d'intégration pour s'assurer de l'intégration correcte des différents modules à notre projet.
 
+<br><br><br><br><br><br><br>
+------------------------------------------------------------------------------------------------------------------------
+
+### <a name="p6"></a>VI – Recours humain, questions juridiques, politiques, organisationnelles.
+- <b><a name="p6a"></a>a) Quel est le recours humain au fonctionnement du système ?</b><br>
+  
+  Le hardware devras être mis en place à chaque utilisation. Cela nécessitera donc un personnel qualifié à sa mise en place.<br>
+  Cependant, ce système pourras à terme être branché en serveur. <br><br>
+  Le démarrage et la maintenance du système doivent être faits par du personnel compétent.<br>
+  <br>
+  
+- <b><a name="p6b"></a>b) Quelles sont les exigences juridiques et politiques ?</b><br>
+  L'application se doit de respecter la loi française « Informatique et liberté » du 6 janvier 1978, mise à jour le 1er juin 2019, relative à l'informatique, aux fichiers et aux libertés.<br>
+  L'application est également soumise au règlement européen « Règlement Général sur la Protection des Données » (RGPD) du 27 avril 2016, relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données, et abrogeant la directive 95/46/CE.<br>
+  <br>
+  A noter, la CNIL propose des recommandations vis à vis de la loi, notamment en matière de cookies.<br>
+  <br>
+  Les articles peuvent être consultés via les liens ci-dessous :
+  - <u>Loi « Informatique et liberté » :</u><br>
+    https://www.cnil.fr/fr/la-loi-informatique-et-libertes <br>
+  - <u>Règlement européen « Règlement Général sur la Protection des Données » :</u><br>
+    https://www.cnil.fr/fr/reglement-europeen-protection-donnees <br>
+  - <u>A propos des cookies :</u><br>
+    https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies <br>
+    <br>
+
+- <b><a name="p6c"></a>c) Quelles sont les conséquences humaines de la réalisation du système ?</b><br>
+
+  L'application permettra aux utilisateurs d'exécuter des programmes nécessitant un calcul distribué ou parallèle de manière plus accessible, sans qu'ils aient besoin de connaissances approfondies en gestion de clusters et en calcul.<br><br>
+
+  L'interface web simplifira l'accès aux ressources du cluster et permet une interaction fluide avec le système, ce qui améliore l'expérience utilisateur.
+
+  Ces données sont utilisables dans le cas d'études statistiques afin de permettre aux administrateurs de se renseigner sur la fréquentation du site et l'utilisation des ressources materiels lors des calculs.<br>
+  <br>
+
+
+- <b><a name="p6d"></a>d) Quels sont les besoins en formation ?</b><br>
+  En général, il est nécessaire de savoir se servir d'un ordinateur et d'un navigateur internet.<br>
+  <br>
+  Un guide d'utilisation, comprenant potentielement une vidéo de présentation pour apprendre à se servir de l'application, sera disponible.<br>
+  Celle-ci expliquera comment utiliser l'application.<br>
+  <br>
+  On peut supposer une page web donnant des conseils pour les utilisateurs.<br>
+  <br>
+  
+
+- <b><a name="p6e"></a>e) Quelles sont les hypothèses et les dépendances affectant l’environnement humain ?</b><br>
+  - Nous supposons que :<br>
+    - tous les étudiants, professeurs et personnels concernés possède une connexion internet et savent se servir d'un ordinateur et d'un navigateur internet.<br>
+    - l'utilisation de l'application par des personnes handicapées peut-être différente.<br>
+      <br>
+  - L'application dépend de :<br>
+    - la présence des administrateurs.
+    - de la loi "Informatique et liberté" en France, ainsi que le RGPD dans l'Union Européenne.
+      Leur changement peut demander une réévaluation de l'application afin de s'assurer qu'elle soit toujours conforme.
+    - l'évolution des navigateurs internet. L'application pouvant se retrouver obsolète.
+
   <br><br><br><br><br><br><br>
 ------------------------------------------------------------------------------------------------------------------------
 
