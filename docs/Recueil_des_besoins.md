@@ -7,7 +7,7 @@ INF2-A
 # SAÉ S3 - Recueil des besoins
 
 <br><br>
-Ce document rassemble toutes les informations importantes que nous devrons respecter pour mener à bien ce projet.
+This document contains all the important information we need to know in order to successfully complete this project.
 
 </div>
 
@@ -53,9 +53,9 @@ Ce document rassemble toutes les informations importantes que nous devrons respe
 - <b>[c) Quelles sont les conséquences humaines de la réalisation du système ?](#p6c)</b>
 - <b>[d) Quels sont les besoins en formation ?](#p6d)</b>
 - <b>[e) Quelles sont les hypothèses et les dépendances affectant l’environnement humain ?](#p6e)</b>
-### [VII - Gestion et organisation du projet.](#p7)
-- <b>[a) Rôles de chacun](#p7a)
-- <b>[b) Cycles de vie](#p7b)</b>
+### [VII - Project management and organization.](#p7)
+- <b>[a) Roles and responsibilities](#p7a)
+- <b>[b) Life cycle](#p7b)</b>
 - <b>[c) Bilan répartition des tâches S3](#p7c)</b>
 - <b>[d) Bilan répartition des tâches S4](#p7d)</b>
 
@@ -106,3 +106,31 @@ Ce document rassemble toutes les informations importantes que nous devrons respe
       Les membres de notre équipe sont les principaux participants au projet.
       Notre équipe est constituée de Tom BOGAERT, Matthieu FARANDJIS, William HERUBEL, Baptiste FOURNIÉ et Florent VASSEUR--BERLIOUX.<br>
       <br>
+
+  <br><br><br><br><br><br><br>
+------------------------------------------------------------------------------------------------------------------------
+
+### <a name="p7"></a>VII - Project management and organization.
+- <b><a name="p7a"></a>a) Roles and responsibilities</b><br>
+  L'équipe est composé de :
+  - **Matthieu FARANDJIS**
+    Project Manager, Database Administrator, RaspberryPi 4 Administrator, Developer, GitHub Manager,
+    in charge of communication between professors and the team.
+  - **Florent VASSEUR--BERLIOUX**
+    Design (conception) Manager, RaspberryPi 4 vice-Administrator, Developer
+  - **Tom BOGAERT**
+    Artistic Manager, Developer HTML/CSS/JS, Developer
+  - **William HERUBEL**
+    Redaction Manager, Developer
+  - **Baptiste FOURNIÉ**
+    Mathematical Calculations Manager, Developer
+    <br><br>
+
+
+- <b><a name="p7b"></a>b) Life cycle</b><br>
+  As part of the project, we followed an iterative waterfall cycle.<br>
+  Among other things, for each task (pages, for example), we followed the pattern: Designer -> Development -> Testing.<br>
+  However, there's nothing to stop us going back to the drawing board in the event of bugs or design errors, for example.<br>
+
+  <br><br><br>
+  **Cycle de vie V0.2 : **
