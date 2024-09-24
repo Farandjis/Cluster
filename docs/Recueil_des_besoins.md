@@ -43,11 +43,10 @@ This document contains all the important information we need to know in order to
     - <u>[iv. Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ?](#p5aiv)</u>
     - <u>[v. Quels sont les autres exigences du processus ? (exemple : tests, installation, etc...)](#p5av)</u>
     - <u>[vi. À quelle dépendance le projet est-il soumis ?](#p5avi)</u>
-- <b>[c) Performances](#p5c)</b>
-- <b>[d) Opérations, sécurité, documentation](#p5d)</b>
-- <b>[e) Utilisation et utilisabilité](#p5e)</b>
-- <b>[f) Maintenance et portabilité](#p5f)</b>
-- <b>[g) Questions non résolues ou reportées à plus tard](#p5g)</b>
+- <b>[b) Performances](#p5b)</b>
+- <b>[c) Opérations, sécurité, documentation](#p5c)</b>
+- <b>[d) Utilisation et utilisabilité](#p5d)</b>
+- <b>[e) Maintenance et portabilité](#p5e)</b>
 ### [VI – Recours humain, questions juridiques, politiques, organisationnelles.](#p6)
 - <b>[a) Quel est le recours humain au fonctionnement du système ?](#p6a)
 - <b>[b) Quelles sont les exigences juridiques et politiques ?](#p6b)</b>
@@ -125,6 +124,41 @@ This document contains all the important information we need to know in order to
       Les membres de notre équipe sont les principaux participants au projet.
       Notre équipe est constituée de Tom BOGAERT, Matthieu FARANDJIS, William HERUBEL, Baptiste FOURNIÉ et Florent VASSEUR--BERLIOUX.<br>
       <br>
+    - <u><a name="p5aii"></a>ii.  Quelles valeurs devront être privilégiées ? (exemple : simplicité, disponibilité, rapidité, souplesse etc... )</u><br>
+      <h3> Efficacité </h3>
+      Nous privilégions l'éfficacité pour permettre à nos algorithmes d'atteindre leurs meilleurs performances. Les calculs devront être exécutés le plus rapidement possible. 
+      <h3> Souplesse </h3>
+      Notre application devra être Extensible, lui permettant d'accueillir de nouvelles fonctionnalités (calculs, etc...) sans avoir à réécrire le code.
+      <h3> Portabilité</h3>
+      La plateforme web devra être hébergée sur un  Kit Cluster Hat (connecté à 4 Rasberry PI Zero), et posséder une Carte SD configurée par l'équipe de développement. De plus, il faudra pouvoir accéder en SSH au RaspberryPi.
+      <h3> Sécurité</h3>
+      Les données devront être protégées, et le site ne doit afficher que ce que chaque utilisateur a le droit de voir. Pour cela, il sera impératif de sécuriser les requêtes SQL formulées par les fichiers (PHP), pour restreindre le plus possible les accès et limiter les failles de sécurité. De plus, tout mot de passe devra être crypté avant d'être enregistré dans la base de données, là encore afin de limiter les conséquences d'une fuite. On installera aussi fail2ban pour pouvoir modérer les connexions SSH, les tentatives de connexion et les inscription au site. <br>
+      <br>
+    - <u><a name="p5aiii"> </a> iii. Quels retours ou quelle visibilité sur le projet les utilisateurs et commanditaires souhaitent-ils ? </u><br><br>
+      Ce projet représentant un travail universitaire évalué, les commanditaires de ce projet sont nos enseignants. Ces derniers ont une grande visibilité sur l'avancée du projet et recevront à certaines dates des documents concernant le projet et son avancement. La communication entre les membres de l'équipe et les enseignants est recommandée afin d'assurer le rendu d'un projet fidèle aux attentes de ces derniers.
+      La communication avec nos professeurs se fera par email mais également à l'oral.<br>
+      Notre client, M. HOGUIN doit avoir un accès général au projet : GitHub, compte administrateur (sudoers) Linux.<br>
+      Notre deuxième client, M. DUFAUD doit avoir accès au GitHub afin de suivre l'avancé de notre projet.<br><br>
+    - <u><a name="p5aiv"> </a>iv. Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ?</u><br><br>
+      Le projet est de concevoir et programmer un logiciel permettant de réaliser divers calculs. Aucun achat n'est nécessaire à la création du logiciel, puisque le matériel (kit cluster) est pris en charge par le client. Nous ne possédons pas de concurrents à proprement parler.<br>
+    - <u><a name="p5av"> </a>v. Quels sont les autres exigences du processus ? (exemple : tests, installation, etc.)</u><br><br>
+      Nous pouvons noter en exigences sur le projet, l'exécution d'une phase de test assurant le bon fonctionnement de l'application. On attend également le rendu d'annexes concernant l'organisation du travail de l'équipe ou encore la charte graphique du logo de l'application.<br>
+      Le projet se fera sous forme de petits cycles en cascade ou cycle en V pour chaque élément du projet. En cycle cascade, on commencera par la conception, puis le développement pour terminer avec les tests. Alors que pour le cycle en V, nous commencerons par la conception suivie des tests et pour finir le développement. Les clients doivent avoir accès au dépôt Git afin de juger de l'évolution du projet et faire des critiques si nécessaire.<br><br>
+    - <u><a name="p5avi"> </a>vi. À quelle dépendance le projet est-il soumis ?</u><br><br>
+      Ce projet n'a pas de dépendance en raison de la stagnation des langages PHP et MariaDB. Il utilise également les technologies HTML, CSS, JavaScript, Raspberry OS Lite, fail2ban et CRON.
+
+- <b><a name="p5b"> </a>b) Performances</b><br><br>
+Le logiciel se devra d'être le plus performant possible afin d'en faciliter l'accès. Pour ce faire, les programmes seront optimisés et testés dans le but de limiter le nombre d'opérations. Les systèmes de stockage de données seront choisis en conséquence pour améliorer au mieux les performances de la plateforme.<br><br>
+
+- <b><a name="p5c"> </a>c) Opérations, documentation</b><br><br>
+Tout le code utilisé pour mener le projet à bien devra être documenté afin d'assurer la lisibilité du programme. Toutes les fonctions générées seront accompagnées d'une Docstring. On notera aussi la présence d'un dossier de test et d'une documentation de code.<br>
+
+- <b><a name="p5d"> </a>d) Utilisation et utilisabilité</b><br><br>
+Nous veillerons à rendre l’application accessible en nous basant sur la norme UAAG 2.1 de W3C. Nous utiliserons l'extension de navigateur internet "Wave" pour nous en assurer. Toute utilisation d'outil supplémentaire pour s'assurer davantage de l'accessibilité est la bienvenue.
+Un guide d'utilisation du site doit être disponible, tout comme la transcription visuelle de la vidéo de présentation. Notre logiciel pourra être utilisé via un site web ou avec des commandes sur un terminal.
+
+- <b><a name="p5e"> </a>e) Maintenance et portabilité</b><br><br>
+La portabilité et la maintenance de l'application web seront notamment vérifiées en passant par le validateur de W3C. Il permet de s'assurer de la compatibilité de la plateforme avec tous les navigateurs et de vérifier que le code est conforme aux exigences actuelles. PHP et MariaDB fonctionnent aussi bien sur un serveur Windows que sur un serveur Linux. Nous devrons mener des tests d'intégration pour s'assurer de l'intégration correcte des différents modules à notre projet.
 
   <br><br><br><br><br><br><br>
 ------------------------------------------------------------------------------------------------------------------------
