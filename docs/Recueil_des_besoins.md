@@ -68,7 +68,7 @@ This document contains all the important information we need to know in order to
 
 
 
-<a name="p4"></a>IV – La technologie employée
+### <a name="p4"></a>IV – La technologie employée
 
    - <b><a name="p4a"></a>a) Quelles sont les exigences technologiques pour ce système ?</b>
 
