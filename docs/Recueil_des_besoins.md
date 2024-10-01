@@ -16,231 +16,276 @@ This document contains all the important information we need to know in order to
 
 ## Plan
 
-### [I – Objectif et portée](#p1)
-- <b>[a) Quels sont la portée et les objectifs généraux ?](#p1a)</b>
-- <b>[b) Lecture du cahier des charges](#p1b) </b>
-    - <u>[i. Liste des objets, acteurs et actions](#p1bi) </u>
-    - <u>[ii. Les différents niveaux](#p1bii) </u>
-    - <u>[iii. Un schéma descriptif des niveaux](#p1biii) </u>
-    - <u>[iiii. Le diagramme des cas d'utilisation](#p1biiii) </u>
-### [II – Terminologie employée / Glossaire](#p2)
-### [III – Les cas d’utilisation](#p3)
-- <b>[a) Les acteurs principaux et leurs objectifs généraux](#p3a).</b>
-- <b>[b) Les cas d’utilisation métier (concepts opérationnels).](#p3b)</b>
-- <b>[c) Les cas d’utilisation stratégique.](#p3c)</b>
-- <b>[d) Les cas d’utilisation utilisateur et système.](#p3d)</b>
-### [IV – La technologie employée](#p4)
-- <b>[a) Quelles sont les exigences technologiques pour ce système ?](#p4a)</b>
-- <b>[b) Avec quels systèmes ce système s’interfacera-t-il et avec quelles exigences ?](#p4b)</b>
-- <b>[c) Quel materiel est utilisé pour porter le système ?](#p4c)</b>
-### [V – Autres exigences](#p5)
-- <b>[a) Processus de développement](#p5a)</b>
-    - <u>[i. Qui sont les participants au projet ?](#p5ai)</u>
-    - <u>[ii. Quelles valeurs devront être privilégiées ? (exemple : simplicité, disponibilité, rapi-
-      dité, souplesse etc... )](#p5aii)</u>
-    - <u>[iii. Quels retours ou quelle visibilité sur le projet les utilisateurs et commanditaires
-      souhaitent-ils ?](#p5aiii)</u>
-    - <u>[iv. Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ?](#p5aiv)</u>
-    - <u>[v. Quels sont les autres exigences du processus ? (exemple : tests, installation, etc...)](#p5av)</u>
-    - <u>[vi. À quelle dépendance le projet est-il soumis ?](#p5avi)</u>
-- <b>[b) Performances](#p5b)</b>
-- <b>[c) Opérations, sécurité, documentation](#p5c)</b>
-- <b>[d) Utilisation et utilisabilité](#p5d)</b>
-- <b>[e) Maintenance et portabilité](#p5e)</b>
-### [VI – Recours humain, questions juridiques, politiques, organisationnelles.](#p6)
-- <b>[a) Quel est le recours humain au fonctionnement du système ?](#p6a)
-- <b>[b) Quelles sont les exigences juridiques et politiques ?](#p6b)</b>
-- <b>[c) Quelles sont les conséquences humaines de la réalisation du système ?](#p6c)</b>
-- <b>[d) Quels sont les besoins en formation ?](#p6d)</b>
-- <b>[e) Quelles sont les hypothèses et les dépendances affectant l’environnement humain ?](#p6e)</b>
-### [VII - Project management and organization.](#p7)
+### [I – Objective and Scope](#p1)
+- <b>[a) What are the scope and general objectives?](#p1a)</b>
+- <b>[b) Review of the project brief](#p1b) </b>
+    - <u>[i. List of objects, actors, and actions](#p1bi) </u>
+    - <u>[ii. The different levels](#p1bii) </u>
+    - <u>[iii. A descriptive diagram of the levels](#p1biii) </u>
+    - <u>[iiii. Use case diagram](#p1biiii) </u>
+### [II – Terminology / Glossary](#p2)
+### [III – Use Cases](#p3)
+- <b>[a) Main actors and their general objectives](#p3a).</b>
+- <b>[b) Business use cases (operational concepts).](#p3b)</b>
+- <b>[c) Strategic use cases.](#p3c)</b>
+- <b>[d) User and system use cases.](#p3d)</b>
+### [IV – Technology Used](#p4)
+- <b>[a) What are the technological requirements for this system?](#p4a)</b>
+- <b>[b) With which systems will this system interface, and with what requirements?](#p4b)</b>
+- <b>[c) What hardware is used to support the system?](#p4c)</b>
+### [V – Other Requirements](#p5)
+- <b>[a) Development process](#p5a)</b>
+    - <u>[i. Who are the project participants?](#p5ai)</u>
+    - <u>[ii. What values should be prioritized? (e.g., simplicity, availability, speed, flexibility, etc.)](#p5aii)</u>
+    - <u>[iii. What feedback or visibility do users and sponsors expect on the project?](#p5aiii)</u>
+    - <u>[iv. What can be purchased? What must be built? Who are our competitors?](#p5aiv)</u>
+    - <u>[v. What are the other process requirements? (e.g., testing, installation, etc.)](#p5av)</u>
+    - <u>[vi. What dependencies does the project have?](#p5avi)</u>
+- <b>[b) Performance](#p5b)</b>
+- <b>[c) Operations, security, documentation](#p5c)</b>
+- <b>[d) Usability and user-friendliness](#p5d)</b>
+- <b>[e) Maintenance and portability](#p5e)</b>
+### [VI – Human Resources, Legal, Political, and Organizational Issues](#p6)
+- <b>[a) What human resources are needed for system operation?](#p6a)
+- <b>[b) What are the legal and political requirements?](#p6b)</b>
+- <b>[c) What are the human consequences of implementing the system?](#p6c)</b>
+- <b>[d) What are the training needs?](#p6d)</b>
+- <b>[e) What assumptions and dependencies affect the human environment?](#p6e)</b>
+### [VII - Project Management and Organization](#p7)
 - <b>[a) Roles and responsibilities](#p7a)
 - <b>[b) Life cycle](#p7b)</b>
-- <b>[c) Bilan répartition des tâches S3](#p7c)</b>
-- <b>[d) Bilan répartition des tâches S4](#p7d)</b>
+- <b>[c) Task distribution report S3](#p7c)</b>
+- <b>[d) Task distribution report S4](#p7d)</b>
 
-### [Annexe 1 : Cas d'utilisation](#a1)
+### [Appendix 1: Use Case](#a1)
 
 
 <br><br><br><br><br><br><br>
 
 ------------------------------------------------------------------------------------------------------------------------
 
+### <a name="p1"></a>I – Objective and Scope
+- <b><a name="p1a"></a>a) What are the scope and general objectives?</b>
+- <b><a name="p1b"></a>b) Review of the project brief </b>
+    - <u><a name="p1bi"></a>i. List of objects, actors, and actions </u>
+    - <u><a name="p1bii"></a>ii. The different levels</u>
+    - <u><a name="p1biii"></a>iii. A descriptive diagram of the levels </u>
+    - <u><a name="p1biiii"></a>iiii. Use case diagram</u>
+
+<br><br><br><br><br><br><br>
+------------------------------------------------------------------------------------------------------------------------
+
+### <a name="p2"></a>II – Terminology / Glossary
+
+| Words                | Definition                                                                                                                                                                                                                               |
+|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CNIL                 | National Commission for Information Technology and Civil Liberties. An independent French administrative authority responsible for ensuring that information technology serves the citizen.                                                |
+| Failed login attempt | The failure of an attempt to log into a system or user account due to incorrect information or a technical issue.                                                                                                                         |
+| Cookie               | (in computing): A small file stored by a server on a user's device (computer, phone, etc.) and associated with a web domain.                                                                                                             |
+| Support request      | A request submitted by a user to report a problem or technical difficulty that requires intervention or resolution (Ticket) by the IT support team.                                                                                       |
+| SQL Injection        | A technique that allows SQL elements to be injected into web form fields or page links, aiming to send them to the web server to modify elements in a database.                                                                           |
+| Labels               | Tags or keywords assigned to an IT ticket to categorize, organize, and facilitate the search for similar issues or support requests.                                                                                                      |
+| GDPR                 | General Data Protection Regulation. The reference text on personal data protection. It strengthens and unifies data protection for individuals within the European Union.                                                                 |
+| RPi4                 | Raspberry Pi 4, a small single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                                   |
+| RPi Zero             | Raspberry Pi Zero, a small, low-cost single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                      |
+| RPi Zero             | Raspberry Pi Zero, a small, low-cost single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                      |
+| Cluster HAT v2.5     | A hardware add-on that allows up to four Raspberry Pi Zero boards to be used in a cluster setup, providing a platform for cluster computing and testing.                                                                                 |
+| DBMS                 | Database Management System.                                                                                                                                                                                                              |
+| IT Support           | Technical assistance that handles support requests, troubleshoots technical problems, and resolves IT-related questions.                                                                                                                  |
+| Dashboard            | An online interface that displays summary information and key data to help users monitor and manage operations related to tickets and IT support.                                                                                         |
+| W3C                  | World Wide Web Consortium. An international organization that defines technical web standards and the rules that all developers worldwide must follow.                                                                                   |
+| Wave                 | A browser extension that evaluates the accessibility of a web page for people with disabilities.                                                                                                                                         |
+
+<br><br><br><br><br><br><br>
+------------------------------------------------------------------------------------------------------------------------
+
+### <a name="p3"></a>III – Use Cases
+- <b><a name="p3a"></a>a) Main actors and their general objectives.</b>
+- <b><a name="p3b"></a>b) Business use cases (operational concepts).</b>
+- <b><a name="p3c"></a>c) Strategic use cases.</b>
+- <b><a name="p3d"></a>d) User and system use cases.</b>
+
+<br><br><br><br><br><br><br>
+------------------------------------------------------------------------------------------------------------------------
 
 
-### <a name="p4"></a>IV – La technologie employée
 
-   - <b><a name="p4a"></a>a) Quelles sont les exigences technologiques pour ce système ?</b>
+### <a name="p4"></a>IV – Technology Used
 
-   L'application devra utiliser : SQL, HTML, CSS et un autre langage de programmation pour la partie algorithmique. Cet autre langage sera décidé en fonction des exigences de nos professeurs.<br>
-   - SQL est le langage utilisé pour l'utilisation d'un SGBD comme MariaDB.<br>
-   - HTML et CSS permettent la création des pages web du site internet.<br>
-   - Le dernier langage permet l'implémentation des algorithmes mathématiques.<br>
+- <b><a name="p4a"></a>a) What are the technological requirements for this system?</b>
 
-   Le serveur devra être protégé des intrusions, notamment SSH, à l'aide du logiciel fail2ban et devra faire automatiquement des archives des journaux d'activités à l'aide du logiciel CRON.<br> Nous utiliserons les logiciels PHPStorm et WebStorm de Jetbrains.<br> Ces outils ne sont pas obligatoires, mais ils permettront d’améliorer la qualité du code rendu.<br>
-    <br>
+The application must use: SQL, HTML, CSS, and other programming languages for the algorithmic part. This other language will be decided based on the requirements from our professors.<br>
+- SQL is the language used for working with a DBMS such as MariaDB.<br>
+- HTML and CSS are used to create the web pages of the website.<br>
+- The other languages will be used to implement mathematical algorithms.<br>
 
-   - <b><a name="p4b"></a>b) Quels systèmes seront interfacés avec ce système, et quelles seront leurs exigences ?</b>
+The server must be protected from intrusions, particularly SSH, using the fail2ban software and should automatically archive activity logs using the CRON software.<br> We will use Jetbrains' PHPStorm and WebStorm software.<br> These tools are not mandatory, but they will help improve the quality of the submitted code.<br>
+<br>
 
-   Afin de garantir le bon fonctionnement de l’application web finale, il faudra s’assurer que le serveur web soit prêt à l’utilisation sur une carte micro SD.<br>
-   De plus, il sera nécessaire d’assurer le bon fonctionnement du site web sur les postes présents dans les salles machines de l’IUT de Vélizy.<br>
-   La carte SD devra contenir un serveur web (Apache est conseillé) ainsi qu’un serveur SGBD.<br>
-   Aussi, le serveur contenant l’application web sera porté sur un cluster Raspberry Pi 0 et sera accessible par connexion SSH.<br>
-   La plateforme doit permettre de configurer à distance fail2ban et de gérer ses prisons. Apache doit donc être capable d'interagir avec le système pour fail2ban.
+- <b><a name="p4b"></a>b) Which systems will be interfaced with this system, and what are their requirements?</b>
+
+To ensure the proper functioning of the final web application, it will be necessary to make sure that the web server is ready for use on a micro SD card.<br>
+Additionally, it will be necessary to ensure the website works correctly on the computers in the machine rooms of the IUT in Vélizy.<br>
+The SD card must contain a web server (Apache is recommended) as well as a DBMS server.<br>
+Also, the server hosting the web application will be deployed on a Raspberry Pi 0 cluster and accessible via SSH connection.<br>
+The platform must allow remote configuration of fail2ban and management of its jails. Therefore, Apache must be able to interact with the system for fail2ban.
 
 <br>
 
-   - <b><a name="p4c"></a>c) Quel matériel est utilisé pour porter le système ?</b>
+- <b><a name="p4c"></a>c) What hardware is used to support the system?</b>
 
-   Nous travaillons sur un Cluster de Raspberry Pi 0 utilisant un Raspberry Pi 4 et un Cluster HAT.
+We are working on a Raspberry Pi 0 Cluster using a Raspberry Pi 4 and a Cluster HAT v2.5 .
 
-   Chaque Raspberry Pi 0 contient :
-   - <b>CPU</b> : Broadcom BCM2835, un processeur ARM11 à cœur unique cadencé à 1 GHz.
-   - <b>RAM</b> : 512 Mo de mémoire SDRAM LPDDR2.
-   - <b>Stockage</b> : Carte micro SD.
-   - <b>Périphériques</b> : Ports Micro USB, Connecteur CSI, Port Mini HDMI.
+Each Raspberry Pi 0 contains:
+- <b>CPU</b>: Broadcom BCM2835, a single-core ARM11 processor clocked at 1 GHz.
+- <b>RAM</b>: 512 MB of LPDDR2 SDRAM.
+- <b>Storage</b>: Micro SD card.
+- <b>Peripherals</b>: Micro USB ports, CSI connector, Mini HDMI port.
 
-   Le Raspberry Pi 4 contient :
-   - <b>CPU</b> : Broadcom BCM2711, un processeur ARM Cortex-A72 à quatre cœurs cadencé à 1,5 GHz.
-   - <b>RAM</b> : 4 Go.
-   - <b>Stockage</b> : Carte micro SD.
-   - <b>Périphériques</b> : Ports USB, Ethernet Gigabit, ports micro-HDMI, Jack audio 3,5 mm.
-   - <b>Autres</b> : Wi-Fi 802.11ac, Bluetooth 5.0, Alimentation via USB-C.
+The Raspberry Pi 4 contains:
+- <b>CPU</b>: Broadcom BCM2711, a quad-core ARM Cortex-A72 processor clocked at 1.5 GHz.
+- <b>RAM</b>: 4 GB.
+- <b>Storage</b>: Micro SD card.
+- <b>Peripherals</b>: USB ports, Gigabit Ethernet, micro-HDMI ports, 3.5 mm audio jack.
+- <b>Others</b>: 802.11ac Wi-Fi, Bluetooth 5.0, power via USB-C.
 
-   Le Cluster HAT contient :
-   - <b>Périphériques</b> : Ports USB.
-
-<br><br><br><br><br><br><br>
-------------------------------------------------------------------------------------------------------------------------
-
-
-### <a name="p5"></a>V – Autres exigences
-
-
-- <b><a name="p5a"></a>a) Processus de développement</b>
-
-    - <u><a name="p5ai"></a>i. Qui sont les participants au projet ?</u><br>
-
-      Les membres de notre équipe sont les principaux participants au projet.
-      Notre équipe est constituée de Tom BOGAERT, Matthieu FARANDJIS, William HERUBEL, Baptiste FOURNIÉ et Florent VASSEUR--BERLIOUX.<br>
-      <br>
-    - <u><a name="p5aii"></a>ii.  Quelles valeurs devront être privilégiées ? (exemple : simplicité, disponibilité, rapidité, souplesse etc... )</u><br>
-      <h3> Efficacité </h3>
-      Nous privilégions l'éfficacité pour permettre à nos algorithmes d'atteindre leurs meilleurs performances. Les calculs devront être exécutés le plus rapidement possible. 
-      <h3> Souplesse </h3>
-      Notre application devra être Extensible, lui permettant d'accueillir de nouvelles fonctionnalités (calculs, etc...) sans avoir à réécrire le code.
-      <h3> Portabilité</h3>
-      La plateforme web devra être hébergée sur un  Kit Cluster Hat (connecté à 4 Rasberry PI Zero), et posséder une Carte SD configurée par l'équipe de développement. De plus, il faudra pouvoir accéder en SSH au RaspberryPi.
-      <h3> Sécurité</h3>
-      Les données devront être protégées, et le site ne doit afficher que ce que chaque utilisateur a le droit de voir. Pour cela, il sera impératif de sécuriser les requêtes SQL formulées par les fichiers (PHP), pour restreindre le plus possible les accès et limiter les failles de sécurité. De plus, tout mot de passe devra être crypté avant d'être enregistré dans la base de données, là encore afin de limiter les conséquences d'une fuite. On installera aussi fail2ban pour pouvoir modérer les connexions SSH, les tentatives de connexion et les inscription au site. <br>
-      <br>
-    - <u><a name="p5aiii"> </a> iii. Quels retours ou quelle visibilité sur le projet les utilisateurs et commanditaires souhaitent-ils ? </u><br><br>
-      Ce projet représentant un travail universitaire évalué, les commanditaires de ce projet sont nos enseignants. Ces derniers ont une grande visibilité sur l'avancée du projet et recevront à certaines dates des documents concernant le projet et son avancement. La communication entre les membres de l'équipe et les enseignants est recommandée afin d'assurer le rendu d'un projet fidèle aux attentes de ces derniers.
-      La communication avec nos professeurs se fera par email mais également à l'oral.<br>
-      Notre client, M. HOGUIN doit avoir un accès général au projet : GitHub, compte administrateur (sudoers) Linux.<br>
-      Notre deuxième client, M. DUFAUD doit avoir accès au GitHub afin de suivre l'avancé de notre projet.<br><br>
-    - <u><a name="p5aiv"> </a>iv. Que peut-on acheter ? Que doit-on construire ? Qui sont nos concurrents ?</u><br><br>
-      Le projet est de concevoir et programmer un logiciel permettant de réaliser divers calculs. Aucun achat n'est nécessaire à la création du logiciel, puisque le matériel (kit cluster) est pris en charge par le client. Nous ne possédons pas de concurrents à proprement parler.<br>
-    - <u><a name="p5av"> </a>v. Quels sont les autres exigences du processus ? (exemple : tests, installation, etc.)</u><br><br>
-      Nous pouvons noter en exigences sur le projet, l'exécution d'une phase de test assurant le bon fonctionnement de l'application. On attend également le rendu d'annexes concernant l'organisation du travail de l'équipe ou encore la charte graphique du logo de l'application.<br>
-      Le projet se fera sous forme de petits cycles en cascade ou cycle en V pour chaque élément du projet. En cycle cascade, on commencera par la conception, puis le développement pour terminer avec les tests. Alors que pour le cycle en V, nous commencerons par la conception suivie des tests et pour finir le développement. Les clients doivent avoir accès au dépôt Git afin de juger de l'évolution du projet et faire des critiques si nécessaire.<br><br>
-    - <u><a name="p5avi"> </a>vi. À quelle dépendance le projet est-il soumis ?</u><br><br>
-      Ce projet n'a pas de dépendance en raison de la stagnation des langages PHP et MariaDB. Il utilise également les technologies HTML, CSS, JavaScript, Raspberry OS Lite, fail2ban et CRON.
-
-- <b><a name="p5b"> </a>b) Performances</b><br><br>
-Le logiciel se devra d'être le plus performant possible afin d'en faciliter l'accès. Pour ce faire, les programmes seront optimisés et testés dans le but de limiter le nombre d'opérations. Les systèmes de stockage de données seront choisis en conséquence pour améliorer au mieux les performances de la plateforme.<br><br>
-
-- <b><a name="p5c"> </a>c) Opérations, documentation</b><br><br>
-Tout le code utilisé pour mener le projet à bien devra être documenté afin d'assurer la lisibilité du programme. Toutes les fonctions générées seront accompagnées d'une Docstring. On notera aussi la présence d'un dossier de test et d'une documentation de code.<br>
-
-- <b><a name="p5d"> </a>d) Utilisation et utilisabilité</b><br><br>
-Nous veillerons à rendre l’application accessible en nous basant sur la norme UAAG 2.1 de W3C. Nous utiliserons l'extension de navigateur internet "Wave" pour nous en assurer. Toute utilisation d'outil supplémentaire pour s'assurer davantage de l'accessibilité est la bienvenue.
-Un guide d'utilisation du site doit être disponible, tout comme la transcription visuelle de la vidéo de présentation. Notre logiciel pourra être utilisé via un site web ou avec des commandes sur un terminal.
-
-- <b><a name="p5e"> </a>e) Maintenance et portabilité</b><br><br>
-La portabilité et la maintenance de l'application web seront notamment vérifiées en passant par le validateur de W3C. Il permet de s'assurer de la compatibilité de la plateforme avec tous les navigateurs et de vérifier que le code est conforme aux exigences actuelles. PHP et MariaDB fonctionnent aussi bien sur un serveur Windows que sur un serveur Linux. Nous devrons mener des tests d'intégration pour s'assurer de l'intégration correcte des différents modules à notre projet.
+The Cluster HAT contains:
+- <b>Peripherals</b>: USB ports.    
 
 <br><br><br><br><br><br><br>
 ------------------------------------------------------------------------------------------------------------------------
 
-### <a name="p6"></a>VI – Recours humain, questions juridiques, politiques, organisationnelles.
-- <b><a name="p6a"></a>a) Quel est le recours humain au fonctionnement du système ?</b><br>
-  
-  Le hardware devras être mis en place à chaque utilisation. Cela nécessitera donc un personnel qualifié à sa mise en place.<br>
-  Cependant, ce système pourras à terme être branché en serveur. <br><br>
-  Le démarrage et la maintenance du système doivent être faits par du personnel compétent.<br>
-  <br>
-  
-- <b><a name="p6b"></a>b) Quelles sont les exigences juridiques et politiques ?</b><br>
-  L'application se doit de respecter la loi française « Informatique et liberté » du 6 janvier 1978, mise à jour le 1er juin 2019, relative à l'informatique, aux fichiers et aux libertés.<br>
-  L'application est également soumise au règlement européen « Règlement Général sur la Protection des Données » (RGPD) du 27 avril 2016, relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données, et abrogeant la directive 95/46/CE.<br>
-  <br>
-  A noter, la CNIL propose des recommandations vis à vis de la loi, notamment en matière de cookies.<br>
-  <br>
-  Les articles peuvent être consultés via les liens ci-dessous :
-  - <u>Loi « Informatique et liberté » :</u><br>
-    https://www.cnil.fr/fr/la-loi-informatique-et-libertes <br>
-  - <u>Règlement européen « Règlement Général sur la Protection des Données » :</u><br>
-    https://www.cnil.fr/fr/reglement-europeen-protection-donnees <br>
-  - <u>A propos des cookies :</u><br>
-    https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies <br>
-    <br>
 
-- <b><a name="p6c"></a>c) Quelles sont les conséquences humaines de la réalisation du système ?</b><br>
+### <a name="p5"></a>V – Other Requirements
 
-  L'application permettra aux utilisateurs d'exécuter des programmes nécessitant un calcul distribué ou parallèle de manière plus accessible, sans qu'ils aient besoin de connaissances approfondies en gestion de clusters et en calcul.<br><br>
+- <b><a name="p5a"></a>a) Development Process</b>
 
-  L'interface web simplifira l'accès aux ressources du cluster et permet une interaction fluide avec le système, ce qui améliore l'expérience utilisateur.
+    - <u><a name="p5ai"></a>i. Who are the project participants?</u><br>
 
-  Ces données sont utilisables dans le cas d'études statistiques afin de permettre aux administrateurs de se renseigner sur la fréquentation du site et l'utilisation des ressources materiels lors des calculs.<br>
-  <br>
-
-
-- <b><a name="p6d"></a>d) Quels sont les besoins en formation ?</b><br>
-  En général, il est nécessaire de savoir se servir d'un ordinateur et d'un navigateur internet.<br>
-  <br>
-  Un guide d'utilisation, comprenant potentielement une vidéo de présentation pour apprendre à se servir de l'application, sera disponible.<br>
-  Celle-ci expliquera comment utiliser l'application.<br>
-  <br>
-  On peut supposer une page web donnant des conseils pour les utilisateurs.<br>
-  <br>
-  
-
-- <b><a name="p6e"></a>e) Quelles sont les hypothèses et les dépendances affectant l’environnement humain ?</b><br>
-  - Nous supposons que :<br>
-    - tous les étudiants, professeurs et personnels concernés possède une connexion internet et savent se servir d'un ordinateur et d'un navigateur internet.<br>
-    - l'utilisation de l'application par des personnes handicapées peut-être différente.<br>
+      The members of our team are the main participants in the project. Our team consists of Tom BOGAERT, Matthieu FARANDJIS, William HERUBEL, Baptiste FOURNIÉ, and Florent VASSEUR-BERLIOUX.<br>
       <br>
-  - L'application dépend de :<br>
-    - la présence des administrateurs.
-    - de la loi "Informatique et liberté" en France, ainsi que le RGPD dans l'Union Européenne.
-      Leur changement peut demander une réévaluation de l'application afin de s'assurer qu'elle soit toujours conforme.
-    - l'évolution des navigateurs internet. L'application pouvant se retrouver obsolète.
+  
+    - <u><a name="p5aii"></a>ii. What values should be prioritized? (e.g., simplicity, availability, speed, flexibility, etc.)</u><br>
+      <h3> Efficiency </h3>
+      We prioritize efficiency to ensure our algorithms achieve their best performance. Calculations must be executed as quickly as possible.
+      <h3> Flexibility </h3>
+      Our application should be extensible, allowing new features (calculations, etc.) to be added without rewriting the code.
+      <h3> Portability</h3>
+      The web platform must be hosted on a Cluster Hat Kit (connected to 4 Raspberry Pi Zeros) and have an SD card configured by the development team. Additionally, it must allow SSH access to the Raspberry Pi.
+      <h3> Security</h3>
+      Data must be protected, and the site should display only what each user is allowed to see. It is essential to secure the SQL queries made by the (PHP) files to restrict access as much as possible and limit security vulnerabilities. Moreover, all passwords must be encrypted before being stored in the database to mitigate the effects of any potential data breach. We will also install fail2ban to moderate SSH connections, login attempts, and website registrations.<br>
+      <br>
+  
+    - <u><a name="p5aiii"> </a> iii. What feedback or visibility on the project do users and sponsors expect?</u><br><br>
+      Since this project is part of an evaluated academic work, the sponsors of this project are our instructors. They have significant visibility into the project's progress and will receive documentation on the project and its advancement at specific dates. Communication between team members and instructors is recommended to ensure the project meets their expectations.
+      Communication with our professors will take place via email as well as in person.<br>
+      Our client, Mr. HOGUIN, should have full access to the project: GitHub, Linux administrator account (sudoers).<br>
+      Our second client, Mr. DUFAUD, should have access to the GitHub to track the progress of our project.<br><br>
+  
+    - <u><a name="p5aiv"> </a>iv. What can be purchased? What needs to be built? Who are our competitors?</u><br><br>
+      The project involves designing and developing software to perform various calculations. No purchases are required for software development, as the hardware (cluster kit) is provided by the client. We do not have direct competitors.<br><br>
+  
+    - <u><a name="p5av"> </a>v. What are the other process requirements? (e.g., testing, installation, etc.)</u><br><br>
+      Project requirements include a testing phase to ensure the application functions correctly. We also expect the submission of appendices related to the team’s work organization and the graphic design of the application logo.
+      The project will follow a waterfall or V-model approach for each project element. In the waterfall model, we will start with design, followed by development, and finish with testing. In the V-model, we will begin with design, followed by testing, and then development. Clients should have access to the Git repository to assess project progress and provide feedback if necessary.<br><br>
+  
+    - <u><a name="p5avi"> </a>vi. What dependencies does the project have?</u><br><br>
+      This project has no major dependencies due to the stability of PHP and MariaDB. It also uses technologies such as HTML, CSS, JavaScript, Raspberry OS Lite, fail2ban, and CRON.<br><br>
+
+- <b><a name="p5b"> </a>b) Performance</b><br><br>
+  The software must be as efficient as possible to facilitate access. Programs will be optimized and tested to minimize the number of operations. Data storage systems will be chosen accordingly to maximize platform performance.<br><br>
+
+- <b><a name="p5c"> </a>c) Operations, Documentation</b><br><br>
+  All the code used in the project must be documented to ensure readability. All generated functions will be accompanied by a Docstring. Additionally, a test folder and code documentation will be included.<br>
+
+- <b><a name="p5d"> </a>d) Usability and User-friendliness</b><br><br>
+  We will ensure the application is accessible by adhering to the W3C UAAG 2.1 standard. We will use the "Wave" browser extension to verify compliance. Any additional tools to further ensure accessibility are welcome.
+  A user guide for the website must be available, as well as a visual transcript of the presentation video. Our software can be used via a website or through terminal commands.
+
+- <b><a name="p5e"> </a>e) Maintenance and Portability</b><br><br>
+  The web application’s portability and maintenance will be checked using the W3C validator. This ensures compatibility across all browsers and verifies that the code complies with current standards. PHP and MariaDB function on both Windows and Linux servers. We will conduct integration tests to ensure the correct integration of different modules into our project.
+<br><br><br><br><br><br><br>
+
+------------------------------------------------------------------------------------------------------------------------
+
+### <a name="p6"></a>VI – Human Resources, Legal, Political, and Organizational Questions
+
+- <b><a name="p6a"></a>a) What is the human involvement in the system's operation?</b><br>
+
+  The hardware must be set up for each use. This will require qualified personnel for its installation.<br>
+  However, this system could eventually be connected as a server.<br><br>
+  The system startup and maintenance must be handled by competent personnel.<br>
+  <br>
+
+- <b><a name="p6b"></a>b) What are the legal and political requirements?</b><br>
+  The application must comply with the French law "Informatique et Liberté" of January 6, 1978, updated on June 1, 2019, regarding information technology, files, and liberties.<br>
+  The application is also subject to the European regulation "General Data Protection Regulation" (GDPR) of April 27, 2016, concerning the protection of natural persons with regard to the processing of personal data and the free movement of such data, repealing Directive 95/46/EC.<br>
+  <br>
+  It should be noted that the CNIL provides recommendations regarding the law, particularly concerning cookies.<br>
+  <br>
+  The articles can be consulted via the links below:
+    - <u>"Informatique et Liberté" law:</u><br>
+      https://www.cnil.fr/fr/la-loi-informatique-et-libertes <br>
+    - <u>European regulation "General Data Protection Regulation":</u><br>
+      https://www.cnil.fr/fr/reglement-europeen-protection-donnees <br>
+    - <u>About cookies:</u><br>
+      https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies <br>
+      <br>
+
+- <b><a name="p6c"></a>c) What are the human impacts of the system's implementation?</b><br>
+
+  The application will allow users to run programs requiring distributed or parallel computing in a more accessible way, without needing in-depth knowledge of cluster management and computing.<br><br>
+
+  The web interface will simplify access to cluster resources and enable smooth interaction with the system, enhancing the user experience.
+
+  This data can be used for statistical studies, allowing administrators to monitor site traffic and the use of hardware resources during computations.<br>
+  <br>
+
+- <b><a name="p6d"></a>d) What are the training requirements?</b><br>
+  In general, users need to know how to use a computer and an internet browser.<br>
+  <br>
+  A user guide, potentially including a presentation video to help users learn how to use the application, will be available.<br>
+  This will explain how to use the application.<br>
+  <br>
+  It is possible to have a web page providing tips for users.<br>
+  <br>
+
+
+- <b><a name="p6e"></a>e) What hypothesis and dependencies affect the human environment?</b><br>
+    - We assume that:<br>
+        - all students, teachers, and staff involved have an internet connection and know how to use a computer and an internet browser.<br>
+        - the use of the application by individuals with disabilities may differ.<br>
+          <br>
+    - The application depends on:<br>
+        - the presence of administrators.
+        - the "Informatique et Liberté" law in France, as well as the GDPR in the European Union.
+          Changes to these laws may require a reevaluation of the application to ensure continued compliance.
+        - the evolution of internet browsers. The application may become obsolete.
 
   <br><br><br><br><br><br><br>
 ------------------------------------------------------------------------------------------------------------------------
 
 ### <a name="p7"></a>VII - Project management and organization.
-- <b><a name="p7a"></a>a) Roles and responsibilities</b><br>
-  L'équipe est composé de :
-  - **Matthieu FARANDJIS**
-    Project Manager, Database Administrator, RaspberryPi 4 Administrator, Developer, GitHub Manager,
-    in charge of communication between professors and the team.
-  - **Florent VASSEUR--BERLIOUX**
-    Design (conception) Manager, RaspberryPi 4 vice-Administrator, Developer
-  - **Tom BOGAERT**
-    Artistic Manager, Developer HTML/CSS/JS, Developer
-  - **William HERUBEL**
-    Redaction Manager, Developer
-  - **Baptiste FOURNIÉ**
-    Mathematical Calculations Manager, Developer
-    <br><br>
 
+- <b><a name="p7a"></a>a) Roles and responsibilities</b><br>
+  The team is composed of:
+    - **Matthieu FARANDJIS**  
+      Project Manager, Database Administrator, RaspberryPi 4 Administrator, Developer, GitHub Manager,  
+      responsible for communication between professors and the team.
+    - **Florent VASSEUR--BERLIOUX**  
+      Design Manager, RaspberryPi 4 Vice-Administrator, Developer
+    - **Tom BOGAERT**  
+      Artistic Manager, HTML/CSS/JS Developer, Developer
+    - **William HERUBEL**  
+      Redaction Manager, Developer
+    - **Baptiste FOURNIÉ**  
+      Mathematical Calculations Manager, Developer
+      <br><br>
 
 - <b><a name="p7b"></a>b) Life cycle</b><br>
   As part of the project, we followed an iterative waterfall cycle.<br>
-  Among other things, for each task (pages, for example), we followed the pattern: Designer -> Development -> Testing.<br>
-  However, there's nothing to stop us going back to the drawing board in the event of bugs or design errors, for example.<br>
+  For each task (like pages), we followed the pattern: Design -> Development -> Testing.<br>
+  However, we can always go back to the drawing board in case of bugs or design errors, for example.<br>
 
   <br><br><br>
-  **Cycle de vie V0.2 : **
+  **Life cycle V0.2:**
