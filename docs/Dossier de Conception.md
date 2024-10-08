@@ -1,54 +1,54 @@
-Florent VASSEUR--BERLIOUX, Tom BOGAERT,William HERUBEL, Baptiste FOURNIE, Matthieu FARANDJIS<br>
+Florent VASSEUR--BERLIOUX, Tom BOGAERT, William HERUBEL, Baptiste FOURNIE, Matthieu FARANDJIS  
 INF2-A
 
 <div align="center">
 <img height="95" width="400" src="/img/IUT_Velizy_Villacoublay_logo_2020_ecran.png" title="logo uvsq vélizy"/>
 
-# SAÉ S5  Dossier de conception
+# SAÉ S5 Design Report
 </div>
 
 <br><br><br><br><br><br><br>
 
-## Plan
+## Table of Contents
 
-### [I – Conception Architectural](#p1)
-- <b>[Figure 1 : Diagramme des composants ](#fg1)</b>
+### [I – Architectural Design](#p1)
+- <b>[Figure 1: Component Diagram](#fg1)</b>
 
-### [II – Conception Détaillée](#p2)
+### [II – Detailed Design](#p2)
 
 
 <br><br><br><br><br><br><br>
 
 
 ------------------------------------------------------------------------------------------------------------------------
-### <a name="p2"></a>I – Conception Architecturale
+### <a name="p2"></a>I – Architectural Design
 <br><br>
 
 ## Introduction
-Ce document expose en détail la mise en œuvre et la conception du projet.
-Il explore les différentes perspectives de la structure du projet et les comportements associés à son utilisation.
+This document details the implementation and design of the project.
+It explores the different aspects of the project's structure and the behaviors associated with its use.
 
-### Conception Architecturale
-<img height="800" width="800" src="Conception/ComponentDiagramV1.png" title="conception UML du site statique"/><br><br>
-<i><a name="fg1"></a>Figure 1 : Diagramme de composants.</i>
+### Architectural Design
+<img height="800" width="800" src="Conception/ComponentDiagramV1.png" title="UML design of the static site"/><br><br>
+<i><a name="fg1"></a>Figure 1: Component Diagram.</i>
 
-#### Outils utilisées :
+#### Tools Used:
 
-Langage de programmation :
-- Server Apache
+Programming Language:
+- Apache Server
 - MariaDB (SQL)
 
-Architecture matériel :
- - Raspberry pi 0
- - Raspberry pi 4
- - Kit Cluster HAT
+Hardware Architecture:
+ - Raspberry Pi 0
+ - Raspberry Pi 4
+ - Cluster HAT Kit
 
- (rèf :  Recueil des besoins; Part 4)
+ (ref: Requirements Collection; Part 4)
 
 
-#### Forme de l'architecture :
+#### Architecture Form:
 
-Notre architecture est constitué d'un Kit Cluster HAT, lui même composé de quatre Rasberry pi 0 et d'un Raspberry pi 4.
-Notre Kit Cluster HAT dépend d'un serveur Apache. Ce dernier utilise les services de l'interface MySQL afin d'accéder à la base de données.
+Our architecture consists of a Cluster HAT Kit, which itself is made up of four Raspberry Pi 0 units and a Raspberry Pi 4.
+Our Cluster HAT Kit relies on an Apache server. The latter uses MySQL interface services to access the database.
 
 ------------------------------------------------------------------------------------------------------------------------
