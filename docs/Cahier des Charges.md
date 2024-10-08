@@ -1,77 +1,61 @@
-# SAE 5.01 - Cahier des Charges
+# SAE 5.01 - Specifications Document
 
-## Sommaire
+## Table of Contents
 
-* [**Chapitre 1**](#part1) **:** _Introduction_
-* [**Chapitre 2**](#part2) **:** _Énoncé_
-* [**Chapitre 3**](#part3) **:** _Pré-requis_
+* [**Chapter 1**](#part1) **:** _Introduction_
+* [**Chapter 2**](#part2) **:** _Statement_
+* [**Chapter 3**](#part3) **:** _Prerequisites_
 
 ## <a id="part1"></a>Introduction
 
-Ce Cahier des Charges décrit les attendus du projet, et exprime les
-besoins du client. Ce document a été rédigé dans le but de présenter efficacement les objectifs du système, tant pour les intervenants
-au projet que pour le client.
+This Specifications Document outlines the project's expected outcomes and defines the client's requirements. It has been written to effectively present the system's objectives, both for project stakeholders and the client.
 
-Le projet joue un rôle central dans l'évaluation et la validation du projet, en veillant à ce que toutes les conditions et objectifs
-énoncés dans ce document soient pleinement satisfaits. Il constitue ainsi une étape critique pour certifier la conformité du projet
-aux attentes du client.
+The project plays a central role in evaluating and validating the project by ensuring that all the conditions and goals stated in this document are fully met. Thus, it represents a critical step in certifying the project’s compliance with the client’s expectations.
 
-Ce cahier des charges commencera par une description détaillée du contexte de développement et des objectifs que le projet doit
-atteindre. Les contraintes imposées au projet seront données ensuite, autour desquelles le projet devra se concentrer. Enfin, il
-détaillera les connaissances, ressources matérielles, ressources logicielles et compétences nécessaires à la réalisation du projet.
+This document will begin with a detailed description of the development context and the objectives that the project must achieve. The constraints imposed on the project will then be provided, which will be the focus of the project. Finally, it will detail the knowledge, hardware resources, software resources, and skills required to complete the project.
 
 ---
 
-## <a id="part2"></a>Énoncé
+## <a id="part2"></a>Statement
 
-## _Objectifs du projet_
+## _Project Objectives_
 
-Le projet vise à mettre en place une application permettant de réaliser des calculs paralléles ou distribués sur un cluster de Raspberry. Pour une meilleure visualisation, l'application disposera d'une version web (application web).
+The project aims to develop an application that can perform parallel or distributed computations on a Raspberry Pi cluster. For better visualization, the application will have a web version (web application).
 
-### Objets du système
+### System Objects
 
 // Todo
 
-### Acteurs du système
+### System Actors
 
-#### 1. Visiteur
+#### 1. Visitor
 
-Le visiteur est un utilisateur non connecté/non inscrit. Il peut donc s'agir d'une personne extérieure au système, mais également
-de n'importe quel autre type d'utilisateur ne s'étant simplement pas encore connecté à la plateforme. Il est ainsi vital que l'affichage
-de la page d'accueil dans le format Visiteur soit efficace et ergonomique, car tout type d'utilisateur sera amené à la visiter.
+The visitor is a non-registered and non-logged-in user. This may be an external person but could also include any other type of user who has not yet logged in to the platform. Therefore, it is essential that the homepage display for Visitors is effective and ergonomic, as all types of users will visit it.
 
-#### 2. Utilisateur connecté
+#### 2. Logged-in User
 
-L'utilisateur connecté pourra lancer des calculs prédéfinis via soit grâce à des commande sur un terminal, soit grâce à la Page Web. L'utilisateur disposera d'un historique de tous ses calculs précédents.Il pourra se déconnecter du site via la page Web.
+The logged-in user will be able to execute predefined computations either through terminal commands or via the Web Page. The user will have access to a history of all their previous calculations. They can log out of the website via the Web Page.
 
-#### 3. Administrateur
+#### 3. Administrator
 
-L'administrateur pourra ajouter,modifier (modifier les mots de passe) et supprimmer des comptes d'autres utilisateurs. Il pourra se déconnecter du site via la page Web.
+The administrator can add, modify (change passwords), and delete other users’ accounts. They can log out of the website via the Web Page.
 
-## _Contraintes et Exigences_
+## _Constraints and Requirements_
 
-L'application web devra être développée en PHP & MYSQL et être installée sur un serveur porté par un cluster de Raspberry, disponible en connexion ssh
-depuis les postes des salles machines.
+The web application must be developed in PHP & MySQL and installed on a server running on a Raspberry Pi cluster, accessible via SSH from the machines in the computer labs.
 
-Une carte SD devra être configurée pour installer le système, le serveur web et le serveur SGBD Mysql, et 4 autres carte SD seront configurés de maniére identique pour réaliser différents calculs. Le login de base de la
-carte SD sera [utilisateur] et son mot de passe [mot de passe].
+An SD card must be configured to install the system, the web server, and the MySQL database server. Four additional SD cards will be configured identically to perform various computations. The base login for the SD card will be [username], and the password will be [password].
 
-Un github du projet devra être partagé avec les professeurs souhaitant le consulter, et devra contenir tous les éléments du projet,
-de sa documentation à son code php.
+A GitHub repository for the project must be shared with the professors who wish to consult it, and it should contain all project elements, from its documentation to its PHP code.
 
 ---
 
-## <a id="part3"></a>Pré-requis
+## <a id="part3"></a>Prerequisites
 
-Le projet demande des compétences en PHP & MYSQL, en Analyse des besoins et en Conception. Des connaissances en HTML et en
-installation système et réseau sont également nécessaires à la bonne réalisation du projet. Des connaissances en Mathématiques pour réaliser les calculs distribués ou parallèles. 
+The project requires skills in PHP & MySQL, Requirements Analysis, and Design. Knowledge of HTML and system and network installation is also necessary for successful project completion. Mathematical knowledge is needed to perform distributed or parallel computations.
 
-Il est nécessaire de savoir travailler avec Git, ainsi que d'avoir des compétences en communication dans le cadre de la documentation, 
-de la charte graphique et du logo à réaliser. 
+It is necessary to be familiar with working with Git and have communication skills for the documentation, graphic charter, and logo creation.
 
-En termes de ressources matérielles, le projet devra faire l'objet d'un cluster Raspberry et de plusieur carte SD à paramétrer. Pour les
-ressources logicielles, nous allons utiliser Github pour tenir un registre du projet, et les IDE Jetbrains ainsi que VSCode pour
-écrire les fichiers markdown et coder les fichiers php, css, html et autres.
+In terms of hardware resources, the project will require a Raspberry Pi cluster and several SD cards to be configured. For software resources, we will use GitHub to maintain a project registry, and JetBrains IDEs and VSCode to write markdown files and code PHP, CSS, HTML, and other files.
 
-Enfin, l'utilisation de logiciel comme Excalidraw ou StarUML pour permettre de mettre en forme des diagrammes et des figures pour concevoir et illustrer
-les choix de conceptions.
+Lastly, software like Excalidraw or StarUML should be used to format diagrams and figures to design and illustrate the design choices.
