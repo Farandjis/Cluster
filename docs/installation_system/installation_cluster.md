@@ -97,17 +97,15 @@ As with most computers, this one features ports for connecting a monitor, periph
 
   - ### <a name="p1c"></a> c) RaspberryPi Hat presentation
 
+    The Raspberry Pi Hat is an extension board for the RPi 4 and the RPi Zero, which connects to the GPIO port.<br>
+    With it, we can connect four RPi Zeros to the RPi 4: the Hat serves as a bridge. Moreover, we can control the Hat using commands.<br>
+
+
   - ### <a name="p1d"></a> d) CNAT image presentation
 
-    RaspberryPi OS Lite est la version de RaspberryPi OS sans interface graphique.<br>
-    Cette version permet de démarrer le RPi4 sans écran, sans clavier et sans souris. Elle pèse près de 600 Mo, c'est donc le système idéal pour notre serveur.<br>
-    Bien que nous savons utiliser le terminal, le cas échéant, il est toujours possible d'ajouter une interface graphique à Raspberry OS Lite.<br>
-    <br>
-    RaspberryPi OS est fondé sur le système d'exploitation gratuit Debian et est conçu spécialement pour le RaspberryPi.<br>
-    En effet, au lancement de Raspbian, l'ancien nom de l'OS, Debian n'était pas disponible pour la famille de processeur du RaspberryPi : l'ARMv6.<br>
-    Vu que ce système d'exploitation est dédié au RaspberryPi, il comporte des commandes dédiées au micro-ordinateur comme "raspi-config" ou encore "pinout" cité plus tôt.<br>
-    Ubuntu étant aussi issu sur Debian, nous pouvons aussi bien s'aider de la documentation de Raspberry OS, que celle de Debian ou celle d'Ubuntu.<br>
-    Pour notre serveur de secours, nous utiliserons Ubuntu Server. L'installation du serveur LAMP et de LogMeIn Hamachi reste pratiquement la même.<br>
+    The CNAT Image is based on RaspberryPi OS Lite, the without graphical interface version of RPi OS.<br>
+    The RPi OS Lite is a version enabling to start the RPi4 without display, keyboard or mouse. This version is dedicated for server.<br>
+    RaspberryPi OS is based on the free operating system Debian, and it specially designed for the RaspberryPi and has commands for it.<br>
 
     <br><br>
     **Sources :**
