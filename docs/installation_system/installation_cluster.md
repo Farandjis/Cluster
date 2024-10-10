@@ -1,5 +1,5 @@
 Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS<br>
-INF2-A
+INF3-FI
 
 
 <div align="center">
@@ -27,7 +27,7 @@ This document describes in detail the installation process of the RPi4 and RPi0 
       - Contains: explanation of the problems encountered.
 
 - ### [II – Preparations](#p2)
-  - [**a) Equipment requirements **](#p2a)
+  - [**a) Equipment requirements**](#p2a)
   - [**b) Software requirements**](#p2b)
   - [**c) Installation of images**](#p2c)
   - [**d) Cluster test**](#p2d)
@@ -106,6 +106,16 @@ As with most computers, this one features ports for connecting a monitor, periph
     The CNAT Image is based on RaspberryPi OS Lite, the without graphical interface version of RPi OS.<br>
     The RPi OS Lite is a version enabling to start the RPi4 without display, keyboard or mouse. This version is dedicated for server.<br>
     RaspberryPi OS is based on the free operating system Debian, and it specially designed for the RaspberryPi and has commands for it.<br>
+    <br>
+
+    The issue with the original Raspberry Pi OS Lite image is that it does not include the commands necessary to control the RaspberryPi Hat, such as `clusterhat` (also known as `clusterctrl`).
+    For example, this prevents us from starting a Raspberry Pi Zero.<br>
+    While we can manually install the command from a GitHub repository, the easiest solution is to use the CBRIDGE or CNAT image, which already include these commands.<br>
+    The difference between the CBRIDGE and CNAT images is that the CNAT image can automatically recognize a Raspberry Pi Zero thanks to the additional images "P1", "P2", "P3", and "P4".
+    Each PX image is dedicated to one specific Raspberry Pi Zero, where PX refers to the USB port on the Raspberry Pi Hat used to connect a Raspberry Pi Zero.<br>
+    Additionally, with the `clusterhat` command, we can start a specific Raspberry Pi Zero by referring to its PX name.<br>
+    <br>
+    The CNAT image is regularly updated. Our version is from 2024, but there is also a 2020 version, which does not take custom settings from the Pi Imager into account.<br>
 
     <br><br>
     **Sources :**
@@ -113,6 +123,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     - https://raspberrytips.fr/raspberry-pi-os-versions/
     - https://alain-michel.canoprof.fr/eleve/tutoriels/raspberry/premiers-pas-raspberrypi/activities/utiliser-raspi-config.html
     - https://www.macg.co/ailleurs/2023/10/les-raspberry-pi-passent-bookworm-pour-le-nouvel-os-139771
+    - https://clusterctrl.com/setup-software
 
 <br><br><br>
 

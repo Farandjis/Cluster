@@ -1,3 +1,6 @@
+Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS<br>
+INF3-FI
+
 # SAE 5.01 - Specifications Document
 
 ## Table of Contents
