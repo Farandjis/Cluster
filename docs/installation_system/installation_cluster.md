@@ -129,57 +129,39 @@ As with most computers, this one features ports for connecting a monitor, periph
 
 ---
 
-## <a name="p2"></a> II - Préparatif
+## <a name="p2"></a> II - Preparations
 
-  - ### <a name="p2a"></a> a) Matériels nécessaires
-    Pour utiliser le RPi4 sur le même écran de son ordinateur tout en l'utilisant, on peut utiliser un boîtier d'acquisition.<br>
-    C'est un adaptateur HDMI vers USB, permettant de récupérer le signal vidéo sur son ordinateur. Utile pour enregistrer l'écran du RPi4 par exemple.<br>
+  - ### <a name="p2a"></a> a) Equipment requirements
 
-    <br>
-    Pour procéder à l'installation du système, il faut au préalable avoir :<br><br>
+    To install the system, you need to have :
 
-    - **Un RaspberryPi et son alimentation**<br>
-      Monsieur Hoguin nous a confié un RaspberryPi 4 modèle B. C'est un micro-ordinateur à manipuler avec précaution. En effet, il n'est pas dans un boîtier.<br>
-      Son alimentation se branche au RPi4 via son port USB type C.<br><br>
-    
-    - **Une carte microSD**<br>
-      Monsieur Hoguin nous a donné une carte micro SD Verbatim de 16Go.<br>
-      Le RPi4 est réputé comme étant un tueur de carte micro SD. Nous devons donc archiver régulièrement l'intégralité du contenu de cette carte.<br><br>
-    
-    - **Un câble HDMI et son adaptateur vers micro HDMI**<br>
-      Le RPi4 se branche en micro HDMI. Ayant un câble HDMI, un adaptateur était nécessaire. Il nous a coûté 3€ à la FNAC.<br><br>
-  
-    - **Un clavier d'ordinateur**<br>
-      Un clavier d'ordinateur basique se branchant en USB suffit.<br><br>
-    
-    - **Un câble ethernet** (préférable)<br>
-      Brancher un câble ethernet permet de vérifier grâce aux leds que le RPi4 soit bien connecté au réseau.<br>
-      On peut aussi connecter le RPi4 en Wi-Fi. Mais grâce au câble nous sommes assurés de ne pas accuser la connexion si on rencontre des problèmes dans la plupart des cas.
+      - **1 RaspberryPi 4 and 4 RaspberryPi 0 and its power supply**.
+        Mr Hoguin has entrusted us with a RaspberryPi 4 model B. This is a microcomputer to be handled with care. It is not housed in a case.
+        Les 4 autres RPi0 se branchent sur le RPiHat.
+        Its power supply is connected to the RPi4 via its USB type C port.
 
+      - **1 RaspberryPi Hat**
+        Connect the 4 RPi0s to it, connect it to the RPi4 via its micro USB port and place it on the RPi4 via its GPIO port.
+
+      - **5 microSD cards**
+        The RPi is reputed to be a micro SD card killer. We therefore need to archive the entire contents of these cards on a regular basis.
+
+      - **HDMI cable, HDMI-Micro HDMI adapter, HDMI-VGA adapter** The RPi4 connects via micro HDMI.**
+        The RPi4 connects via micro HDMI. Having an HDMI cable, an adapter was required.
+
+      - **A computer keyboard**
+        A basic USB-connected computer keyboard is all that's needed.
+   
 <br>
 
-  - ### <a name="p2b"></a> b) Logiciels nécessaires
+  - ### <a name="p2b"></a> b) Software requirements
 
-    Pour installer un système sur un support dédié au RaspberryPi, le plus simple est d'utiliser le logiciel "Pi Imager".<br>
-
-    <br>
-    En-dehors du logiciel Pi Imager, vu que nous possédons un boîtier d'acquisition, nous allons utiliser les logiciels VLC et Mirillis Action!.<br>
-    VLC permettra d'afficher sur son ordinateur la sortie vidéo du boîtier provenant du RPi4, et Action! permettra en même temps d'enregistrer celui-ci et même le bureau Windows.<br>
-    Grâce aux vidéos, nous pouvons décrire précisément l'installation du système et la résolution des problèmes rencontrés.<br>
-    Des captures d'écran de ces vidéos illustrent ce document.<br>
-
-    <br><br>
-
-    <div align="center">
-       <img src="img\II_preparatif\vlc.webp" title="VLC sur Windows 10 affichant l'écran du RPi4 installant PHPMyAdmin" height="220"/><br>
-       <i>VLC affichant l'écran du RPi4 sur Windows 10</i>
-    </div>
+    To install a system on a dedicated RaspberryPi support, the easiest way is to use the “Pi Imager” software.<br>
 
 
-- ### <a name="p2c"></a> c) Installation de Raspberry OS Lite
+- ### <a name="p2c"></a> c) Installation of images
 
-    À partir du bouton "Choisir l'OS", Pi Imager propose différents systèmes pouvant être installé. On peut aussi installer son propre système.<br>
-    Nous avons choisi Raspberry OS Lite pour les raisons évoqué lors de la présentation de ce système.
+    À partir du bouton "Choisir l'OS", Pi Imager propose différents systèmes pouvant être installé. On peut aussi installer son propre système, ce que l'on va faire.<br>
 
     <br><br>
 
