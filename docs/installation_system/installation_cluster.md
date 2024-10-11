@@ -161,34 +161,34 @@ As with most computers, this one features ports for connecting a monitor, periph
 
 - ### <a name="p2c"></a> c) Installation of images
 
-    À partir du bouton "Choisir l'OS", Pi Imager propose différents systèmes pouvant être installé. On peut aussi installer son propre système, ce que l'on va faire.<br>
+  From the “Choisir OS” button, Pi Imager proposes different systems that can be installed. You can also install your own system, which is what we're going to do.<br>
 
     <br><br>
 
     <div align="center">
-        <img src="img\II_preparatif\0_piimager_menu.webp" title="Menu de Pi Imager avec les boutons choix OS, choix Stockage, écrire et un bouton paramètre" height="220"/><br>
+        <img src="img\II_preparatif\0_piimager_menu.webp" title="Pi Imager menu with OS choice, Storage choice, Write buttons and a parameter button" height="220"/><br>
         <i>Menu de Pi Imager</i>
     </div>
   
     <br>
 
-    Une fois avoir sélectionné le système, un petit bouton engrenage apparaît pour paramétrer l'installation de RaspberryPi OS Lite.<br>
-    On peut y donner un nom à l'ordinateur, activer SSH, modifier le login et le mot de passe de l'utilisateur par défaut, configurer le Wi-Fi, le clavier ou encore le fuseau horaire.<br>
-    Nous avons configuré l'installation par rapport à notre besoin. Il est tout à fait possible de le faire plus tard avec la commande `raspi-config`.<br>
+    Once you've selected the system, a small gear button appears, allowing you to configure the installation of the image.<br>
+    Here you can give the RaspberryPi a name, activate SSH, change the default user login and password, configure Wi-Fi, keyboard and time zone.<br>
+    We've configured the installation to suit our needs. This can be done later with the `raspi-config` command.<br>
     <br>
-    Les trois cases à cocher tout en bas ne sont pas très importante.<br>
-    La télémétrie correspond à l'envoi de pings à raspberry.org pour des fins de statiques, c'est inutile, ça ne restreint pas l'utilisation du système, nous l'avons donc désactivé pour ne pas être surveillés.<br>
+    The three checkboxes at the bottom are not very important.<br>
+    Telemetry corresponds to sending pings to raspberry.org for static purposes. It's useless, it doesn't restrict the use of the system, so we've disabled it to avoid being monitored.<br>
     <br><br>
 
     <div align="center">
-        <img src="img\II_preparatif\1_piimager_option.webp" title="Les options d'installation de Pi Imager" height="220"/><br>
+        <img src="img\II_preparatif\1_piimager_option.webp" title="Pi Imager installation options" height="220"/><br>
         <i>Options d'installation de Pi Imager</i>
     </div>
 
     <br>
 
-    Une fois fait, il suffit de sélectionner le bon lecteur et de flasher la carte microSD. C'est assez rapide, et la carte microSD est immédiatement opérationnel.
-
+    Once done, simply select the right reader and flash the microSD card. It's quite quick, and the microSD card is immediately operational.<br>
+    Note: the 2020 image does not take custom settings into account.
     <br><br>
     **Source :**
     - https://framboise-pi.skyost.eu/article/maitriser-raspberry-pi-imager/
