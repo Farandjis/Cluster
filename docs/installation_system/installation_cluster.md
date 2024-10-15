@@ -201,11 +201,6 @@ As with most computers, this one features ports for connecting a monitor, periph
 <br><br><br>
 
 ---
-Here’s the translated report in English:
-
----
-
-
 
 ## <a name="p3"></a> III - Cluster Installation
 
