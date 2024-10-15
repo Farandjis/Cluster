@@ -32,6 +32,11 @@ This document describes in detail the installation process of the RPi4 and RPi0 
   - [**c) Installation of images**](#p2c)
   - [**d) Cluster test**](#p2d)
 
+
+- ### [III - Cluster Installation](#p3)
+- [**a) Starting the Cluster HAT]**(#p3a)
+- [**b) SSH Connection Between All Raspberry Pis]**(#p3b)
+
 <br><br><br>
 
 ---
@@ -196,3 +201,107 @@ As with most computers, this one features ports for connecting a monitor, periph
 <br><br><br>
 
 ---
+Here’s the translated report in English:
+
+---
+
+
+
+## <a name="p3"></a> III - Cluster Installation
+
+- ### <a name="p3a"></a> a) Starting the Cluster HAT
+This report documents the process of installing and configuring a Cluster HAT (version 2.5) composed of 4 Raspberry Pi Zero connected to a Raspberry Pi 4, on which a CNAT image is deployed.<br>
+#### 1.1 Activating the Cluster HAT
+- **Executed Command**:  
+  ```bash
+  clusterhat on
+  ```
+- **Description**:  
+  This command activates the Cluster HAT, allowing the Raspberry Pi Zero to connect to the Raspberry Pi 4. At this stage, the USB interfaces (usb0, usb1, usb2, usb3) are established.
+
+#### 1.2 Configuring the `brint` Network Interface
+- **Executed Commands**:  
+  ```bash
+  sudo ifdown brint && sudo ifup brint
+  ```
+- **Observation**:  
+  No output or visible effect was observed. This lack of response suggests that the `brint` interface is not yet active or correctly configured.
+
+#### 1.3 Editing the Configuration File
+- **Executed Command**:  
+  ```bash
+  sudo nano /etc/network/interfaces.d/brint
+  ```
+- **Configuration Added**:
+  ```plaintext
+  auto brint
+  iface brint inet static
+  address 172.19.181.254
+  netmask 255.255.255.0
+  bridge_ports usb0 usb1 usb2 usb3
+  ```
+- **Description**:  
+  This file configures the `brint` interface as a network bridge, assigning it the IP address `172.19.181.254` and integrating the USB interfaces of the Raspberry Pi Zero. This facilitates the management of these devices through the Raspberry Pi 4.
+
+---
+
+
+- ### <a name="p3a"></a> b) SSH Connection Between All Raspberry Pis
+
+#### Explanation of `brint` and `br0`
+
+##### `brint`
+- **Definition**: `brint` is a bridge interface that we created to group multiple network interfaces (in this case, the USB interfaces of the Raspberry Pi Zero) into a single logical interface.
+  
+- **Functionality**: 
+  - With `brint`, we enable all connected Raspberry Pi Zero devices via USB to operate as if they are on the same local network. This facilitates communication between the Raspberry Pi 4, which manages the cluster, and the Raspberry Pi Zero devices.
+  - By grouping the USB interfaces into a single bridge, `brint` simplifies network management, allowing us to assign an IP address to the bridge interface instead of each individual interface.
+
+- **Usage**: 
+  - When we configure `brint`, we allow all connected devices to communicate directly. This is especially useful in a cluster environment, where devices need to collaborate and exchange data without latency due to network configuration.
+
+##### `br0`
+- **Definition**: `br0` is typically the first default bridge interface in many Linux network configurations. If we have another bridge network configured on our system, it might be named `br0`.
+
+- **Functionality**:
+  - Like `brint`, `br0` allows for the grouping of multiple network interfaces, including Ethernet interfaces, Wi-Fi, or other bridge interfaces.
+  - We often use `br0` to establish network connections in virtual environments or advanced network configurations, where multiple networks need to be interconnected.
+
+- **Usage**: 
+  - In a typical setup, we might see `br0` used to link virtual machines to a physical network, allowing VMs to access the Internet or communicate with each other on the same local network.
+
+#### Viewing `brint` and `br0`
+We can view the configured bridge interfaces, including `brint` and `br0`, by executing the following command:
+```bash
+ip addr
+```
+This command lists all network interfaces and their assigned IP addresses, allowing us to confirm that `brint` is properly configured with the desired address.
+
+---
+
+#### 2.1 Connectivity Test with `ping`
+- **Executed Command**:  
+  ```bash
+  ping 172.19.181.1
+  ```
+- **Observation**:  
+  The ping test did not succeed, indicating a connectivity issue between the Raspberry Pi 4 and the Raspberry Pi Zero at the specified address. This suggests that the `brint` bridge or the USB interfaces are not fully operational at this stage.
+
+#### 2.2 SSH Connection
+- **Executed Command**:  
+  ```bash
+  ssh bapti@172.19.181.1
+  ```
+- **Observation**:  
+  We successfully established the SSH connection. This success indicates that network communication has been restored, allowing the Raspberry Pi 4 to connect to the Raspberry Pi Zero.
+
+#### 2.3 New Connectivity Test with `ping`
+- **Executed Command**:  
+  ```bash
+  ping 172.19.181.1
+  ```
+- **Observation**:  
+  This time, the ping test succeeded. This shows that the network route has been properly configured after the SSH connection, and the `brint` bridge is now functioning as expected.
+
+---
+
