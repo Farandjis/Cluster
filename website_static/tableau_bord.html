@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" href="style/main_style.css">
+    <link rel="stylesheet" href="style/navigation.css">
+    <link rel="stylesheet" href="style/tableau_bord.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="js/hamburger.js"></script>
+</head>
+<body>
+    <nav>
+        <div id="logo"><a href="index.html"><img src="img/logo_origin.png"></a></div>
+        <div id="nav_conteneur">
+            <a href="index.html" class="nav_link">Accueil</a>
+            <a href="tableau_bord.html" class="nav_link" id="current_page">Tableau de Bord</a>
+        </div>
+        <div style="width: 240px"></div>
+
+        <div class="hamburger-menu" tabindex="0" onclick="hamburger()" onkeypress="hamburger()">
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+        </div>
+    </nav>
+
+
+    <h1>Les modules de calcul</h1>
+    <div id="section_title_module">
+        <a href="#section_module"><div class="title_module test"><img src="img/module_test.png" class="img_module" alt="module_1"><p>Hello World</p></div></a>
+        <a href="#section_module"><div class="title_module prime"><img src="img/module_premier.png" class="img_module" alt="module_1"><p>Les nombres <span>Premier</span></p></div></a>
+        <a href="#section_module"><div class="title_module pi"><img src="img/module_pi.png" class="img_module" alt="module_2"><p>Pi</p></div></a>
+        <a href="#section_module"><div class="title_module fibonnaci"><img src="img/module_or.jpg" class="img_module" alt="module_3"><p>Fibonacci</p></div></a>
+    </div>
+
+    <div id="section_module">
+        <div class="module test"><p>AAAAAAA</p></div>
+        <div class="module prime"><p>BBBBBBB</p></div>
+        <div class="module pi"><p>CCCCCCC</p></div>
+        <div class="module fibonnaci"><p>DDDDDDD</p></div>
+    </div>
+
+    <script src="js/modules_calcul.js" charset="utf-8"></script>
+</body>
+</html>

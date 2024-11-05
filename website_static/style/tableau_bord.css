@@ -1,0 +1,68 @@
+@import url('variables_couleurs.css');
+
+h1 {
+    margin-top: 175px;
+}
+
+#section_title_module {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#section_title_module a{
+    text-decoration: none;
+    color: var(--col-dark-gray);
+
+}
+
+#section_title_module div{
+    margin-bottom: 20px;
+}
+
+#section_title_module div:hover{
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    box-shadow:  0 0 0  var(--col-dark-gray);
+}
+
+.title_module img {
+    width: 250px;
+    height: 250px;
+}
+
+.title_module {
+    padding: 10px;
+    border: 3px solid #333333;
+    border-radius: 20px;
+    background-color: #ff9f65;
+}
+
+.title_module.active {
+    /*box-shadow: 0 0 50px #b900cf;*/
+    background-color: var(--col-dark-gray);
+    color: white;
+}
+
+.img_module {
+    border-radius: 10px;
+}
+
+#section_module {
+    margin-top: 100px;
+    width: 90%;
+    height: 600px;
+    background: #eeeeee;
+    border-radius: 20px;
+    border: 1px solid #4d4641;
+}
+
+#section_module div{
+    visibility: hidden;
+}
+
+#section_module div.active {
+    visibility: visible;
+}
+
