@@ -26,9 +26,8 @@ This document contains all the important information we need to know in order to
 ### [II – Terminology / Glossary](#p2)
 ### [III – Use Cases](#p3)
 - <b>[a) Main actors and their general objectives](#p3a).</b>
-- <b>[b) Business use cases (operational concepts).](#p3b)</b>
-- <b>[c) Strategic use cases.](#p3c)</b>
-- <b>[d) User and system use cases.](#p3d)</b>
+- <b>[b) Strategic use cases.](#p3b)</b>
+- <b>[c) User and system use cases.](#p3c)</b>
 ### [IV – Technology Used](#p4)
 - <b>[a) What are the technological requirements for this system?](#p4a)</b>
 - <b>[b) With which systems will this system interface, and with what requirements?](#p4b)</b>
@@ -96,16 +95,198 @@ This document contains all the important information we need to know in order to
 | W3C                  | World Wide Web Consortium. An international organization that defines technical web standards and the rules that all developers worldwide must follow.                                                                                   |
 | Wave                 | A browser extension that evaluates the accessibility of a web page for people with disabilities.                                                                                                                                         |
 
-<br><br><br><br><br><br><br>
 ------------------------------------------------------------------------------------------------------------------------
-
 ### <a name="p3"></a>III – Use Cases
 - <b><a name="p3a"></a>a) Main actors and their general objectives.</b>
-- <b><a name="p3b"></a>b) Business use cases (operational concepts).</b>
-- <b><a name="p3c"></a>c) Strategic use cases.</b>
-- <b><a name="p3d"></a>d) User and system use cases.</b>
+  <br>
 
-<br><br><br><br><br><br><br>
+    - <u>The visitor (one or more):</u>
+        > - Registers
+        > - Accesses the homepage
+
+  <br>
+
+  To differentiate a user from a visitor, visitors must register and fill out a form to become users.
+
+    - <u>The user (one or more):</u>
+        > - Logs in, logs out
+        > - Performs calculations
+        > - Accesses their history
+    
+  <br>
+  <br>
+
+    - <u>The system administrator (one only):</u>
+        > - Is a user, but with additional administrative rights
+        > - Accesses and uses activity logs
+
+      
+- <b><a name="p3b"></a>b) Strategic use cases.</b>
+
+#### Use Case 1: Administration
+**Name:** Administration  
+**Usage Context:** The platform must allow administrators to manage elements external to the tickets.  
+**Scope:** Black box organization  
+**Level:** Strategic  
+**Primary Actor:** Administrator  
+**Guarantee in case of success:** Metadata update  
+**Trigger:** Need to update the platform's metadata
+
+**Normal Scenario:**
+1. The administrator accesses the metadata
+2. The metadata is modified by the administrator
+
+**Exceptions:**
+1. a. Unable to access the database:
+    1. A failure message is sent for loading metadata (FAILURE)
+2. a. Error during modification:
+    1. A failure message is sent for modifying metadata (FAILURE)
+***
+
+#### Use Case 2: Manage Users
+**Name:** Manage Users  
+**Usage Context:** The platform must allow administrators to manage user accounts.  
+**Scope:** White box organization  
+**Level:** Strategic  
+**Primary Actor:** Administrator  
+**Precondition:** The administrator is logged in  
+**Guarantee in case of success:** Creation of a user account  
+**Trigger:** Receipt of a user creation form
+
+**Normal Scenario:**
+1. Receipt of the form
+2. Access to the database
+3. Creation of the new user account
+
+**Exceptions:**
+1. a. The mandatory fields of the form are not all filled out:
+    1. A failure message is sent for user account creation (FAILURE)
+2. a. Unable to access the database:
+    1. A failure message is sent for user account creation (FAILURE)
+3. a. Error during account creation:
+    1. A failure message is sent for user account creation (FAILURE)
+***
+
+- <b><a name="p3c"></a>c) User and system use cases.</b>
+#### Use Case 3: Registration
+**Name:** Register  
+**Usage Context:** The data provided in a registration form is used to create a new account on the platform.  
+**Scope:** Black box system  
+**Level:** User  
+**Primary Actor:** User  
+**Precondition:** User is not registered  
+**Minimum Guarantee:** Data will be kept private and the password will be encrypted  
+**Guarantee in case of success:** Creation of a user account in the database  
+**Trigger:** Receipt of a registration form filled out by the user
+
+**Normal Scenario:**
+1. Receipt of the registration form
+2. Encrypting the password
+3. Insertion of the form data into the database => Creation of a new account on the platform
+4. Sending a confirmation message of registration to the user
+
+**Exceptions:**
+1. a. The user has not filled out all required fields in the form:
+    1. A failure message is sent to the user for account creation (FAILURE)
+
+2. a. The user's login is already present in the database:
+    1. A failure message is sent to the user for account creation (FAILURE)
+
+   b. Unable to access the database:
+    1. A failure message is sent to the user for account creation (FAILURE)
+***
+
+#### Use Case 4: View Failed Login Activity Logs
+**Name:** View Failed Login Activity Logs  
+**Usage Context:** The administrator views the failed login activity log.  
+**Scope:** Subsystem  
+**Level:** User  
+**Primary Actor:** Administrator  
+**Minimum Guarantee:** Failed login activity logs are not disclosed.  
+**Guarantee in case of success:** Failed login activity logs are displayed.  
+**Trigger:** The administrator wants to view a failed login activity log.
+
+**Normal Scenario:**
+1. The failed login activity logs are displayed on the administrator's page.
+
+**Extensions:**
+1. a. No failed login activity logs are recorded:
+    1. A table with a message informing the administrator is displayed.
+***
+
+#### Use Case 5: Authentication
+**Name:** Authentication  
+**Usage Context:** A user wants to switch between logged in and logged out states.  
+**Scope:** Subsystem  
+**Level:** Sub-function  
+**Primary Actor:** System  
+**Participants:** User  
+**Precondition:** User is registered  
+**Minimum Guarantee:** Data will be private and the password will be encrypted  
+**Guarantee in case of success:** User login/logout  
+**Trigger:** Receipt of an authentication request
+
+**Normal Scenario LOGIN:**
+1. Receipt of the login form
+2. Access the database
+3. Verify the form information with the data in the database
+4. Log in to the user account
+
+**Exceptions LOGIN:**
+1. a. The user has not filled out all required fields in the form:
+    1. A failure message is sent to the user (FAILURE)
+    2. A failed login attempt is logged
+2. a. Unable to access the database:
+    1. A failure message is sent to the user (FAILURE)
+    2. A failed login attempt is logged
+3. a. The user's login is not in the database:
+    1. A failure message is sent to the user (FAILURE)
+    2. A failed login attempt is logged
+
+   b. The provided password is not validated:
+    1. A failure message is sent to the user (FAILURE)
+    2. A failed login attempt is logged
+4. a. Login failure:
+    1. A failure message is sent to the user (FAILURE)
+    2. A failed login attempt is logged
+
+**Normal Scenario LOGOUT:**
+1. Receipt of the logout request
+2. Log out from the user account
+3. Send a confirmation message of logout to the user
+
+**Exceptions LOGOUT:**
+2. a. Logout failure:
+    1. A failure message is sent to the user (FAILURE)
+***
+
+#### Use Case 6: Failed Login Activity Log
+**Name:** Log Failed Login Activity  
+**Usage Context:** Recording a failed login attempt in a log  
+**Scope:** Subsystem  
+**Level:** Sub-function  
+**Primary Actor:** System  
+**Participants:** User  
+**Precondition:** A login attempt has failed  
+**Guarantee in case of success:** A failed login activity log is recorded  
+**Trigger:** Failed login
+
+**Normal Scenario:**
+1. Receipt of a failed login attempt
+2. Creation of a failed login activity log
+3. Recording of the log
+
+**Exceptions:**
+2. a. Failure to create the activity log:
+    1. The information is not stored (FAILURE)
+***
+
+#### Use Case 7: Go to the Website
+**Name:** Go to the Website  
+**Usage Context:** Ensuring connection to the website.  
+**Scope:** Subsystem  
+**Level:** Sub-function  
+**Guarantee in case of success:** Successful connection to the website.
 ------------------------------------------------------------------------------------------------------------------------
 
 
