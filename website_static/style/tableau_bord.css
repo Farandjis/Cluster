@@ -60,6 +60,8 @@ h1 {
 
 #section_module div{
     visibility: hidden;
+    position: absolute;
+    margin: 10px;
 }
 
 #section_module div.active {

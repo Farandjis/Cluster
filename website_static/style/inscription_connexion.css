@@ -1,5 +1,23 @@
 @import url('variables_couleurs.css');
 
+#logoTitle {
+    width: 550px;
+    padding: 10px;
+    margin-bottom: 50px;
+    background-color: var(--col-dark-gray);
+    border-radius: 15px;
+
+    transition: 0.75s;
+}
+
+@media (max-width: 1000px) {
+    #logoTitle {
+        width: 300px;
+    }
+
+}
+
+
 .container{
     position: relative;
     overflow: hidden;
