@@ -113,7 +113,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     RaspberryPi OS is based on the free operating system Debian, and it specially designed for the RaspberryPi and has commands for it.<br>
     <br>
 
-    The issue with the original Raspberry Pi OS Lite image is that it does not include the commands necessary to control the RaspberryPi Hat, such as `clusterhat` (also known as `clusterctrl`).
+    The issue with the original Raspberry Pi     OS Lite image is that it does not include the commands necessary to control the RaspberryPi Hat, such as `clusterhat` (also known as `clusterctrl`).
     For example, this prevents us from starting a Raspberry Pi Zero.<br>
     While we can manually install the command from a GitHub repository, the easiest solution is to use the CBRIDGE or CNAT image, which already include these commands.<br>
     The difference between the CBRIDGE and CNAT images is that the CNAT image can automatically recognize a Raspberry Pi Zero thanks to the additional images "P1", "P2", "P3", and "P4".
