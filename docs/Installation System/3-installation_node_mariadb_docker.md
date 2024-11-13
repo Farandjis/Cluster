@@ -63,6 +63,14 @@ We were helped by : WordReference, DeepL, ChatGPT.
   <br>
   MariaDB repose sur SQL et prend en charge le traitement de données selon le modèle ACID, c'est-à-dire avec garantie d'atomicité, de cohérence, d'isolation et de durabilité des transactions.
   <br>
+
+
+- ### <a name="p1c"></a> c) NodeJS
+  **Sources :**
+    - https://makina-corpus.com/front-end/introduction-nodejs
+  <br><br>
+
+  Node.js est une plateforme de développement Javascript. Ce n'est pas un serveur, ce n'est pas un framework, c'est juste le langage Javascript avec des bibliothèques permettant de réaliser des actions comme écrire sur la sortie standard, ouvrir/fermer des connections réseau ou encore créer un fichier.
 ---
 ## <a name="p2"></a> II - Installations
 
