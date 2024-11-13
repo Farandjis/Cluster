@@ -202,7 +202,7 @@ nav .hamburger-menu.active .slice:nth-child(3) {
 }
 
 
-@media (max-width: 850px) {
+@media (max-width: 1070px) {
 
     #section_presentation {
         margin-top: 80px;
