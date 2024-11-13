@@ -19,7 +19,7 @@ This document details the implementation and design of the project.
 It explores the different aspects of the project's structure and the behaviors associated with its use.
 
 ### Architectural Design
-<img height="800" width="800" src="Conception/ComponentDiagramV1.png" title="UML design of the static site"/><br><br>
+<img height="800" width="800" src="Modèle UML/ComponentDiagramV1.png" title="UML design of the static site"/><br><br>
 <i><a name="fg1"></a>Figure 1: Component Diagram.</i>
 
 #### Tools Used:
