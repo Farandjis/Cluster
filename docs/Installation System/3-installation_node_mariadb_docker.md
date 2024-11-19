@@ -119,19 +119,27 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   - `tobi312/rpi-mariadb:10.6-alpine` : Specifies the image and version
     <br>
     Note : Execute this command in /home<br>
-  <br>
-  <br>
+  <br><br>
+
   **3. Lauching NodeJS with MariaDB container**<br>
     # à corriger
-  All files must be installed (see part 4 on appendices).<br>
+  All files must be installed (see part 4 in the appendices).<br>
   <br>
-  If we test `docker ps`, we will see that no docker process is operating.<br>
+  If we test `docker ps`, we will see that no docker process is running.<br>
   <br>
-  To launch NodeJS service with MariaDB, we will generate a new image thanks to the command `sudo docker compose up --build -d`.
-  - `--build` : forces to build the image. When we will be satisfied, we need't even use this option.<br>
+  To launch NodeJS service with MariaDB, we will generate a new image using the command `sudo docker compose up --build -d`.
+  - `--build` : forces the image to be built. Once we are satisfied, we won't need to use this option anymore.<br>
   - `-d` : Runs in detached mode, allowing the container to run in the background.<br><br>
   
-  Once done, if we test `docker ps`, we can see the twice processus and if we test `docker images`, we can see the new image created by the docker compose up command (the result is not on the screenshot).<br>
+  Once completed, if we test `docker ps`, we can see the two processus running. If we test `docker images`, we can see the new image created by the `docker compose up` command (the result is not shown in the screenshot).<br>
   <img src="img\img_installation_node_mariadb_docker\docker_compse_up_with_docker_ps.png" width="800"/><br>
-  We can also see that the port of the host and container form a single common port
+  We can also observe that the host and container port  are mapped to a single common port : `0.0.0:3000->3000/tcp`. This allows us to view the NodeJS page directly on the Pi4 !<br>
+<img src="img\img_installation_node_mariadb_docker\website_test.png" width="800"/><br><br>
+
+  **4. Problem during my installation**
+  
+  - **NodeJS starts but it stops immediately, it restarts in a loop**<br>
+    The solution was to add the `app.listen` code, which enables the server to listen to requests continuously. Without this, NodeJS shuts down because it finishes executing the code, and Docker restarts it since the service is required to stay online.<br>
+  - **express module doesn't settle despite the --build**
+
 
