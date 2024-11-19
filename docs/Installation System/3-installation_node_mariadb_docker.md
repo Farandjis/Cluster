@@ -98,4 +98,15 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   <br>
   **3. Lauching NodeJS with MariaDB container**<br>
     # à corriger
-  All files must be installed (see part 4 on appendices).
+  All files must be installed (see part 4 on appendices).<br>
+  <br>
+  If we test `docker ps`, we will see that no docker process is operating.<br>
+  <br>
+  To launch NodeJS service with MariaDB, we will generate a new image thanks to the command `sudo docker compose up --build -d`.
+  - `--build` : forces to build the image. When we will be satisfied, we need't even use this option.<br>
+  - `-d` : Runs in detached mode, allowing the container to run in the background.<br><br>
+  
+  Once done, if we test `docker ps`, we can see the twice processus and if we test `docker images`, we can see the new image created by the docker compose up command (the result is not on the screenshot).<br>
+  <img src="img\img_installation_node_mariadb_docker\docker_compse_up_with_docker_ps.png" width="800"/><br>
+  We can also see that the port of the host and container form a single common port
+
