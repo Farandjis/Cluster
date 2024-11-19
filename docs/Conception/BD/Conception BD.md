@@ -61,7 +61,7 @@ This table records unsuccessful login attempts to the system.
 
 <br><br>
 
-<img height="300" width="400" src="./Modèles UML/Sae_Mcd.png" title="Modèle MCD de la base de données"/>
+<img height="300" width="400" src="./Modèle UML/Sae_Mcd.png" title="Modèle MCD de la base de données"/>
 
 <i><a name="fg1"></a>Figure 1: MCD Diagram.</i>
 
@@ -81,6 +81,6 @@ These ID are the primary keys of these tables.
 
 <br><br>
 
-<img height="90" width="400" src="./Modèles UML/Sae_Mld.png" title="Modèle MLD de la base de données"/>
+<img height="90" width="400" src="./Modèle UML/Sae_Mld.png" title="Modèle MLD de la base de données"/>
 
 <i><a name="fg2"></a>Figure 2: MLD Diagram.</i>
