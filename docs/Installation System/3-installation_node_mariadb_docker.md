@@ -51,7 +51,31 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   - [**b) package**](#p4c)
 
 ---
+## <a name="p1"></a> I - Presentations
 
+- ### <a name="p1a"></a> a) Docker
+  **Sources :**
+  - https://aws.amazon.com/fr/docker/ <br><br>
+    Docker est une plateforme logicielle qui vous permet de concevoir, tester et déployer des applications rapidement. Docker enveloppe les logiciels dans des unités normalisées appelées conteneurs, qui rassemblent tous les éléments nécessaires à leur fonctionnement : bibliothèques, outils système, code et environnement d’exécution. Avec Docker, vous pouvez facilement déployer et dimensionner des applications dans n'importe quel environnement, avec l'assurance que votre code s'exécutera correctement.
+
+- ### <a name="p1b"></a> b) MariaDB
+  **Sources :**
+    - https://www.lemagit.fr/definition/MariaDB
+  <br><br>
+  
+  MariaDB est un système de gestion de base de données relationnelle (SGBDR) open source qui constitue une solution de remplacement compatible avec la technologie très répandue des bases de données MySQL.
+  <br>
+  MariaDB repose sur SQL et prend en charge le traitement de données selon le modèle ACID, c'est-à-dire avec garantie d'atomicité, de cohérence, d'isolation et de durabilité des transactions.
+  <br>
+
+
+- ### <a name="p1c"></a> c) NodeJS
+  **Sources :**
+    - https://makina-corpus.com/front-end/introduction-nodejs
+  <br><br>
+
+  Node.js est une plateforme de développement Javascript. Ce n'est pas un serveur, ce n'est pas un framework, c'est juste le langage Javascript avec des bibliothèques permettant de réaliser des actions comme écrire sur la sortie standard, ouvrir/fermer des connections réseau ou encore créer un fichier.
+---
 ## <a name="p2"></a> II - Installations
 
 - ### <a name="p2a"></a> a) Docker
@@ -67,6 +91,7 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
     We can verify that Docker was installed successfully with `sudo systemctl ` and `sudo docker version`.<br>
     <br><br>
     - ### <a name="p2b"></a> b) Images and containers Docker
+    - 
     **Sources :**
     - https://hub.docker.com/r/tobi312/rpi-mariadb/
     - https://blog.codetitans.pl/post/howto-mariadb-in-docker-on-raspberry-pi/

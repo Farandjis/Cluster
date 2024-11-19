@@ -29,18 +29,21 @@ This document describes how we succeed in making parallel and distributed calcul
   - [**a) prime.py presentation**](#p2a)
     <br><br><br>
 ---
-
 ## <a name="p0"></a> Definitions
 
-# Mettre ici travail William
-**noeud de calcul :** <br>
-**processus (tâche) de calcul :**<br>
-**job de calcul :**<br>
-**calcul séquentiel :**<br>
-**calcul parallèle :**<br>
-**mémoire distribuée :**<br>
----
+**noeud de calcul :** Dans un cluster informatique, chaque noeud est un serveur individuel qui travaille en parallèle avec d'autres noeuds pour traiter des tâches lourdes ou exécuter des applications nécessitant une grande puissance de calcul.
+Il doit contenir une mémoire vive, un disque dur local, plusieurs processeurs à plusieurs cœurs de calcul chacun <br><br>
+**processus (tâche) de calcul :**  Il doit contenir un ensemble d'instruction à exécuter un programme, un espace mémoire pour les donnée
+Une tâche de calcul consiste généralement en une série d'opérations arithmétiques ou logiques, souvent représentées sous forme d'algorithmes. Cela peut inclure des opérations simples comme l'addition ou des opérations plus complexes comme le tri de données, la recherche, ou l'analyse statistique.<br><br>
+**job de calcul :** c'est un ensemble de processus liés à l'exécution d'un code calcul
+Le terme "job de calcul" désigne une tâche ou un ensemble de tâches que l'on soumet à un système informatique pour qu'il exécute des calculs, des analyses ou des traitements de données.<br><br>
+**calcul séquentiel :** c'est un processus qui est rattaché à un seul coeur de calcul
+Le calcul séquentiel est un modèle de traitement des données où les opérations sont exécutées de manière linéaire, une après l'autre. Ce type de calcul est fondamental dans de nombreux domaines de l'informatique et est souvent le mode de calcul par défaut dans de nombreux langages de programmation.<br><br>
+**calcul parallèle :** Le calcul parallèle est un modèle de traitement des données dans lequel plusieurs opérations ou tâches sont exécutées simultanément sur plusieurs unités de traitement. Cela permet de résoudre des problèmes complexes plus rapidement en tirant parti de la puissance de calcul de plusieurs processeurs ou cœurs de processeur, en opposition au calcul séquentiel, où les opérations sont effectuées une par une.<br><br>
+**mémoire distribuée :** lorsque la mémoire est répartie en plusieurs noeuds, chaque portion n'étant accessible qu'à certains processeurs.
+La mémoire distribuée se réfère à un système où la mémoire est partagée entre plusieurs nœuds, chacun ayant sa propre mémoire physique. Les nœuds peuvent être des ordinateurs individuels, des serveurs ou d'autres dispositifs de traitement. Dans ce modèle, les données peuvent être réparties sur plusieurs nœuds, permettant ainsi une plus grande évolutivité et redondance.<br><br>
 
+---
 ## <a name="p1"></a> I - MPI utilization
 
 # A corriger
@@ -49,6 +52,7 @@ _**Sources :**_
 - https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
 - https://www.matrics.u-picardie.fr/documentation/mpi/
   <br><br>
+  
 - ### <a name="p1a"></a> a) MPI presentation
   MPI (Message Passing Interface) is a library with an ensemble of standardized function for memory distributed architectures.<br>
   MPI allow of exploiting many calcul knots link by a network communication.<br>
