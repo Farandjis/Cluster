@@ -12,31 +12,35 @@ INF3-FI
 ## Table of Contents
 
 ### [I – Architectural Design](#p1)
-- <b>[Figure 1: Component Diagram](#fg1)</b>
-
-### [II – Detailed Design](#p2)
-
-
-<br><br><br><br><br><br><br>
+- #### [Architectural Design's Diagram](#p1.1)
+    - <b>[Figure 1: Component Diagram](#fg1)</b>
+- #### [Tools Used](#p1.2)
+- #### [Architecture Form](#p1.3)
 
 
-------------------------------------------------------------------------------------------------------------------------
-### <a name="p2"></a>I – Architectural Design
-<br><br>
-
+<br><br><br>
 ## Introduction
 This document details the implementation and design of the project.
 It explores the different aspects of the project's structure and the behaviors associated with its use.
 
-### Architectural Design
-<img height="800" width="800" src="Composants/Modèle UML/ComponentDiagramV1.png" title="UML design of the static site"/><br><br>
-<i><a name="fg1"></a>Figure 1: Component Diagram.</i>
+<br><br><br><br>
 
-#### Tools Used:
+
+------------------------------------------------------------------------------------------------------------------------
+### <a id="p1"></a>I – Architectural Design
+<br><br>
+
+#### <a id="p1.1"></a>Architectural Design's Diagram
+<img height="800" width="800" src="Modèle UML/ComponentDiagramV1.png" title="UML design of the architecture"/><br><br>
+<i><a id="fg1"></a>Figure 1: Component Diagram.</i>
+
+#### <a id="p1.2"></a>Tools Used:
 
 Programming Language:
 - Apache Server
 - MariaDB (SQL)
+- JavaScript / Node.js (Express)
+- HTML / CSS
 
 Hardware Architecture:
  - Raspberry Pi 0
@@ -46,7 +50,7 @@ Hardware Architecture:
  (ref: Requirements Collection; Part 4)
 
 
-#### Architecture Form:
+#### <a id="p1.3"></a>Architecture Form:
 
 Our architecture consists of a Cluster HAT Kit, which itself is made up of four Raspberry Pi 0 units and a Raspberry Pi 4.
 Our Cluster HAT Kit relies on an Apache server. The latter uses MySQL interface services to access the database.
