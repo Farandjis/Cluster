@@ -3,10 +3,9 @@
 #logoTitle {
     width: 550px;
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     background-color: var(--col-dark-gray);
     border-radius: 15px;
-
     transition: 0.75s;
 }
 
@@ -15,72 +14,54 @@
         width: 300px;
     }
 
+    .container{
+        flex-direction: column;
+    }
+
 }
 
+#body_inscription_connexion{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .container{
     position: relative;
-    overflow: hidden;
     min-height: 480px;
-    width: 768px;
+
     max-width: 100%;
-    background: var(--col-white);
+    /*background: var(--col-white);
     border-radius: 10px;
     box-shadow: 0 8px 24px rgba(0,32,63,.45),
-    0 8px 8px rgba(0,32,63,.45);
+    0 8px 8px rgba(0,32,63,.45);*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px;
 }
 
-.form_container{
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: .6s ease-in-out;
-}
 
-.container.panel-active .connexion_container{
-    transform:  translateX(100%);
-}
-.container.panel-active .inscription_container{
-    transform:  translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show .6s;
-}
-
-@keyframes show {
-    0%, 49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-    50%, 100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.inscription_container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-.connexion_container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-
-}
-
-form {
+.form_container {
     background-color: var(--col-white);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 20px;
     height: 100%;
     text-align: center;
+    border-radius: 15px;
+    border: 1px solid var(--col-dark-gray);
+    min-width: 300px;
+    width: 40%;
+    box-shadow: 0 8px 24px rgba(0,32,63,.45),
+    0 8px 8px rgba(0,32,63,.45);
+    margin: 20px;
 }
+
 
 .inputForm {
     background-color: var(--col-pink);
@@ -89,6 +70,7 @@ form {
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;
+    min-width: 160px;
     box-shadow: 0 2px 6px rgba(0,32,63,.45),
     0 2px 2px rgba(0,32,63,.45);
 }
@@ -139,66 +121,6 @@ a {
     color: var(--col-black);
 }
 
-.overlay_container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 100;
-    transition: transform .6s ease-in-out;
-}
-
-.container.panel-active .overlay_container {
-    transform: translateX(-100%);
-}
-
-.overlay {
-    background: var(--col-pink);
-    color: var(--col-black);
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform .6s ease-in-out;
-}
-/*background:linear-gradient(90deg, rgba(253,173,164,0) 0%, rgba(253,173,164,0.7) 30%, rgba(250,128,114,0.9) 100%);*/
-
-.container.panel-active .overlay {
-    transform: translateX(50%);
-}
-
-.overlay-panel{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform .6s ease-in-out;
-}
-
-.overlay-left{
-    transform: translateX(-20%);
-}
-.container.panel-active .overlay-left{
-    transform: translateX(0);
-}
-
-.overlay-right{
-    right: 0;
-    transform: translateX(0);
-}
-.container.panel-active .overlay-right{
-    transform: translateX(20%);
-}
 
 p {
     color: var(--col-black);

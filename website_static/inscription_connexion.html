@@ -7,49 +7,40 @@
     <link rel="stylesheet" href="style/main_style.css">
     <link rel="stylesheet" href="style/inscription_connexion.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo_icone.png" type="image/png">
 </head>
-<body style="height: 100vh">
+<body>
 <div id="return"><a href="index.html"><-</a></div>
-
+<div id="body_inscription_connexion">
 <div><img src="img/logo_origin_2.png" id="logoTitle" alt="Logo"></div>
 
 <div class="container" id="container">
-    <div class="form_container inscription_container">
-        <form action="tableau_bord.html">
-            <h1>Créer un compte</h1>
-            <input class="inputForm" type="text" placeholder="Nom">
-            <input class="inputForm" type="password" placeholder="Mot de passe">
-            <input class="inputForm" type="password" placeholder="Vérification Mot de Passe">
-            <input class="button" type="submit" value="S'inscrire">
-
-        </form>
-    </div>
-
-    <div class="form_container connexion_container">
-        <form action="tableau_bord.html">
-            <h1>Connectez-vous</h1>
-            <input class="inputForm" type="text" placeholder="Nom">
-            <input class="inputForm" type="password" placeholder="Mot de passe">
-            <input class="button" type="submit" value="Se Connecter">
-        </form>
-    </div>
-
-    <div class="overlay_container">
-        <div class="overlay">
-            <div class="overlay-panel overlay-left">
-                <h1>Heureux de vous revoir !</h1>
-                <p>Si vous disposez d'un compte, connectez-vous ici.</p>
-                <button class="ghost button" id="connexion">Se Connecter</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-                <h1>Vous êtes un nouvel utilisateur ?</h1>
-                <p>Créer un compte paralix.</p>
-                <button class="ghost button" id="inscription">S'inscrire</button>
-            </div>
+    <div class="form_container">
+        <div class="form_inscription">
+            <form action="tableau_bord.html">
+                <h1>Créer un compte</h1>
+                <input class="inputForm" type="text" placeholder="Nom">
+                <input class="inputForm" type="password" placeholder="Mot de passe">
+                <input class="inputForm" type="password" placeholder="Vérification Mot de Passe">
+                <input class="button" type="submit" value="S'inscrire">
+            </form>
         </div>
     </div>
-</div>
+    <div class="form_container">
+        <div class="form_connexion">
+            <form action="tableau_bord.html">
+                <h1>Connectez-vous</h1>
+                <input class="inputForm" type="text" placeholder="Nom">
+                <input class="inputForm" type="password" placeholder="Mot de passe">
+                <input class="button" type="submit" value="Se Connecter">
+            </form>
+        </div>
 
+    </div>
+
+
+</div>
+</div>
 <script src="js/inscription_connexion.js" charset="utf-8"></script>
 </body>
 </html>
