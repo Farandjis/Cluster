@@ -46,9 +46,9 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
       - Mettre les questions que M Hoguin aura sur notre système
 
 - ### [IV – Appendices](#p4)
-  - [**a) Dockerfile**](#p4a)
-  - [**b) Dockercompose**](#p4b)
-  - [**b) package**](#p4c)
+  - [**a) Dockerfile (in the directory)**](#p4a)
+  - [**b) Dockercompose (in the directory)**](#p4b)
+  - [**c) package**](#p4c)
 
 ---
 ## <a name="p1"></a> I - Presentations
@@ -140,6 +140,5 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   
   - **NodeJS starts but it stops immediately, it restarts in a loop**<br>
     The solution was to add the `app.listen` code, which enables the server to listen to requests continuously. Without this, NodeJS shuts down because it finishes executing the code, and Docker restarts it since the service is required to stay online.<br>
+  
   - **express module doesn't settle despite the --build**
-
-
