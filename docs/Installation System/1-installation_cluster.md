@@ -58,7 +58,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     We can learn more about the features of our Raspberry Pi 4 by executing the Raspberry OS command: `pinout`<br>
     <br>
     <div align="center">
-    <img width=350px src="img/I_presentation/pinout.png" title="result of the pinout command with the different ports, a drawing of the board and a description of the pins"/><br>
+    <img width=350px src="img/img_installation_cluster/pinout.png" title="result of the pinout command with the different ports, a drawing of the board and a description of the pins"/><br>
     <i>result of pinout command</i>
     </div>
     <br>
@@ -171,7 +171,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     <br><br>
 
     <div align="center">
-        <img src="img\II_preparatif\0_piimager_menu.webp" title="Pi Imager menu with OS choice, Storage choice, Write buttons and a parameter button" height="220"/><br>
+        <img src="img\img_installation_cluster\0_piimager_menu.webp" title="Pi Imager menu with OS choice, Storage choice, Write buttons and a parameter button" height="220"/><br>
         <i>Menu de Pi Imager</i>
     </div>
   
@@ -186,7 +186,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     <br><br>
 
     <div align="center">
-        <img src="img\II_preparatif\1_piimager_option.webp" title="Pi Imager installation options" height="220"/><br>
+        <img src="img\img_installation_cluster\1_piimager_option.webp" title="Pi Imager installation options" height="220"/><br>
         <i>Options d'installation de Pi Imager</i>
     </div>
 

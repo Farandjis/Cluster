@@ -31,22 +31,23 @@ This document describes how we succeed in making parallel and distributed calcul
 ---
 ## <a name="p0"></a> Definitions
 
-**noeud de calcul :** Dans un cluster informatique, chaque noeud est un serveur individuel qui travaille en parallèle avec d'autres noeuds pour traiter des tâches lourdes ou exécuter des applications nécessitant une grande puissance de calcul.
-Il doit contenir une mémoire vive, un disque dur local, plusieurs processeurs à plusieurs cœurs de calcul chacun <br><br>
-**processus (tâche) de calcul :**  Il doit contenir un ensemble d'instruction à exécuter un programme, un espace mémoire pour les donnée
-Une tâche de calcul consiste généralement en une série d'opérations arithmétiques ou logiques, souvent représentées sous forme d'algorithmes. Cela peut inclure des opérations simples comme l'addition ou des opérations plus complexes comme le tri de données, la recherche, ou l'analyse statistique.<br><br>
-**job de calcul :** c'est un ensemble de processus liés à l'exécution d'un code calcul
-Le terme "job de calcul" désigne une tâche ou un ensemble de tâches que l'on soumet à un système informatique pour qu'il exécute des calculs, des analyses ou des traitements de données.<br><br>
-**calcul séquentiel :** c'est un processus qui est rattaché à un seul coeur de calcul
-Le calcul séquentiel est un modèle de traitement des données où les opérations sont exécutées de manière linéaire, une après l'autre. Ce type de calcul est fondamental dans de nombreux domaines de l'informatique et est souvent le mode de calcul par défaut dans de nombreux langages de programmation.<br><br>
-**calcul parallèle :** Le calcul parallèle est un modèle de traitement des données dans lequel plusieurs opérations ou tâches sont exécutées simultanément sur plusieurs unités de traitement. Cela permet de résoudre des problèmes complexes plus rapidement en tirant parti de la puissance de calcul de plusieurs processeurs ou cœurs de processeur, en opposition au calcul séquentiel, où les opérations sont effectuées une par une.<br><br>
-**mémoire distribuée :** lorsque la mémoire est répartie en plusieurs noeuds, chaque portion n'étant accessible qu'à certains processeurs.
-La mémoire distribuée se réfère à un système où la mémoire est partagée entre plusieurs nœuds, chacun ayant sa propre mémoire physique. Les nœuds peuvent être des ordinateurs individuels, des serveurs ou d'autres dispositifs de traitement. Dans ce modèle, les données peuvent être réparties sur plusieurs nœuds, permettant ainsi une plus grande évolutivité et redondance.<br><br>
+**calcul code:**<br>In a computer cluster, each node is an individual server that works in parallel with other nodes to process heavy tasks or run applications requiring high computing power.
+It must contain RAM, a local hard disk, several processors with several computing cores each <br><br>
+**computational process (task):**<br>It must contain a set of instructions to execute a program, and memory space for data.
+A computational task usually consists of a series of arithmetic or logical operations, often represented as algorithms. This can include simple operations such as addition, or more complex operations such as data sorting, searching, or statistical analysis.<br><br>
+**computational job:**<br>a set of processes linked to the execution of a computational code.
+The term “calculation job” refers to a task or set of tasks that a computer system is asked to perform in order to carry out calculations, analyses or data processing.<br><br>
+**sequential calculation:**<br> this is a set of processes linked to the execution of a calculation code.
+this is a process that is attached to a single computational core.<br>
+Sequential calculation is a data processing model in which operations are executed linearly, one after the other. This type of calculation is fundamental to many areas of computer science, and is often the default mode of calculation in many programming languages.<br><br>
+**parallel computing:**<br>Parallel computing is a data processing model in which several operations or tasks are performed simultaneously on several processing units. This enables complex problems to be solved more quickly by taking advantage of the computing power of multiple processors or processor cores, as opposed to sequential computing, where operations are performed one at a time.<br><br>
+**distributed memory:**<br>when memory is divided into several nodes, with each portion accessible only to certain processors.
+Distributed memory refers to a system where memory is shared between several nodes, each with its own physical memory. Nodes can be individual computers, servers or other processing devices. In this model, data can be distributed across multiple nodes, enabling greater scalability and redundancy.<br><br>
+
 
 ---
 ## <a name="p1"></a> I - MPI utilization
 
-# A corriger
 _**Sources :**_
 - https://mpi4py.readthedocs.io/en/stable/<br>
 - https://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
@@ -111,6 +112,10 @@ _**Sources :**_
     When we made `mpirun --hostfile hosts -np 8 python prime.py` when slots=28 for Master, only Master will be used.<br>
     If Master have just 4 slots, all RaspberryPi will be used (because 4 slots for Pi4 and 1 for each Pi0)<br>
 
+  We notice that using the cluster rather than the Pi4 directly is slower.<br>
+  The first reason is the power of the Pi0s, the second is that communications overload the Controller Pi GPIO port.<br>
+  Since the port is overloaded, the data passes through one by one, and with the Pi4 controlling each of the RPi0s, this takes time.
 
-# Insérer aussi dessin Hoguin
+  <img src="img\img_fonctionnement_calculs_paralleles_distribues\schema_cluster_illustration_transfert_donnees.png" width="300"/>
+
 # faire commande top et voir ce que ça donne, voir comment sont gérés les processus MPI voir quel quantité de mémoire est de part de processeur est utilisé
