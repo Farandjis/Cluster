@@ -1,4 +1,4 @@
-Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS<br>
+Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS, Lucas DA SILVA FERREIRA<br>
 INF3-FI
 
 <div align="center">
@@ -23,34 +23,34 @@ INF3-FI
 ### <a name="p1"></a>I – MCD
 <br><br>
 
-**Table `UTILISATEUR`:**
+**Table `UTILISATEUR` :**
 
 This table describes the user information.
-- `user`: The username. It is the primary key of the table.
-- `password`: The password associated with the user, used for authentication.
-- `role`: The role of the user.
+- `user` : The username. It is the primary key of the table.
+- `password` : The password associated with the user, used for authentication.
+- `role` : The role of the user.
 
 <br><br>
 
-**Table `HISTORY`:**
+**Table `HISTORY` :**
 
 This table stores information about the calculations and actions performed by users.
 
-- `id_history`: A unique identifier for each history record. This is the primary key.
-- `calcul`: A column to store calculations or computed information.
-- `module`: Indicates which module the calculation is related to or the context of the action.
-- `user`: A foreign key that references the `User` field in the `Utilisateur` table, showing which user is linked to this history record.
+- `id_history` : A unique identifier for each history record. This is the primary key.
+- `calcul` : A column to store calculations or computed information.
+- `module` : Indicates which module the calculation is related to or the context of the action.
+- `user` : A foreign key that references the `User` field in the `Utilisateur` table, showing which user is linked to this history record.
 
 <br><br>
 
-**Table `LOG_CONNECTION`:**
+**Table `LOG_CONNECTION` :**
 
 This table records unsuccessful login attempts to the system.
 
-- `id_connection`: A unique identifier for each login attempt. This is the primary key.
-- `password_tester`: The password used during this login attempt.
-- `date`: The date and time of the login attempt. This column uses the `TIMESTAMP` type which, by default, records the current time automatically.
-- `user_tester`: A foreign key that references the `User` field in the `Utilisateur` table, indicating which user made the login attempt.
+- `id_connection` : A unique identifier for each login attempt. This is the primary key.
+- `password_tester` : The password used during this login attempt.
+- `date` : The date and time of the login attempt. This column uses the `TIMESTAMP` type which, by default, records the current time automatically.
+- `user_tester` : A foreign key that references the `User` field in the `Utilisateur` table, indicating which user made the login attempt.
 
 
 <br><br>
@@ -61,9 +61,9 @@ This table records unsuccessful login attempts to the system.
 
 <br><br>
 
-<img height="300" width="400" src="./Modèle UML/Sae_Mcd.png" title="Modèle MCD de la base de données"/>
-
 <i><a name="fg1"></a>Figure 1: MCD Diagram.</i>
+
+<img height="300" width="400" src="./Modèle UML/Sae_Mcd.png" title="Modèle MCD de la base de données"/>
 
 ------------------------------------------------------------------------------------------------------------------------
 ### <a name="p2"></a>II – MLD
@@ -81,6 +81,6 @@ These ID are the primary keys of these tables.
 
 <br><br>
 
-<img height="90" width="400" src="./Modèle UML/Sae_Mld.png" title="Modèle MLD de la base de données"/>
-
 <i><a name="fg2"></a>Figure 2: MLD Diagram.</i>
+
+<img height="90" width="400" src="./Modèle UML/Sae_Mld.png" title="Modèle MLD de la base de données"/>

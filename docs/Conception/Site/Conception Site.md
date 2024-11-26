@@ -34,7 +34,7 @@ It explores the different aspects of the project's structure and the behaviors a
 
 <i><a id="fg1"></a>Figure 2: Dependnecy Diagram.</i>
 
-<img height="800" width="800" src="Modèle UML/DependencyDiagramV1.png" title="UML design of the site"/><br><br>
+<img height="800" width="600" src="Modèle UML/DependencyDiagramV1.png" title="UML design of the site"/><br><br>
 
 <i><a id="fg2"></a>Figure 3: Class Diagram.</i>
 

@@ -31,8 +31,12 @@ It explores the different aspects of the project's structure and the behaviors a
 <br><br>
 
 #### <a id="p1.1"></a>Architectural Design's Diagram
-<img height="800" width="800" src="Modèle UML/ComponentDiagramV1.png" title="UML design of the architecture"/><br><br>
 <i><a id="fg1"></a>Figure 1: Component Diagram.</i>
+
+<img height="600" width="600" src="Modèle UML/ComponentDiagramV1.png" title="UML design of the architecture"/>
+<br>
+This diagram represents the architecture of our project. It is composed of a Cluster HAT Kit, which is made up of four Raspberry Pi 0 units and a Raspberry Pi 4. The Cluster HAT Kit is connected to an Apache server, which uses MySQL interface services to access the database. The Apache server is responsible for managing the website.
+<br><br>
 
 #### <a id="p1.2"></a>Tools Used:
 
