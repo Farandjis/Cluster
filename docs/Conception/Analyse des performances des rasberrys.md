@@ -1,36 +1,36 @@
-# Analyse des performances des configurations de Raspberry Pi pour le calcul des nombres premiers
+# Performance Analysis of Raspberry Pi Configurations for Prime Number Calculation
 
-## Image :
-![Graphique des performances](../../img/diagramme_des_calculs.png "Comparaison des performances des Raspberry Pi")
+## Image:
+![Performance Graph](../../img/diagramme_des_calculs.png "Comparison of Raspberry Pi Performance")
 
-## 1. Axes et contexte
-- **Axe des abscisses (x)** : La plage de recherche des nombres premiers (par exemple, jusqu'à 10, 100, 1 000, etc.).
-- **Axe des ordonnées (y)** : Le temps nécessaire en secondes pour effectuer ces calculs.
-- Le graphique compare les performances de différentes configurations de Raspberry Pi pour effectuer ces calculs.
+## 1. Axes and Context
+- **X-axis**: The range of prime numbers being searched (e.g., up to 10, 100, 1,000, etc.).
+- **Y-axis**: The time required in seconds to perform these calculations.
+- The graph compares the performance of different Raspberry Pi configurations for these calculations.
 
 ---
 
 ## 2. Observations
-- **Pi 0 seul (rouge)** : Le Raspberry Pi 0 montre une lenteur extrême, avec une courbe qui grimpe fortement dès que la plage des nombres premiers augmente. Cela illustre sa faible capacité pour des calculs intensifs.
-- **Cluster de 4 Pi 0 (vert)** : Ce cluster améliore légèrement les performances comparé à un seul Pi 0, mais la courbe reste bien plus raide que celle du Pi 4. Les gains obtenus grâce au parallélisme sont limités par la faible puissance individuelle de chaque Pi 0.
-- **Pi 4 seul (bleu)** : Le Raspberry Pi 4 est de loin la configuration la plus performante. Sa courbe quasi plate indique qu'il gère efficacement même les plages de nombres premiers les plus larges.
-- **Pi 4 + 4 Pi 0 (violet)** : Cette configuration est **plus lente que le Pi 4 seul**. Les Pi 0 n’apportent aucune amélioration et introduisent même une surcharge, ce qui ralentit le système global.
+- **Single Pi 0 (red)**: The Raspberry Pi 0 shows extremely slow performance, with a steep curve as the range of prime numbers increases. This highlights its low capacity for intensive calculations.
+- **Cluster of 4 Pi 0s (green)**: This cluster slightly improves performance compared to a single Pi 0, but the curve remains much steeper than that of the Pi 4. The benefits of parallelism are limited by the low individual performance of each Pi 0.
+- **Single Pi 4 (blue)**: The Raspberry Pi 4 is by far the most efficient configuration. Its nearly flat curve indicates that it handles even the largest ranges of prime numbers effectively.
+- **Pi 4 + 4 Pi 0s (purple)**: This configuration is **slower than the standalone Pi 4**. The Pi 0s provide no improvement and even introduce overhead, slowing down the overall system.
 
 ---
 
-## 3. Analyse détaillée des performances
-### Le ralentissement du Pi 4 dans la configuration hybride (Pi 4 + 4 Pi 0) s’explique par des facteurs clairs :
-- **Communication inter-nœuds** : Le Pi 4 doit gérer la répartition des tâches avec les Pi 0 via le réseau. Cette coordination introduit un temps supplémentaire qui dépasse les bénéfices potentiels du parallélisme.
-- **Déséquilibre de performances** : Les Pi 0 sont beaucoup moins performants que le Pi 4. Cela crée un goulot d'étranglement, car la tâche globale est ralentie par les unités les plus lentes.
-- **Répartition et collecte des résultats** : Après avoir décomposé le calcul en sous-tâches, le Pi 4 doit récupérer et assembler les résultats des Pi 0. Ce processus ajoute du temps de calcul supplémentaire.
+## 3. Detailed Performance Analysis
+### The slowdown of the Pi 4 in the hybrid configuration (Pi 4 + 4 Pi 0s) can be explained by clear factors:
+- **Inter-node communication**: The Pi 4 has to manage task distribution with the Pi 0s over the network. This coordination introduces additional time that outweighs the potential benefits of parallelism.
+- **Performance imbalance**: The Pi 0s are significantly less powerful than the Pi 4. This creates a bottleneck, as the overall task is slowed down by the slowest units.
+- **Task distribution and result collection**: After breaking the computation into subtasks, the Pi 4 must gather and combine the results from the Pi 0s. This process adds extra computation time.
 
-### Autres points importants :
-- **Cluster de 4 Pi 0** : Bien que le parallélisme permette de répartir les calculs entre les 4 unités, l’amélioration reste marginale. Chaque Pi 0 étant peu performant, l’ensemble reste largement inférieur à un Pi 4 seul.
-- **Pi 4 seul** : C’est la configuration idéale. Sa puissance de calcul lui permet de gérer les plages croissantes efficacement, sans dépendre d’unités extérieures.
+### Other key points:
+- **Cluster of 4 Pi 0s**: While parallelism allows tasks to be distributed among the 4 units, the improvement is minimal. Since each Pi 0 is underpowered, the cluster as a whole remains far inferior to a standalone Pi 4.
+- **Single Pi 4**: This is the ideal configuration. Its processing power allows it to handle increasing ranges effectively without relying on external units.
 
 ---
 
 ## 4. Conclusion
-- **Configuration optimale** : Le Raspberry Pi 4 seul offre les meilleures performances pour cette tâche.
-- **Impact des Pi 0 dans une configuration hybride** : L’ajout des Pi 0 **ralentit** le calcul global en introduisant une surcharge liée à leur faible performance et à la gestion de la coordination.
-- **Configuration utilisé**: La configuration qui nous est demandée d'utiliser est le cluster entier donc le Rasberry PI 4 + Les 4 Rasberry PI 0.
+- **Optimal configuration**: The standalone Raspberry Pi 4 offers the best performance for this task.
+- **Impact of Pi 0s in a hybrid configuration**: Adding Pi 0s **slows down** the overall computation due to their low performance and the overhead of coordination.
+- **Configuration in use**: The required setup is the entire cluster, which consists of the Raspberry Pi 4 and the 4 Raspberry Pi 0s.
