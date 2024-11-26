@@ -1,7 +1,7 @@
 # Analyse des performances des configurations de Raspberry Pi pour le calcul des nombres premiers
 
 ## Image :
-
+![Graphique des performances](../../img/diagramme_des_calculs.png "Comparaison des performances des Raspberry Pi")
 
 ## 1. Axes et contexte
 - **Axe des abscisses (x)** : La plage de recherche des nombres premiers (par exemple, jusqu'à 10, 100, 1 000, etc.).
