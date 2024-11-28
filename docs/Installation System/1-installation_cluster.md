@@ -34,8 +34,8 @@ This document describes in detail the installation process of the RPi4 and RPi0 
 
 
 - ### [III - Cluster Installation](#p3)
-- [**a) Starting the Cluster HAT]**(#p3a)
-- [**b) SSH Connection Between All Raspberry Pis]**(#p3b)
+- [**a) Starting the Cluster HAT**](#p3a)
+- [**b) SSH Connection Between All Raspberry Pis**](#p3b)
 
 <br><br><br>
 
