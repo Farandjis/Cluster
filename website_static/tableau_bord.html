@@ -36,12 +36,58 @@
     </div>
 
     <div id="section_module">
-        <div class="module test"><p>AAAAAAA</p></div>
-        <div class="module prime"><p>BBBBBBB</p></div>
-        <div class="module pi"><p>CCCCCCC</p></div>
-        <div class="module fibonnaci"><p>DDDDDDD</p></div>
-    </div>
+        <div id="section_form">
+            <form class="module test">
+                <input class="inputForm" type="number" placeholder="Argument 1">
+                <input class="inputForm" type="number" placeholder="Argument 2">
+                <input class="inputForm" type="number" placeholder="Argument 3">
+                <div class="bouton_intput">
+                    <input class="button" type="submit" value="Exécuter">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+            </form>
+            <form class="module prime">
+                <input class="inputForm" type="number" placeholder="Valeur de départ">
+                <input class="inputForm" type="number" placeholder="Valeur de Fin">
+                <div class="bouton_intput">
+                    <input class="button" type="submit" value="Exécuter">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+            </form>
+            <form class="module pi">
+                <input class="inputForm" type="number" placeholder="Nombre de point">
+                <input class="inputForm" type="number" placeholder="Nombre de Worker">
+                <div class="bouton_intput">
+                    <input class="button" type="submit" value="Exécuter">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+            </form>
+            <form class="module fibonnaci">
+                <input class="inputForm" type="number" placeholder="Argument 1">
+                <input class="inputForm" type="number" placeholder="Argument 2">
+                <input class="inputForm" type="number" placeholder="Argument 3">
+                <div class="bouton_intput">
+                    <input class="button" type="submit" value="Exécuter">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+            </form>
+            <div id="section_form_import">
+            </div>
+            <button id="generate-button">Générer un formulaire</button>
 
+
+        </div>
+
+        <script src="js/genForm.js"></script>
+
+
+        <div id="section_res">
+            <div class="test"><p>AAAAAAA</p></div>
+            <div class="prime"><p>BBBBBBB</p></div>
+            <div class="pi"><p>CCCCCCC</p></div>
+            <div class="fibonnaci"><p>DDDDDDD</p></div>
+        </div>
+    </div>
     <script src="js/modules_calcul.js" charset="utf-8"></script>
 </body>
 </html>

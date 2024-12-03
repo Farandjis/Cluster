@@ -49,22 +49,80 @@ h1 {
     border-radius: 10px;
 }
 
-#section_module {
+#section_module{
     margin-top: 100px;
     width: 90%;
     height: 600px;
-    background: #eeeeee;
-    border-radius: 20px;
-    border: 1px solid #4d4641;
+    display: none;
+    justify-content: space-evenly;
+}
+#section_module.active{
+    display: flex;
 }
 
-#section_module div{
+#section_form, #section_res {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #4d4641;
+    height: 100%;
+    background: #eeeeee;
+}
+#section_form{
+    width: 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+#section_res{
+    width: 65%;
+}
+
+#section_form form{
+    display: none;
+    position: relative;
+    margin: 10px;
+}
+#section_form form.active {
+    display: flex;
+}
+
+#section_res div{
     visibility: hidden;
     position: absolute;
     margin: 10px;
 }
 
-#section_module div.active {
+#section_res div.active {
     visibility: visible;
 }
 
+
+/*====== Style Form Module ======*/
+
+.module {
+    flex-direction: column;
+}
+
+.module input{
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid var(--col-dark-gray);
+    border-radius: 10px;
+    height: 50px;
+}
+
+.bouton_intput{
+    display: flex;
+    flex-direction: row;
+}
+
+.bouton_intput input[type="submit"],.bouton_intput input[type="reset"]{
+    width: 45%;
+    margin: 10px;
+}
+
+#generate-button {
+    display: none;
+}
