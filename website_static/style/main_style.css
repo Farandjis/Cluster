@@ -117,4 +117,12 @@ footer {
     margin-top: 80px;
     width: 100%;
     background: var(--col-dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a>img{
+    width: 300px;
+    margin: 0 10px;
 }
