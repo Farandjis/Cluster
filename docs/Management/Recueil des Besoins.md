@@ -194,6 +194,8 @@ This document contains all the important information we need to know in order to
 
 3. a. Display failed:
    1. An error message.
+  
+***
 
 - <b><a name="p3c"></a>c) User and system use cases.</b>
 #### Use Case 3: Registration
@@ -315,7 +317,7 @@ This document contains all the important information we need to know in order to
 **Scope:** Subsystem  
 **Level:** Sub-function  
 **Guarantee in case of success:** Successful connection to the website.
-
+***
 
 #### Use Case 9: Create a Request
 **Name**: Create a Request<br>
@@ -335,6 +337,7 @@ This document contains all the important information we need to know in order to
 **Exceptions**:
 3. a. The request could not be created:
     1. An error message informs the user.
+***
 
 #### Use Case 10: Perform a Calculation
 **Name**: Perform a Calculation
@@ -356,7 +359,7 @@ This document contains all the important information we need to know in order to
 **Exceptions**:
 2. a. No Raspberry Pi Zero devices are available:
     1. The calculation is canceled.
-
+***
 
 #### Use Case 11: Perform a Calculation
 **Name**: View History
