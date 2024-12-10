@@ -112,6 +112,8 @@ This document contains all the important information we need to know in order to
         > - Logs in, logs out
         > - Performs calculations
         > - Accesses their history
+        > - View History
+        > - Create a Request
     
   <br>
   <br>
@@ -166,6 +168,32 @@ This document contains all the important information we need to know in order to
 3. a. Error during account creation:
     1. A failure message is sent for user account creation (FAILURE)
 ***
+
+#### Use Case 8: Calculation Management
+**Name**: Calculation Management<br>
+**Usage**: The platform must allow managing a calculation and displaying a result.<br>
+**Scope**: Black box organization.<br>
+**Level**: Strategic.<br>
+**Actor**: User.<br>
+**Guarantee**: Calculation performed and result successfully displayed.<br>
+**Trigger**: User's request.<br>
+
+**Normal Scenario**:
+1. The user requests a calculation to be performed.
+2. The system processes the requested calculation.
+3. The page displays the result.
+
+**Extensions**:
+2. a. Calculation too long:
+    1. The calculation is stopped.
+    2. An information message is displayed stating that the calculation is taking too long.
+
+**Exceptions**:
+1. a. The request was not successful:
+    1. An error message is displayed explaining the failure.
+
+3. a. Display failed:
+   1. An error message.
 
 - <b><a name="p3c"></a>c) User and system use cases.</b>
 #### Use Case 3: Registration
@@ -287,6 +315,66 @@ This document contains all the important information we need to know in order to
 **Scope:** Subsystem  
 **Level:** Sub-function  
 **Guarantee in case of success:** Successful connection to the website.
+
+
+#### Use Case 9: Create a Request
+**Name**: Create a Request<br>
+**Usage**: The user requests a calculation to be performed.<br>
+**Scope**: White box system.<br>
+**Level**: User.<br>
+**Actor**: User.<br>
+**Precondition**: The user is logged in.<br>
+**Guarantee**: The calculation request is sent to the system.<br>
+**Trigger**: The user makes a calculation request.<br>
+
+**Normal Scenario**:
+1. The user selects the category of the calculation to be performed.
+2. The user enters the variables for the selected category.
+3. The request is created based on the provided information.
+
+**Exceptions**:
+3. a. The request could not be created:
+    1. An error message informs the user.
+
+#### Use Case 10: Perform a Calculation
+**Name**: Perform a Calculation
+**Usage**: The system executes the calculation.
+**Scope**: White box system.
+**Level**: User.
+**Actor**: System.
+**Precondition**: A calculation request has been made.
+**Guarantee**: The calculation produces a result.
+**Trigger**: The system receives a calculation request.
+
+**Normal Scenario**:
+1. The system receives a calculation request.
+2. The system distributes the calculation to various Raspberry Pi Zero devices.
+3. The Raspberry Pi Zero devices process the calculation and return a result.
+4. The system processes the results obtained from the Raspberry Pi Zero devices.
+5. The system displays the final result.
+
+**Exceptions**:
+2. a. No Raspberry Pi Zero devices are available:
+    1. The calculation is canceled.
+
+
+#### Use Case 11: Perform a Calculation
+**Name**: View History
+**Usage**: The user views the calculation history of their profile.
+**Scope**: Black box system.
+**Level**: User.
+**Actor**: User.
+**Minimal Guarantee**: Calculation histories are not disclosed to unauthorized parties.
+**Success Guarantee**: The calculation history is displayed.
+**Trigger**: The user wishes to view their calculation history.
+
+**Normal Scenario**:
+1. The calculation history is displayed on the user's page.
+
+**Extensions**:
+1. a. No record of ticket creation activity is found:
+    1. A table with a message informing the system administrator is displayed.
+
 ------------------------------------------------------------------------------------------------------------------------
 
 
