@@ -254,15 +254,6 @@ nav .hamburger-menu.active .slice:nth-child(3) {
         transition: 0.5s;
     }
 
-    nav.active #logo{
-        scale: 1.1;
-    }
-
-    /*nav.active #nav_conteneur {
-        background: none;
-        border: none;
-    }*/
-
     .presentation {
         margin-top: 120px;
     }
