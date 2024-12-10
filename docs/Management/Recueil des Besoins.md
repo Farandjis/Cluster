@@ -143,6 +143,7 @@ This document contains all the important information we need to know in order to
     1. A failure message is sent for loading metadata (FAILURE)
 2. a. Error during modification:
     1. A failure message is sent for modifying metadata (FAILURE)
+       
 ***
 
 #### Use Case 2: Manage Users
@@ -167,6 +168,7 @@ This document contains all the important information we need to know in order to
     1. A failure message is sent for user account creation (FAILURE)
 3. a. Error during account creation:
     1. A failure message is sent for user account creation (FAILURE)
+       
 ***
 
 #### Use Case 8: Calculation Management
@@ -224,6 +226,7 @@ This document contains all the important information we need to know in order to
 
    b. Unable to access the database:
     1. A failure message is sent to the user for account creation (FAILURE)
+       
 ***
 
 #### Use Case 4: View Failed Login Activity Logs
@@ -242,6 +245,7 @@ This document contains all the important information we need to know in order to
 **Extensions:**
 1. a. No failed login activity logs are recorded:
     1. A table with a message informing the administrator is displayed.
+       
 ***
 
 #### Use Case 5: Authentication
@@ -285,9 +289,10 @@ This document contains all the important information we need to know in order to
 2. Log out from the user account
 3. Send a confirmation message of logout to the user
 
-**Exceptions LOGOUT:**
-2. a. Logout failure:
-    1. A failure message is sent to the user (FAILURE)
+**Exceptions LOGOUT:** <br>
+2. a Logout failure:<br>
+     1. A failure message is sent to the user (FAILURE)<br>
+
 ***
 
 #### Use Case 6: Failed Login Activity Log
@@ -306,9 +311,10 @@ This document contains all the important information we need to know in order to
 2. Creation of a failed login activity log
 3. Recording of the log
 
-**Exceptions:**
-2. a. Failure to create the activity log:
-    1. The information is not stored (FAILURE)
+**Exceptions:**<br>
+2. a. Failure to create the activity log:<br>
+    1. The information is not stored (FAILURE)<br>
+    
 ***
 
 #### Use Case 7: Go to the Website
@@ -317,6 +323,7 @@ This document contains all the important information we need to know in order to
 **Scope:** Subsystem  
 **Level:** Sub-function  
 **Guarantee in case of success:** Successful connection to the website.
+
 ***
 
 #### Use Case 9: Create a Request
@@ -334,9 +341,10 @@ This document contains all the important information we need to know in order to
 2. The user enters the variables for the selected category.
 3. The request is created based on the provided information.
 
-**Exceptions**:
-3. a. The request could not be created:
-    1. An error message informs the user.
+**Exceptions**:<br>
+3. a. The request could not be created:<br>
+    1. An error message informs the user.<br>
+    
 ***
 
 #### Use Case 10: Perform a Calculation
@@ -356,9 +364,10 @@ This document contains all the important information we need to know in order to
 4. The system processes the results obtained from the Raspberry Pi Zero devices.
 5. The system displays the final result.
 
-**Exceptions**:
-2. a. No Raspberry Pi Zero devices are available:
-    1. The calculation is canceled.
+**Exceptions**:<br>
+2. a. No Raspberry Pi Zero devices are available:<br>
+    1. The calculation is canceled.<br>
+    
 ***
 
 #### Use Case 11: Perform a Calculation
