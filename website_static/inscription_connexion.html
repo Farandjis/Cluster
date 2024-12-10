@@ -12,16 +12,19 @@
 <body>
 <div id="return"><a href="index.html"><-</a></div>
 <div id="body_inscription_connexion">
-<div><img src="img/logo_origin_2.png" id="logoTitle" alt="Logo"></div>
+<div><img src="img/logo_origin_2.png" id="logoTitle" alt="Logo Paralix"></div>
 
 <div class="container" id="container">
     <div class="form_container">
         <div class="form_inscription">
             <form action="tableau_bord.html">
                 <h1>Créer un compte</h1>
-                <input class="inputForm" type="text" placeholder="Nom">
-                <input class="inputForm" type="password" placeholder="Mot de passe">
-                <input class="inputForm" type="password" placeholder="Vérification Mot de Passe">
+                <label for="NomInsc">Nom</label>
+                <input class="inputForm" type="text" placeholder="Nom" name="NomInsc" id="NomInsc" required>
+                <label for="MdpInsc">Mot de passe</label>
+                <input class="inputForm" type="password" placeholder="Mot de passe" name="MdpInsc" id="MdpInsc" required>
+                <label for="ValidMdpInsc">Validation du mot de passe</label>
+                <input class="inputForm" type="password" placeholder="Vérification Mot de Passe" name="ValidMdpInsc" id="ValidMdpInsc" required>
                 <input class="button" type="submit" value="S'inscrire">
             </form>
         </div>
@@ -30,8 +33,10 @@
         <div class="form_connexion">
             <form action="tableau_bord.html">
                 <h1>Connectez-vous</h1>
-                <input class="inputForm" type="text" placeholder="Nom">
-                <input class="inputForm" type="password" placeholder="Mot de passe">
+                <label for="NomConnex">Nom</label>
+                <input class="inputForm" type="text" placeholder="Nom" name="NomConnex" id="NomConnex" required>
+                <label for="MdpConnex">Mot de Passe</label>
+                <input class="inputForm" type="password" placeholder="Mot de passe" name="MdpConnex" id="MdpConnex" required>
                 <input class="button" type="submit" value="Se Connecter">
             </form>
         </div>
