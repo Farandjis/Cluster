@@ -21,5 +21,5 @@ CREATE TABLE LOG_CONNECTION (
     id_connection INT PRIMARY KEY AUTO_INCREMENT,
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     login_tested VARCHAR(50),
-    password_tested VARCHAR(100) NOT NULL,
+    password_tested VARCHAR(100) NOT NULL
 );
