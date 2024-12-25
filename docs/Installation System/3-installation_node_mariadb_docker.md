@@ -191,3 +191,42 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
     Fail2Ban successfully detected and banned IP addresses that exceeded the maximum number of failed login attempts. The tool was effective in reducing the risk of brute-force attacks on both MariaDB and the Node.js application by blocking malicious traffic for the specified ban time.
 
     Logs from Fail2Ban provided insight into the banned IP addresses and the trigger that led to their banning, verifying that Fail2Ban was actively monitoring and responding to security threats as expected.
+
+
+- ### <a name="p2e"></a> e) MariaDB Docker with NodeJS Docker Test
+
+  **1. Objective**
+
+    The purpose of this section is to document the procedures and outcomes of SQL SELECT query testing between a Node.js application and a MariaDB database, both deployed within Docker containers. This testing was essential to validate the interaction and data retrieval capabilities of our system.
+
+  **2. Test Configuration**
+
+    The testing environment was set up using Docker, where both Node.js and MariaDB were hosted in separate containers on the same network bridge. This setup aimed to mimic a production-like environment to ensure accurate results.
+
+    - **Node.js Container**: Ran the application server with environment variables configured for database connections.
+    - **MariaDB Container**: Utilized an image optimized for the Raspberry Pi architecture (`tobi312/rpi-mariadb:10.6-alpine`) to host the database.
+
+  **3. Test Execution**
+
+    The Node.js application was programmed to perform SQL SELECT operations to fetch data from the MariaDB database. Below is a sample route implemented in the application for these tests:
+
+    ```javascript
+    app.get('/fetch-users', (req, res) => {
+        db.query('SELECT * FROM users', (err, results) => {
+            if (err) {
+                return res.status(500).json({ error: "Database query failed" });
+            }
+            res.json(results);
+        });
+    });
+    ```
+
+    This route was accessed using a simple HTTP GET request, which triggered the SELECT query to retrieve all records from the 'users' table in the MariaDB database.
+
+  **4. Results and Observations**
+
+  The tests were successful, demonstrating that:
+  - The Node.js application could establish a connection with the MariaDB container.
+  - SQL SELECT queries executed correctly and retrieved expected data, confirming the integrity and responsiveness of the database interactions.
+
+  Logs and system monitoring tools were used to observe the transactions and ensure no unwanted behaviors occurred during the queries.
