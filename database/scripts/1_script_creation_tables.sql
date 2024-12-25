@@ -1,9 +1,10 @@
 -- Création de la table UTILISATEUR 
-CREATE TABLE UTILISATEUR (
+CREATE TABLE USERS (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
-    login VARCHAR(50) NOT NULL UNIQUE,
-    role VARCHAR(50) NOT NULL
-    last_login_user DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
+    login VARCHAR(20) NOT NULL UNIQUE,
+    role VARCHAR(50) NOT NULL,
+    last_login_user_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    last_login_user_ip VARCHAR(15)
 );
 
 -- Création de la table HISTORY 
@@ -13,7 +14,7 @@ CREATE TABLE HISTORY (
     id_user VARCHAR(50) NOT NULL,
     calcul TEXT NOT NULL,
     module VARCHAR(100) NOT NULL,
-    CONSTRAINT constaint_user_history FOREIGN KEY (id_user) REFERENCES UTILISATEUR(id_user) ON DELETE CASCADE ON UPDATE CASCADE
+    CONSTRAINT constaint_user_history FOREIGN KEY (id_user) REFERENCES USERS(id_user) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Création de la table LOG_CONNECTION
