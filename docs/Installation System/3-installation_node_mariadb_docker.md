@@ -148,3 +148,46 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
 - ### <a name="p2c"></a> c) Website Test
 
   Wait for the next deliverable
+
+
+- ### <a name="p2d"></a> d) Integration and Testing of Fail2Ban
+
+  **1. Objective**
+
+    The aim of this section is to describe the implementation and effectiveness of Fail2Ban, a security tool used to prevent brute force attacks by monitoring server logs for suspicious activity and temporarily banning IP addresses that display malicious behavior.
+
+  **2. Configuration**
+
+    Fail2Ban was installed and configured to monitor the MariaDB and Node.js Docker containers for unauthorized access attempts. The configuration involved setting up jail rules specifically for the Docker containers to ensure that any anomalous login attempts would trigger IP banning.
+
+    ```bash
+    sudo apt-get install fail2ban
+    sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+    ```
+
+    The following settings were applied in the `jail.local` file to customize the Fail2Ban behavior:
+
+    ```ini
+    [DEFAULT]
+    bantime = 3600
+    findtime = 600
+    maxretry = 3
+
+    [mariadb-docker]
+    enabled = true
+    port = 3306
+    filter = mariadb
+    logpath = /var/log/docker/mariadb.log
+    maxretry = 5
+    bantime = 600
+    ```
+
+  **3. Testing Methodology**
+
+    Testing involved simulating unauthorized access attempts to both MariaDB and the Node.js application. Scripts were used to automate login attempts from various IP addresses with incorrect credentials.
+
+  **4. Results**
+
+    Fail2Ban successfully detected and banned IP addresses that exceeded the maximum number of failed login attempts. The tool was effective in reducing the risk of brute-force attacks on both MariaDB and the Node.js application by blocking malicious traffic for the specified ban time.
+
+    Logs from Fail2Ban provided insight into the banned IP addresses and the trigger that led to their banning, verifying that Fail2Ban was actively monitoring and responding to security threats as expected.
