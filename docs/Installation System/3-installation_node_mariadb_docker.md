@@ -32,18 +32,18 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
 - ### [II – Installations](#p2)
     - [**a) Docker**](#p2a)
     - [**b) Images and containers Docker**](#p2b)
-    - [**c) Website test**](#p2c)
-    - [**d) MPI with NodeJS Docker test**](#p2d)
-    - [**e) MariaDB Docker with NodeJS Docker test**](#p2e)
+    - [**c) Website Test**](#p2c)
+    - [**d) Integration and Testing of Fail2Ban**](#p2d)
+    - [**d) MariaDB Docker with NodeJS Docker test**](#p2e)
 
 - ### [III – Use and maintenance](#p3)
     - [**a) Docker instantiation**](#p3a)
     - [**b) Tools box**](#p3b)
-      - Comment rentrer dans un Docker
-      - Comment vérifier l'état du réseau virtuel (bridge)
-      - Comment vérifier l'état des services
-      - Comment vérifier le partage port 3000 Docker NodeJS avec 3000 RPi4
-      - Mettre les questions que M Hoguin aura sur notre système
+      - **How to Enter a Docker Container**
+      - **How to Check the Status of the Virtual Network (Bridge)**
+      - **How to Check the Status of Services**
+      - **How to Verify Port Sharing between Docker NodeJS and RPi4 on Port 3000**
+      - **Prepare for Questions That our client May Have About Our System**
 
 - ### [IV – Appendices](#p4)
   - [**a) Dockerfile (in the directory)**](#p4a)
