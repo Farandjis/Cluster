@@ -142,3 +142,9 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
     The solution was to add the `app.listen` code, which enables the server to listen to requests continuously. Without this, NodeJS shuts down because it finishes executing the code, and Docker restarts it since the service is required to stay online.<br>
   
   - **express module doesn't settle despite the --build**
+
+
+ 
+- ### <a name="p2c"></a> c) Website Test
+
+  Wait for the next deliverable
