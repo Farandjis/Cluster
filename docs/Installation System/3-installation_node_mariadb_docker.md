@@ -230,3 +230,76 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   - SQL SELECT queries executed correctly and retrieved expected data, confirming the integrity and responsiveness of the database interactions.
 
   Logs and system monitoring tools were used to observe the transactions and ensure no unwanted behaviors occurred during the queries.
+
+
+## <a name="p3"></a> III - Use and Maintenance
+
+In this section, we outline the procedures for regular operation and maintenance tasks essential for the proper functioning of the Docker-hosted Node.js and MariaDB services. This guide serves as a practical reference for routine checks and administrative tasks.
+
+- ### <a name="p3a"></a> a) Docker Instantiation
+
+  **Starting and Stopping Containers:**
+  To manage Docker containers efficiently, use the following commands:
+  - **Start Containers:** `docker start [container_name]`
+  - **Stop Containers:** `docker stop [container_name]`
+
+  **Automated Container Management:**
+  Ensure containers are set to restart automatically upon failure or system reboot:
+  ```bash
+  docker update --restart unless-stopped [container_name]
+  ```
+
+- ### <a name="p3b"></a> b) Tools Box
+
+  This toolbox section provides a collection of essential commands and checks for managing Docker environments effectively.
+
+  - **Entering a Docker Container:**
+    To access the interactive shell of a running Docker container:
+    ```bash
+    docker exec -it [container_name] /bin/bash
+    ```
+
+  - **Checking Virtual Network Status (Bridge):**
+    Review the status and configuration of Docker's virtual network:
+    ```bash
+    docker network inspect [network_name]
+    ```
+
+  - **Checking Service Status:**
+    Monitor the operational status of Docker services:
+    ```bash
+    docker service ls
+    ```
+
+  - **Verifying Port Sharing between Node.js Docker and RPi4:**
+    Confirm the correct mapping and sharing of ports, particularly for services exposed to the host:
+    ```bash
+    docker port [container_name]
+    ```
+
+  - **Questions Anticipated from M. Hoguin:**
+    Prepare responses for potential queries regarding system architecture, data security, and operational efficiency. Include logs, configuration files, and system metrics to support the responses.
+
+- ### Regular Maintenance Checks
+
+  - **Update and Upgrade Docker Images:**
+    Regularly check for updates to the Docker images used:
+    ```bash
+    docker pull [image_name]
+    docker-compose up -d --build
+    ```
+
+  - **Backup and Data Recovery:**
+    Implement routine backups of the MariaDB database to ensure data integrity and facilitate quick recovery in case of data loss:
+    ```bash
+    docker exec [mariadb_container_name] /usr/bin/mysqldump -u [user] --password=[password] [database_name] > backup.sql
+    ```
+
+  - **Log Monitoring:**
+    Regular review of Docker and application logs to identify and respond to potential issues:
+    ```bash
+    docker logs [container_name]
+    ```
+
+  - **Security Audits:**
+    Conduct periodic security checks using tools like Fail2Ban to ensure no unauthorized access attempts succeed.
