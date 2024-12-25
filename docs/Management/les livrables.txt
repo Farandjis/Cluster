@@ -1,0 +1,51 @@
+============================ Delivrable 1 : System and Database (V0.1)
+------------------------------ Deadline : 26/12/2024
+	- RaspberryPi installation with RPI OS and cluster modules.
+	- Installation and configuration of mpirun, docker, nodejs, mariadb
+	- Test mpirun with python script
+	- Server installation via docker
+	- Test data persistence
+	- Test using mpirun from docker NodeJS
+	- Testing a demo site
+	- Testing DB connections from NodeJS
+	- Reports, documentation, maintenance docs, designs
+	- Cluster performance studies with mpirun.
+	- Installation and configuration of fail2ban
+
+
+
+============================ Delivrable 2 : Static website (V0.2)
+------------------------------ Deadline : 29/12/2024
+	- Static site design and layout
+	- Page creation
+	- Page testing
+	- Static site use cases
+
+
+
+============================ Delivrable 3 : Dynamic website (V0.3)
+------------------------------ Deadline : 19/01/2025
+	- Transformation of .html code into .js
+	- Dynamic page development with DB and MPI interaction.
+	- Design and testing
+	- DB enhancement: views, MariaDB profiles, etc.
+	- Testing
+	- New use cases
+	- Improvement of specifications and requirements gathering
+	- Scalability study
+	- Verification by M Hoguin or M Dufaud 
+
+
+
+============================ Rendering V1
+------------------------------ Deadline : 23/01/2025
+	- Last-minute correction to V1.
+
+>>>> Objectif : 
+	Have a presentable version of the project ready for the day of the defense (24/01/2025).
+	The project must allow the calculation of prime numbers and the MonteCarlo method.
+	Documentation must be finalized.
+	The site will not include the following functionalities: history and user profile.
+	It does, however, allow users to register and log in.
+	The site must meet accessibility criteria.
+	
