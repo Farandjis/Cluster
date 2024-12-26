@@ -303,3 +303,108 @@ In this section, we outline the procedures for regular operation and maintenance
 
   - **Security Audits:**
     Conduct periodic security checks using tools like Fail2Ban to ensure no unauthorized access attempts succeed.
+
+## <a name="p4"></a> IV – Appendices
+
+- ### <a name="p4a"></a> a) Dockerfile (in the directory)
+  Dockerfiles are crucial for defining the environments of our Docker containers. Below are the Dockerfiles used for setting up the Node.js and MariaDB containers.
+
+  **Node.js Dockerfile:**
+  ```Dockerfile
+  # Use an official Node runtime as a parent image
+  FROM node:14
+
+  # Set the working directory
+  WORKDIR /usr/src/app
+
+  # Copy package.json and install dependencies
+  COPY package*.json ./
+  RUN npm install
+
+  # Bundle app source
+  COPY . .
+
+  # Bind to all network interfaces so that it can be mapped to the host OS
+  EXPOSE 3000
+
+  CMD ["node", "app.js"]
+  ```
+  **Explanation:**
+  This Dockerfile sets up a Node.js environment, installs dependencies, and prepares the application to run on port 3000.
+
+  **MariaDB Dockerfile:**
+  ```Dockerfile
+  # Use a specific version of MariaDB optimized for ARM architectures
+  FROM tobi312/rpi-mariadb:10.6-alpine
+
+  # Set environment variables
+  ENV MARIADB_ROOT_PASSWORD my-secret-pw
+  ENV MARIADB_DATABASE exampledb
+  ENV MARIADB_USER user
+  ENV MARIADB_PASSWORD password
+
+  # Expose port 3306 to allow communication to/from the server
+  EXPOSE 3306
+
+  # These commands copy your files into the specified directory in the image
+  # and set the default command to execute when creating a new container
+  COPY setup.sql /docker-entrypoint-initdb.d/
+
+  CMD ["mysqld"]
+  ```
+  **Explanation:**
+  This Dockerfile configures a MariaDB server with a specified root password and user details, ready for database operations.
+
+- ### <a name="p4b"></a> b) Dockercompose (in the directory)
+  The `docker-compose.yml` file simplifies the deployment of multi-container Docker applications. Here's how we set up our containers to work together:
+
+  ```yaml
+  version: '3'
+  services:
+    node-app:
+      build: ./node
+      ports:
+        - "3000:3000"
+      links:
+        - mariadb
+      restart: unless-stopped
+
+    mariadb:
+      build: ./mariadb
+      environment:
+        MARIADB_ROOT_PASSWORD: my-secret-pw
+      volumes:
+        - db-data:/var/lib/mysql
+      ports:
+        - "3306:3306"
+      restart: unless-stopped
+
+  volumes:
+    db-data:
+  ```
+
+  **Explanation:**
+  This file defines two services: `node-app` (our Node.js application) and `mariadb` (our database server). It sets up port mapping, volume management for data persistence, and ensures that both containers restart unless manually stopped.
+
+- ### <a name="p4c"></a> c) package
+  The `package.json` file specifies the Node.js project’s dependencies, scripts, and version information.
+
+  ```json
+  {
+    "name": "cluster-project",
+    "version": "1.0.0",
+    "description": "A simple Node.js project",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mysql": "^2.18.1"
+    }
+  }
+  ```
+
+  **Explanation:**
+  This JSON file helps manage the Node.js application dependencies, ensuring all necessary libraries are installed for proper execution.
+
