@@ -1,4 +1,4 @@
-Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS<br>
+Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS, Lucas DA SILVA FERREIRA<br>
 INF3-FI
 
 
@@ -34,8 +34,8 @@ This document describes in detail the installation process of the RPi4 and RPi0 
 
 
 - ### [III - Cluster Installation](#p3)
-- [**a) Starting the Cluster HAT]**(#p3a)
-- [**b) SSH Connection Between All Raspberry Pis]**(#p3b)
+- [**a) Starting the Cluster HAT**](#p3a)
+- [**b) SSH Connection Between All Raspberry Pis**](#p3b)
 
 <br><br><br>
 
@@ -58,7 +58,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     We can learn more about the features of our Raspberry Pi 4 by executing the Raspberry OS command: `pinout`<br>
     <br>
     <div align="center">
-    <img width=350px src="img/I_presentation/pinout.png" title="result of the pinout command with the different ports, a drawing of the board and a description of the pins"/><br>
+    <img width=350px src="img/img_installation_cluster/pinout.png" title="result of the pinout command with the different ports, a drawing of the board and a description of the pins"/><br>
     <i>result of pinout command</i>
     </div>
     <br>
@@ -113,7 +113,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     RaspberryPi OS is based on the free operating system Debian, and it specially designed for the RaspberryPi and has commands for it.<br>
     <br>
 
-    The issue with the original Raspberry Pi OS Lite image is that it does not include the commands necessary to control the RaspberryPi Hat, such as `clusterhat` (also known as `clusterctrl`).
+    The issue with the original Raspberry Pi     OS Lite image is that it does not include the commands necessary to control the RaspberryPi Hat, such as `clusterhat` (also known as `clusterctrl`).
     For example, this prevents us from starting a Raspberry Pi Zero.<br>
     While we can manually install the command from a GitHub repository, the easiest solution is to use the CBRIDGE or CNAT image, which already include these commands.<br>
     The difference between the CBRIDGE and CNAT images is that the CNAT image can automatically recognize a Raspberry Pi Zero thanks to the additional images "P1", "P2", "P3", and "P4".
@@ -171,7 +171,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     <br><br>
 
     <div align="center">
-        <img src="img\II_preparatif\0_piimager_menu.webp" title="Pi Imager menu with OS choice, Storage choice, Write buttons and a parameter button" height="220"/><br>
+        <img src="img\img_installation_cluster\0_piimager_menu.webp" title="Pi Imager menu with OS choice, Storage choice, Write buttons and a parameter button" height="220"/><br>
         <i>Menu de Pi Imager</i>
     </div>
   
@@ -186,7 +186,7 @@ As with most computers, this one features ports for connecting a monitor, periph
     <br><br>
 
     <div align="center">
-        <img src="img\II_preparatif\1_piimager_option.webp" title="Pi Imager installation options" height="220"/><br>
+        <img src="img\img_installation_cluster\1_piimager_option.webp" title="Pi Imager installation options" height="220"/><br>
         <i>Options d'installation de Pi Imager</i>
     </div>
 
