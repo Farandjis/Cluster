@@ -59,6 +59,7 @@ h1 {
 }
 #section_module.active{
     display: flex;
+    flex-wrap: wrap;
 }
 
 #section_form, #section_res {
@@ -70,7 +71,9 @@ h1 {
 }
 #section_form{
     width: 30%;
+    min-width: 280px;
     position: relative;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -117,11 +120,11 @@ h1 {
 .bouton_intput{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .bouton_intput input[type="submit"],.bouton_intput input[type="reset"]{
     width: 45%;
-    margin: 10px;
 }
 
 #generate-button {
