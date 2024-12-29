@@ -1,0 +1,132 @@
+@import url('variables_couleurs.css');
+
+h1 {
+    margin-top: 175px;
+    text-align: center;
+}
+
+#section_title_module {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#section_title_module a{
+    text-decoration: none;
+    color: var(--col-dark-gray);
+
+}
+
+#section_title_module div{
+    margin-bottom: 20px;
+}
+
+#section_title_module div:hover{
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    box-shadow:  0 0 0  var(--col-dark-gray);
+}
+
+.title_module img {
+    width: 250px;
+    height: 250px;
+}
+
+.title_module {
+    padding: 10px;
+    border: 3px solid #333333;
+    border-radius: 20px;
+    background-color: #ff9f65;
+}
+
+.title_module.active {
+    /*box-shadow: 0 0 50px #b900cf;*/
+    background-color: var(--col-dark-gray);
+    color: white;
+}
+
+.img_module {
+    border-radius: 10px;
+}
+
+#section_module{
+    margin-top: 100px;
+    width: 90%;
+    height: 600px;
+    display: none;
+    justify-content: space-evenly;
+}
+#section_module.active{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#section_form, #section_res {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #4d4641;
+    height: 100%;
+    background: #eeeeee;
+}
+#section_form{
+    width: 30%;
+    min-width: 280px;
+    position: relative;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+}
+#section_res{
+    width: 65%;
+}
+
+#section_form form{
+    display: none;
+    position: relative;
+    margin: 10px;
+}
+#section_form form.active {
+    display: flex;
+}
+
+#section_res div{
+    visibility: hidden;
+    position: absolute;
+    margin: 10px;
+}
+
+#section_res div.active {
+    visibility: visible;
+}
+
+
+/*====== Style Form Module ======*/
+
+.module {
+    flex-direction: column;
+}
+
+.module input{
+    margin: 10px 0;
+    padding: 5px;
+    border: 1px solid var(--col-dark-gray);
+    border-radius: 10px;
+    height: 50px;
+}
+
+.bouton_intput{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.bouton_intput input[type="submit"],.bouton_intput input[type="reset"]{
+    width: 45%;
+}
+
+#generate-button {
+    display: none;
+}

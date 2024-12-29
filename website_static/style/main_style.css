@@ -1,0 +1,128 @@
+@import url('variables_couleurs.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--col-light-gray);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Poppins, sans-serif;
+    color: var(--col-dark-gray);
+}
+
+
+.paralix {
+    color: var(--col-light-orange);
+}
+
+
+p {
+    font-weight: 500;
+    font-size: clamp(16px, 1vw + .1rem, 25px);
+    text-align: center;
+}
+
+
+#return a{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    font-size: 60px;
+}
+
+#text_hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--col-dark-gray);
+    text-align: center;
+}
+
+h1{
+    font-size: clamp(3rem, 5vw + .5rem, 6rem);
+    color: var(--col-dark-gray);
+}
+h3 {
+    font-size: clamp(15px, 2vw + .1rem, 30px);
+}
+
+#section_presentation {
+    margin-top: 175px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    text-shadow: 0px 1px 150px rgba(77, 70, 65, 0.67);
+}
+
+#button_hero{
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+
+    background: var(--col-white);
+    height: auto;
+    min-width: 90px;
+    padding: 10px 10px;
+    margin: 50px 20px;
+    border: solid 1px var(--col-dark-gray);
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--col-white);
+    background: var(--col-gradient-orange);
+    box-shadow: 0 7px 0 0 var(--col-dark-gray);
+
+}
+a {
+    text-shadow: 0px 1px 15px var(--col-pink);
+}
+
+#button_hero:hover, #button_hero:focus {
+    background: var(--col-black);
+    color: var(--col-white);
+    box-shadow: 0 4px 0 0 var(--col-dark-gray);
+    transform: translate(0,3px);
+}
+
+#button_hero:active {
+    box-shadow: 0 0 0 var(--col-black);
+    transform: translate(0,6px);
+    transition-duration: 100ms;
+    top: 4px;
+}
+
+#presentation {
+
+    margin-top: 100px;
+    width: 90%;
+    height: 600px;
+    background: var(--col-white);
+    border-radius: 20px;
+    border: 1px solid var(--col-dark-gray);
+}
+
+footer {
+    height: 200px;
+    margin-top: 80px;
+    width: 100%;
+    background: var(--col-dark-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a>img{
+    width: 300px;
+    margin: 0 10px;
+}
