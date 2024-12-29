@@ -2,7 +2,7 @@ Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matth
 INF3-FI
 
 <div align="center">
-<img height="95" width="400" src="../img/IUT_Velizy_Villacoublay_logo_2020_ecran.png" title="logo uvsq vélizy"/>
+<img width="400" src="../../img/IUT_Velizy_Villacoublay_logo_2020_ecran.png" title="logo uvsq vélizy"/>
 
 # SAÉ S3 - Dossier de test
 ## Site statique
@@ -53,7 +53,8 @@ For each HTML page created, we will compare it with the selected mockup. This in
 | Start date                          | 10/12/2024                                                                                                               |
 | End date                            | 10/12/2024                                                                                                               |
 | Test to be applied                  | Site validity check                                                                                                      |
-| Test campaign manager               | BOGAERT Tom    
+| Test campaign manager               | BOGAERT Tom    |
+
 <br><br><br>
 
 ----------
