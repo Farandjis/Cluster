@@ -70,7 +70,6 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   **Sources :**
     - https://makina-corpus.com/front-end/introduction-nodejs
   <br><br>
-
 Node.js is a JavaScript development platform. It is neither a server nor a framework; it is simply the JavaScript language with libraries that allow performing actions such as writing to the standard output, opening/closing network connections, or creating a file.
 ---
 ## <a name="p2"></a> II - Installations
