@@ -55,7 +55,7 @@ A GitHub repository for the project must be shared with the professors who wish 
 
 ## <a id="part3"></a>Prerequisites
 
-The project requires skills in PHP & MySQL, Requirements Analysis, and Design. Knowledge of HTML and system and network installation is also necessary for successful project completion. Mathematical knowledge is needed to perform distributed or parallel computations.
+The project requires skills in Node JS, Javascript & MySQL, Requirements Analysis, and Design. Knowledge of HTML and system and network installation is also necessary for successful project completion. Mathematical knowledge is needed to perform distributed or parallel computations.
 
 It is necessary to be familiar with working with Git and have communication skills for the documentation, graphic charter, and logo creation.
 
