@@ -400,7 +400,7 @@ The application must use: SQL, HTML, CSS, and other programming languages for th
 - HTML and CSS are used to create the web pages of the website.<br>
 - The other languages will be used to implement mathematical algorithms.<br>
 
-The server must be protected from intrusions, particularly SSH, using the fail2ban software and should automatically archive activity logs using the CRON software.<br> We will use Jetbrains' PHPStorm and WebStorm software.<br> These tools are not mandatory, but they will help improve the quality of the submitted code.<br>
+The server must be protected from intrusions, particularly SSH, using the fail2ban software and should automatically archive activity logs using the CRON software.<br> We will use Jetbrains'WebStorm software.<br> These tools are not mandatory, but they will help improve the quality of the submitted code.<br>
 <br>
 
 - <b><a name="p4b"></a>b) Which systems will be interfaced with this system, and what are their requirements?</b>
@@ -454,7 +454,7 @@ The Cluster HAT contains:
       <h3> Portability</h3>
       The web platform must be hosted on a Cluster Hat Kit (connected to 4 Raspberry Pi Zeros) and have an SD card configured by the development team. Additionally, it must allow SSH access to the Raspberry Pi.
       <h3> Security</h3>
-      Data must be protected, and the site should display only what each user is allowed to see. It is essential to secure the SQL queries made by the (PHP) files to restrict access as much as possible and limit security vulnerabilities. Moreover, all passwords must be encrypted before being stored in the database to mitigate the effects of any potential data breach. We will also install fail2ban to moderate SSH connections, login attempts, and website registrations.<br>
+      Data must be protected, and the site should display only what each user is allowed to see. It is essential to secure the SQL queries made by the (Node JS) files to restrict access as much as possible and limit security vulnerabilities. Moreover, all passwords must be encrypted before being stored in the database to mitigate the effects of any potential data breach. We will also install fail2ban to moderate SSH connections, login attempts, and website registrations.<br>
       <br>
   
     - <u><a name="p5aiii"> </a> iii. What feedback or visibility on the project do users and sponsors expect?</u><br><br>
@@ -471,7 +471,7 @@ The Cluster HAT contains:
       The project will follow a waterfall or V-model approach for each project element. In the waterfall model, we will start with design, followed by development, and finish with testing. In the V-model, we will begin with design, followed by testing, and then development. Clients should have access to the Git repository to assess project progress and provide feedback if necessary.<br><br>
   
     - <u><a name="p5avi"> </a>vi. What dependencies does the project have?</u><br><br>
-      This project has no major dependencies due to the stability of PHP and MariaDB. It also uses technologies such as HTML, CSS, JavaScript, Raspberry OS Lite, fail2ban, and CRON.<br><br>
+      This project has no major dependencies due to the stability of Node JS, JS and MariaDB. It also uses technologies such as HTML, CSS, JavaScript, Raspberry OS Lite, fail2ban, and CRON.<br><br>
 
 - <b><a name="p5b"> </a>b) Performance</b><br><br>
   The software must be as efficient as possible to facilitate access. Programs will be optimized and tested to minimize the number of operations. Data storage systems will be chosen accordingly to maximize platform performance.<br><br>
@@ -484,7 +484,7 @@ The Cluster HAT contains:
   A user guide for the website must be available, as well as a visual transcript of the presentation video. Our software can be used via a website or through terminal commands.
 
 - <b><a name="p5e"> </a>e) Maintenance and Portability</b><br><br>
-  The web application’s portability and maintenance will be checked using the W3C validator. This ensures compatibility across all browsers and verifies that the code complies with current standards. PHP and MariaDB function on both Windows and Linux servers. We will conduct integration tests to ensure the correct integration of different modules into our project.
+  The web application’s portability and maintenance will be checked using the W3C validator. This ensures compatibility across all browsers and verifies that the code complies with current standards. Node JS and MariaDB function on both Windows and Linux servers. We will conduct integration tests to ensure the correct integration of different modules into our project.
 <br><br><br><br><br><br><br>
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -561,6 +561,8 @@ The Cluster HAT contains:
       Redaction Manager, Developer
     - **Baptiste FOURNIÉ**  
       Mathematical Calculations Manager, Developer
+      - **Lucas Da silva Ferreira**
+        RaspberryPi 4 Administrator,Redaction Manager, Developer
       <br><br>
 
 - <b><a name="p7b"></a>b) Life cycle</b><br>
