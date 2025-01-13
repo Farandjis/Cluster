@@ -56,25 +56,22 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
 - ### <a name="p1a"></a> a) Docker
   **Sources :**
   - https://aws.amazon.com/fr/docker/ <br><br>
-    Docker est une plateforme logicielle qui vous permet de concevoir, tester et déployer des applications rapidement. Docker enveloppe les logiciels dans des unités normalisées appelées conteneurs, qui rassemblent tous les éléments nécessaires à leur fonctionnement : bibliothèques, outils système, code et environnement d’exécution. Avec Docker, vous pouvez facilement déployer et dimensionner des applications dans n'importe quel environnement, avec l'assurance que votre code s'exécutera correctement.
+   Docker is a software platform that allows you to design, test, and deploy applications quickly. Docker packages software into standardized units called containers, which bundle all the necessary components for the application to run: libraries, system tools, code, and runtime environment. With Docker, you can easily deploy and scale applications in any environment, with the assurance that your code will run correctly.
 
 - ### <a name="p1b"></a> b) MariaDB
   **Sources :**
     - https://www.lemagit.fr/definition/MariaDB
   <br><br>
   
-  MariaDB est un système de gestion de base de données relationnelle (SGBDR) open source qui constitue une solution de remplacement compatible avec la technologie très répandue des bases de données MySQL.
-  <br>
-  MariaDB repose sur SQL et prend en charge le traitement de données selon le modèle ACID, c'est-à-dire avec garantie d'atomicité, de cohérence, d'isolation et de durabilité des transactions.
-  <br>
-
+ MariaDB is an open-source relational database management system (RDBMS) that serves as a compatible replacement for the widely used MySQL database technology. <br> MariaDB is based on SQL and supports data processing according to the ACID model, which guarantees atomicity, consistency, isolation, and durability of transactions.
+<br>
 
 - ### <a name="p1c"></a> c) NodeJS
   **Sources :**
     - https://makina-corpus.com/front-end/introduction-nodejs
   <br><br>
 
-  Node.js est une plateforme de développement Javascript. Ce n'est pas un serveur, ce n'est pas un framework, c'est juste le langage Javascript avec des bibliothèques permettant de réaliser des actions comme écrire sur la sortie standard, ouvrir/fermer des connections réseau ou encore créer un fichier.
+Node.js is a JavaScript development platform. It is neither a server nor a framework; it is simply the JavaScript language with libraries that allow performing actions such as writing to the standard output, opening/closing network connections, or creating a file.
 ---
 ## <a name="p2"></a> II - Installations
 
@@ -122,7 +119,6 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   <br><br>
 
   **3. Lauching NodeJS with MariaDB container**<br>
-    # à corriger
   All files must be installed (see part 4 in the appendices).<br>
   <br>
   If we test `docker ps`, we will see that no docker process is running.<br>
