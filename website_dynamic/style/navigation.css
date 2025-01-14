@@ -1,0 +1,267 @@
+@import url('variables_couleurs.css');
+
+nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    top: 0;
+    /*background: linear-gradient(to top, #C56CD6,#3425AF) #211a43;*/
+    box-shadow: inset 0 -1px 0 var(--col-white);
+    z-index: 500;
+
+    backdrop-filter: blur(50px);
+}
+
+
+#logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 20px;
+
+    border: 3px solid var(--col-black);
+    border-radius: 30px;
+    padding: 5px 10px 0 10px;
+    background-color: var(--col-dark-gray);
+}
+
+
+#logo img {
+    width: 200px;
+    text-decoration: none;
+}
+
+#logo p {
+    font-size: 32px;
+    font-weight: bold;
+    margin-left: 5px;
+    color: var(--col-white);
+    text-decoration: none;
+}
+
+#nav_conteneur {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 4px solid var(--col-dark-gray);
+    background: var(--col-white);
+}
+
+
+#nav_conteneur a {
+    margin: 0 30px;
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--col-dark-gray);
+    padding: 5px 15px;
+    position: relative;
+    transition: transform 0.5s;
+}
+
+#nav_conteneur #current_page{
+    background-color: var(--col-dark-gray);
+    color: var(--col-light-gray);
+    border-radius: 15px;
+}
+
+#nav_conteneur #current_page:hover, #nav_conteneur #current_page:focus{
+    color: var(--col-light-orange);
+}
+
+
+
+#nav_conteneur a:hover, #nav_conteneur a:focus{
+    color: var(--col-light-orange);
+}
+
+#nav_conteneur a::before {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: -1px;
+    width: 95%;
+    height: 2px;
+    transform: scale(0);
+    transform-origin: left;
+    background: var(--col-light-orange);
+    transition: transform 0.3s ease-out;
+}
+#nav_conteneur a:hover::before, #nav_conteneur a:focus::before {
+    transform: scaleX(1);
+}
+
+#button_profile a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+
+    color: var(--col-black);
+    background: var(--col-white);
+    width: 300px;
+    height: auto;
+    min-width: 90px;
+    padding: 10px 10px;
+    margin: 0 5px;
+    border: solid 1px var(--col-black);
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+#button_profile a {
+    color: var(--col-white);
+    background: var(--col-gradient-orange);
+}
+
+
+#button_profile a:hover, #button_profile a:focus {
+    background: var(--col-black);
+    color: var(--col-white);
+}
+
+
+#page_actuelle {
+    color: var(--col-white);
+    background: var(--col-black);
+    border-radius: 20px;
+}
+
+
+
+/* ==================== HAMBURGER ================= */
+
+
+nav .hamburger-menu{
+
+    display: none;
+
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    width: 64px;
+    height: 42px;
+
+    cursor: pointer;
+
+}
+
+nav .hamburger-menu .slice {
+
+    position: absolute;
+
+    width: 100%;
+    height: 4px;
+
+    background: #000;
+    border-radius: 4px;
+
+
+    transition: all 0.5s ease-in-out;
+
+}
+
+nav .hamburger-menu .slice:nth-child(1) {
+
+    top: 0px;
+
+}
+nav .hamburger-menu .slice:nth-child(2) {
+
+    top: 18px;
+
+}
+nav .hamburger-menu .slice:nth-child(3) {
+
+    top: 36px;
+
+}
+
+nav .hamburger-menu.active .slice:nth-child(1) {
+    top: 18px;
+    transform: rotate(135deg);
+
+}
+nav .hamburger-menu.active .slice:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+
+}
+nav .hamburger-menu.active .slice:nth-child(3) {
+    top: 18px;
+    transform: rotate(-135deg);
+
+}
+
+
+@media (max-width: 1070px) {
+
+    #section_presentation {
+        margin-top: 80px;
+    }
+
+    nav .hamburger-menu {
+        display: block;
+        margin: 30px;
+    }
+
+
+    nav {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+
+        transition: 0.2s;
+    }
+
+
+    nav #nav_conteneur,
+    nav #button_profile{
+        display: none;
+        transition: 1s;
+    }
+
+    /* On affiche le menu hamburger */
+    nav .hamburger-menu {
+        display: block;
+    }
+
+
+    /* Et si on clique dessus on décale tous les éléments de la nav sauf le bouton hamburger */
+
+    nav.active {
+        background: #ECECEC;
+    }
+
+    nav.active #logo,
+    nav.active #nav_conteneur,
+    nav.active #button_profile{
+
+        position: relative;
+
+        margin: 15px;
+
+        display: flex;
+
+        transition: 0.5s;
+    }
+
+    .presentation {
+        margin-top: 120px;
+    }
+
+    #fermer_pop-up{
+        right: 0px;
+
+    }
+
+
+}

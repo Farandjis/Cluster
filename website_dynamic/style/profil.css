@@ -1,0 +1,106 @@
+@import url('variables_couleurs.css');
+
+.Profil a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 90px;
+    padding: 10px 5px;
+    margin: 0 5px;
+    border: solid 1px #1c1c1c;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Profil a:nth-child(1){
+    background: #ff4e4e;
+    color: #1c1c1c;
+  
+}
+
+.table-demandes-perso{
+    border-collapse: collapse;
+    width: 1100px;
+    font-size: 16px;
+}
+
+.conteneur_table {
+    border: 1px solid #555555;
+    overflow-y: auto;
+    background-color: #fffb;
+    border-radius: 10px;
+}
+
+.conteneur_table {
+    scrollbar-color: #31251f #e2d5ef;
+    scrollbar-width: thin;
+}
+
+.conteneur_table-demandes-perso {
+    height: 600px;
+}
+
+thead {
+    background-color: #ff9f65;
+    text-align: left;
+}
+
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+    unicode-bidi: isolate;
+}
+
+th {
+    text-align: center;
+    padding: 15px 10px;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+.table-demandes-perso {
+    border-collapse: collapse;
+    width: 1100px;
+    font-size: 16px;
+}
+
+.table-ticket-profil {
+    width: 100%;
+}
+
+.table-demandes-perso > tbody > tr {
+    height: 80px;
+}
+
+tbody tr {
+    transition: 0.4s;
+    background-color: #ECECEC;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}

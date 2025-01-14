@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion/Inscription</title>
+    <link rel="stylesheet" href="style/navigation.css">
+    <link rel="stylesheet" href="style/main_style.css">
+    <link rel="stylesheet" href="style/inscription_connexion.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo_icone.png" type="image/png">
+    <script src="js/afficherMDP.js" charset="UTF-8"></script>
+    <!--<script src="js/verifChamp.js" charset="UTF-8"></script>-->
+</head>
+<body>
+<div id="return"><a href="/"><-</a></div>
+<div id="body_inscription_connexion">
+<div><img src="img/logo_origin_2.png" id="logoTitle" alt="Logo"></div>
+
+<div class="container" id="container">
+    <div class="form_container">
+        <div class="form_inscription" id="form_inscription">
+            <form action="/register" method="POST">
+                <h1>Créer un compte</h1>
+                <%- registrationMessage %>
+                <div class="info-bulle">
+                    <label for="NomInsc">Nom
+                        <input class="inputForm" type="text" name="login" id="NomInsc" required>
+                        <span class="text-info-bulle">Le login doit contenir<br> entre <span>5 et 32 caractères</span>.</span>
+                    </label>
+                </div>
+
+                <div class="champs-password">
+                    <div class="info-bulle">
+                        <label for='MdpInsc'>Mot de passe <br>
+                            <input id='MdpInsc' type='password' name ='password' class='inputForm' required>
+                            <span class="text-info-bulle">Le mot de passe doit contenir entre <span>12 et 32 caractères</span> et au moins une <span>minuscule</span>, <br>une <span>majuscule</span>, un <span>chiffre</span>, <br>un <span> spécial</span>.</span>
+                        </label>
+                    </div>
+
+
+                    <div class="password-show" onclick="showPassword(this)">
+                        <img src="img/visible.png">
+                    </div>
+                    <div class="password-hide" onclick="hidePassword(this)">
+                        <img src="img/hidden.png">
+                    </div>
+                </div>
+
+                <div class="champs-password">
+
+                    <div class="info-bulle">
+                        <label for='ValidMdpInsc'>Vérificaction mot de passe <br>
+                            <input id="ValidMdpInsc" type='password' name ='confirmPassword' class='inputForm' required>
+                            <span class="text-info-bulle">La vérification du mot de passe <span>doit être identique au mot de passe</span>.</span>
+                        </label>
+                    </div>
+
+                    <div class="password-show" onclick="showPassword(this)">
+                        <img src="img/visible.png">
+                    </div>
+                    <div class="password-hide" onclick="hidePassword(this)">
+                        <img src="img/hidden.png">
+                    </div>
+                </div>
+
+                <input class="button" type="submit" value="S'inscrire">
+
+            </form>
+        </div>
+    </div>
+    <div class="form_container">
+        <div class="form_connexion">
+            <form action="/login" method="POST">
+                <h1>Connectez-vous</h1>
+                <%- loginMessage %>
+                <div class="info-bulle">
+                    <label for="NomConnex">Nom
+                        <input class="inputForm" type="text" name="login" id="NomConnex" required>
+                        <span class="text-info-bulle">Le login doit contenir<br> entre <span>5 et 32 caractères</span>.</span>
+                    </label>
+                </div>
+
+                <div class="champs-password">
+                    <div class="info-bulle">
+                        <label for='MdpConnex'>Mot de passe <br>
+                            <input id='MdpConnex' type='password' name ='password' class='inputForm' required>
+                            <span class="text-info-bulle">Le mot de passe doit contenir entre <span>12 et 32 caractères</span> et au moins une <span>minuscule</span>, <br>une <span>majuscule</span>, un <span>chiffre</span>, <br>un <span> spécial</span>.</span>
+                        </label>
+                    </div>
+
+
+                    <div class="password-show" onclick="showPassword(this)">
+                        <img src="img/visible.png">
+                    </div>
+                    <div class="password-hide" onclick="hidePassword(this)">
+                        <img src="img/hidden.png">
+                    </div>
+                </div>
+
+                <input class="button" type="submit" value="Se Connecter">
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+</body>
+</html>
