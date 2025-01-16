@@ -9,11 +9,11 @@ CREATE TABLE USERS (
 
 -- Création de la table HISTORY 
 CREATE TABLE HISTORY (
-    id_history INT PRIMARY KEY AUTO_INCREMENT,
     time TIMESTAMP NOT NULL,
     id_user INT NOT NULL,
-    calcul TEXT NOT NULL,
-    module VARCHAR(100) NOT NULL,
+    module VARCHAR(20) NOT NULL,
+    filename TEXT NOT NULL,
+    PRIMARY KEY (time, id_user),
     CONSTRAINT constaint_user_history FOREIGN KEY (id_user) REFERENCES USERS(id_user) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
