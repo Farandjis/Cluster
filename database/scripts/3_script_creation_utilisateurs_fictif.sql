@@ -1,7 +1,7 @@
 -- Création des différents utilisateurs fictifs
-CREATE USER 'fictif_connexionDB'@'172.20.0.3' IDENTIFIED BY 't!nt1n_connexionDB241745414'; -- Attention ! 172.20.0.3 pour qu'il soit accessible depuis le Docker NodeJS
-CREATE USER 'fictif_inscriptionDB'@'172.20.0.3' IDENTIFIED BY 't!nt1n_inscriptionDB17053417';
-CREATE USER 'fictif_droitDB'@'172.20.0.3' IDENTIFIED BY 't!nt1n_droitDB4768174457';
+CREATE USER 'fictif_connexionDB'@'172.18.0.3' IDENTIFIED BY 't!nt1n_connexionDB241745414'; -- Attention ! 172.18.0.3 pour qu'il soit accessible depuis le Docker NodeJS
+CREATE USER 'fictif_inscriptionDB'@'172.18.0.3' IDENTIFIED BY 't!nt1n_inscriptionDB17053417';
+CREATE USER 'fictif_droitDB'@'172.18.0.3' IDENTIFIED BY 't!nt1n_droitDB4768174457';
 
 
 
@@ -26,22 +26,22 @@ FROM USERS;
 
 
 -- Ajout des droits pour l'utilisateurs fictif_inscriptionDB
-GRANT INSERT (login, role) ON UserFictif_inscription TO 'fictif_inscriptionDB'@'172.20.0.3';
-GRANT SELECT(id_user) ON UserFictif_inscription TO 'fictif_inscriptionDB'@'172.20.0.3';
-GRANT CREATE USER ON *.* TO 'fictif_inscriptionDB'@'172.20.0.3';
+GRANT INSERT (login, role) ON UserFictif_inscription TO 'fictif_inscriptionDB'@'172.18.0.3';
+GRANT SELECT(id_user) ON UserFictif_inscription TO 'fictif_inscriptionDB'@'172.18.0.3';
+GRANT CREATE USER ON *.* TO 'fictif_inscriptionDB'@'172.18.0.3';
 
 
 -- UF droitDB peut est considéré comme un utilisateur de la plateforme pour pouvoir transmettre le rôle à qui il veut.
-GRANT role_utilisateur TO 'fictif_droitDB'@'172.20.0.3' WITH ADMIN OPTION;
+GRANT role_utilisateur TO 'fictif_droitDB'@'172.18.0.3' WITH ADMIN OPTION;
 
 -- UF droitBD peut voir la structure de la BD (pour s'y connecter), mais ne peut absolument rien faire avec (pas de SELECT, UPDATE...)
-GRANT SHOW VIEW ON Paralix.* TO 'fictif_droitDB'@'172.20.0.3';
+GRANT SHOW VIEW ON Paralix.* TO 'fictif_droitDB'@'172.18.0.3';
 
 
 
 -- Ajout des droit pour l'utilisateurs fictif_connexionDB
-GRANT SELECT ON UserFictif_connexion TO 'fictif_connexionDB'@'172.20.0.3';
-GRANT UPDATE (last_login_user_date, last_login_user_ip) ON UserFictif_maj_derniere_co TO 'fictif_connexionDB'@'172.20.0.3';
+GRANT SELECT ON UserFictif_connexion TO 'fictif_connexionDB'@'172.18.0.3';
+GRANT UPDATE (last_login_user_date, last_login_user_ip) ON UserFictif_maj_derniere_co TO 'fictif_connexionDB'@'172.18.0.3';
 
 -- Pour l'administrateur de la BD, pour qu'il puisse continuer à donner le rôle utilisateur lui aussi
 GRANT 'role_utilisateur' TO root@localhost WITH ADMIN OPTION;
