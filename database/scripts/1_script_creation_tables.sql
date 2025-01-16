@@ -10,7 +10,7 @@ CREATE TABLE USERS (
 -- Création de la table HISTORY 
 CREATE TABLE HISTORY (
     time TIMESTAMP NOT NULL,
-    id_user INT NOT NULL,
+    id_user INT NOT NULL DEFAULT (SUBSTRING_INDEX(USER(),'@',1)),
     module VARCHAR(20) NOT NULL,
     filename TEXT NOT NULL,
     PRIMARY KEY (time, id_user),
