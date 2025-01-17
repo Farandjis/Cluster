@@ -15,13 +15,11 @@ WHERE
 
 -- history of user backup history
 CREATE OR REPLACE VIEW `Paralix`.User_History AS 
-    SELECT H.time, U.login, H.module
+    SELECT H.time, H.id_user, H.module, H.filename
 FROM 
     `Paralix`.HISTORY H
-JOIN `Paralix`.`USERS` U ON
-    H.id_user = U.id_user
 WHERE 
-    U.`id_user` = SUBSTRING_INDEX(USER(), '@', 1);
+    H.`id_user` = SUBSTRING_INDEX(USER(), '@', 1);
 
 
 
