@@ -18,6 +18,9 @@ GRANT UPDATE(saveUserSettings_AutoSave, saveUserSettings_AuteDeletion)
   ON view_USER_SETTINGS
   TO 'role_utilisateur';
 
+GRANT SELECT(saveUserSettings_AutoSave, saveUserSettings_AuteDeletion)
+  ON view_USER_SETTINGS
+  TO 'role_utilisateur';
 
 
 -- ======================== LES ADMINS ========================
