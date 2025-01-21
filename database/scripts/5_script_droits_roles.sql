@@ -14,11 +14,11 @@ Grant Select On Paralix.User_History To 'role_utilisateur';
 Grant Delete on Paralix.User_History to 'role_utilisateur';
 
 -- Pour mettre à jour les infos settings de l'utilisateur
-GRANT UPDATE(saveUserSettings_AutoSave, saveUserSettings_AuteDeletion)
+GRANT UPDATE(saveUserSettings_AutoSave, saveUserSettings_AutoDeletion)
   ON view_USER_SETTINGS
   TO 'role_utilisateur';
 
-GRANT SELECT(saveUserSettings_AutoSave, saveUserSettings_AuteDeletion)
+GRANT SELECT(saveUserSettings_AutoSave, saveUserSettings_AutoDeletion)
   ON view_USER_SETTINGS
   TO 'role_utilisateur';
 
