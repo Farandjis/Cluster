@@ -17,7 +17,7 @@ CREATE OR REPLACE VIEW view_USER_SETTINGS AS
 SELECT
     `Paralix`.`USERS`.`id_user` AS `id_user`,
     `Paralix`.`USERS`.`saveUserSettings_AutoSave` AS saveUserSettings_AutoSave,
-    `Paralix`.`USERS`.`saveUserSettings_AutoDeletion` AS saveUserSettings_AuteDeletion
+    `Paralix`.`USERS`.`saveUserSettings_AutoDeletion` AS saveUserSettings_AutoDeletion
 FROM
     `Paralix`.`USERS`
 WHERE
