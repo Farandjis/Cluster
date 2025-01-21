@@ -34,7 +34,7 @@ It explores the different aspects of the project's structure and the behaviors a
 
 <i><a id="fg1"></a>Figure 2: Dependnecy Diagram.</i>
 
-<img height="800" width="600" src="Modèle UML/DependencyDiagramV1.png" title="UML design of the site"/><br><br>
+<img height="800" width="600" src="Modèle UML/dependencyDiagramm2.png" title="UML design of the site"/><br><br>
 
 <i><a id="fg2"></a>Figure 3: Class Diagram.</i>
 
@@ -48,6 +48,7 @@ The project consists of 4 directories:
 - ***img***: containing the images used on the site.
 - ***node***: containing the Node.js files for the dynamic part of the site.
 - ***style***: containing the CSS files related to the site's style.
+- ***view***: contains all the site's html pages, created from files in the node folder.
 
 The dynamic code is written in Node.js.  
 We have chosen an object-oriented programming paradigm.  
