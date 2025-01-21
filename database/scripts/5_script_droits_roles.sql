@@ -13,6 +13,11 @@ Grant Select On Paralix.User_History To 'role_utilisateur';
 -- L'admin peut supprimer ses sauvegardes
 Grant Delete on Paralix.User_History to 'role_utilisateur';
 
+-- Pour mettre à jour les infos settings de l'utilisateur
+GRANT UPDATE(saveUserSettings_AutoSave, saveUserSettings_AuteDeletion)
+  ON view_USER_SETTINGS
+  TO 'role_utilisateur';
+
 
 
 -- ======================== LES ADMINS ========================
