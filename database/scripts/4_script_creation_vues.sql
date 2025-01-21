@@ -1,4 +1,4 @@
--- FOR ALL THE USERS
+--  ================================================================================= FOR ALL THE USERS
 -- Info of the user
 CREATE OR REPLACE VIEW view_USER_PROFILE AS
 SELECT
@@ -23,7 +23,7 @@ WHERE
 
 
 
--- FOR ADMINS
+-- ================================================================================= FOR ADMINS
 -- the count of backups by user and module
 CREATE OR REPLACE VIEW `Paralix`.Module_Usage_By_User AS
     SELECT 
@@ -56,4 +56,16 @@ JOIN `Paralix`.USERS U
     ON H.id_user = U.id_user;
 
 
+-- list of users
+CREATE OR REPLACE VIEW view_USERS_LIST AS
+SELECT
+	`Paralix`.`USERS`.`id_user` as `id_user`,
+	`Paralix`.`USERS`.`login` as `login`,
+	`Paralix`.`USERS`.`role` as `role`,
+	`Paralix`.`USERS`.`last_login_user_date` as `last_login_user_date`,
+	`Paralix`.`USERS`.`last_login_user_ip` as `last_login_user_ip`
+FROM
+	`Paralix`.`USERS`
+WHERE
+	`Paralix`.`USERS`.`login` != 'deletedUser';
 
