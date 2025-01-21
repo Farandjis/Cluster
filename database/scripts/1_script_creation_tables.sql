@@ -4,7 +4,9 @@ CREATE TABLE USERS (
     login VARCHAR(20) NOT NULL UNIQUE,
     role VARCHAR(50) NOT NULL,
     last_login_user_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    last_login_user_ip VARCHAR(15)
+    last_login_user_ip VARCHAR(15),
+    saveUserSettings_AutoSave BOOL DEFAULT TRUE NOT NULL,
+    saveUserSettings_AuteDeletion DEFAULT TRUE NOT NULL
 );
 
 -- Création de la table HISTORY 
