@@ -23,3 +23,4 @@ Grant role_utilisateur To role_admin;
 Grant Select On Paralix.Module_Usage_By_User To 'role_admin';
 Grant Select On Paralix.Module_Usage_Stats To 'role_admin';
 Grant Select On Paralix.User_Action_History To 'role_admin';
+Grant Select On Paralix.view_USERS_LIST To 'role_admin';
