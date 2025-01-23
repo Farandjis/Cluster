@@ -1,11 +1,15 @@
+DELIMITER //
+
 CREATE FUNCTION ObtenirRoleUtilisateur()
-RETURNS LONGTEXT
+RETURNS VARCHAR(30) COLLATE utf8mb4_general_ci
 BEGIN
   DECLARE sonRole VARCHAR(30) COLLATE utf8mb4_general_ci; -- On déclare une variable au formatage utf8mb4_general_ci
-  SELECT role INTO sonRole FROM view_USER_PROFILE LIMIT 1; -- On instancie la variable avec le rôle de l'utilisateur
+  SELECT role INTO sonRole FROM view_USER_PROFILE LIMIT 1;  -- On instancie la variable avec le rôle de l'utilisateur
   RETURN sonRole COLLATE utf8mb4_general_ci; -- On renvois le rôle dont on essaye de remettre le bon formatage...
 END //
 
+DELIMITER ;
+	
 
 DROP PROCEDURE IF EXISTS ATTENTION_SupprimerSonCompte;
 
