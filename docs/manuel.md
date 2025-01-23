@@ -88,7 +88,7 @@ For further assistance, please check our help section below, where you will find
 
 The visitor has access to a video presentation and usage guide of the site. This video explains the main features and navigation of the platform.
 
-![Home Page](Img/Page_Acceuil.png)
+![Home Page](../img/Page_Acceuil.png)
 
 ---
 
@@ -96,7 +96,7 @@ The visitor has access to a video presentation and usage guide of the site. This
 
 By clicking on **"Authentication"**, the visitor can create a user account or log in to access the modules available on the site.
 
-![Authentication Page](Img/Page_Authentification.png)
+![Authentication Page](../img/Page_Authentification.png)
 
 ---
 
@@ -109,7 +109,7 @@ By clicking on **"Authentication"**, the visitor can create a user account or lo
    - **A login**: A unique identifier for recognition.  
    - **A password**: To be entered twice for confirmation.
 
-   ![Sign Up Page](Img/Page_Authentification(Inscription).png)
+   ![Sign Up Page](../img/Page_Authentification(Inscription).png)
 
 2. **Log In (existing user not logged in)**  
    If the visitor already has an account, they can click on **"Log In"**.
@@ -118,13 +118,13 @@ By clicking on **"Authentication"**, the visitor can create a user account or lo
    - **Login**: The identifier used when creating the account.  
    - **Password**: Associated with the login.
 
-   ![Login Page](Img/Page_Authentification(Connection).png)
+   ![Login Page](../img/Page_Authentification(Connection).png)
 
 # <a name="p3"></a> III - Logged-in User
 
 Once logged in with your account, you will have the option to execute various modules.
 
-![Dashboard](Img/Page_Tableau.png)
+![Dashboard](../img/Page_Tableau.png)
 
 ---
 
@@ -151,7 +151,7 @@ To use the module, you will need to fill in the various fields required (these f
 
 After filling out the form, simply click the corresponding button to launch the module.
 
-![Module Dashboard](Img/Page_Tableau(Module).png)
+![Module Dashboard](../img/Page_Tableau(Module).png)
 
 ---
 
@@ -160,7 +160,7 @@ After filling out the form, simply click the corresponding button to launch the 
 While the request is loading, it is recommended to wait.  
 If, at any time, you wish to stop the execution, you can do so by clicking the designated button.
 
-![Loading Waiting](Img/Page_Tableau(Attente).png)
+![Loading Waiting](../img/Page_Tableau(Attente).png)
 
 ---
 
@@ -168,7 +168,7 @@ If, at any time, you wish to stop the execution, you can do so by clicking the d
 
 Once execution is complete, you will be able to view the results. Here is an example of how the results are presented:
 
-![Result Dashboard](Img/Page_Tableau(Résultat).png)
+![Result Dashboard](../img/Page_Tableau(Résultat).png)
 
 ---
 
@@ -179,7 +179,7 @@ This section offers two checkboxes:
 - **Save Results**: Allows you to save your results in a history for later viewing.  
 - **Automatic Space Management**: Automatically deletes the least frequent results to make room for new ones. Each user has limited space, so it may be necessary to manage available space.
 
-![Options](Img/Page_Tableau(Options).png)
+![Options](../img/Page_Tableau(Options).png)
 
 ---
 
@@ -189,19 +189,19 @@ When displaying a result, a notification will inform you:
 - About the success of the save.  
 - About the files that have been deleted (if applicable).
 
-![Notification](Img/Page_Tableau(Notification).png)
+![Notification](../img/Page_Tableau(Notification).png)
 
 ## <a name="p3b"></a> B. Profile
 
 At the top of the page, you will find a navigation bar that allows you to access different sections of the site such as **"Home"**, **"Dashboard"**, and **"Profile"**.
 
-![Navigation](Img/Navigation.png)
+![Navigation](../img/Navigation.png)
 
 - The **first button** takes you back to the **"Home"** page, the page you saw upon arrival.  
 - The **second button** takes you to the **"Dashboard"** page, where you are currently.  
 - The **third button** takes you to the **"Profile"** page.
 
-![Profile Page](Img/Page_Profil.png)
+![Profile Page](../img/Page_Profil.png)
 
 ---
 
@@ -210,7 +210,7 @@ At the top of the page, you will find a navigation bar that allows you to access
 1. **View Your Personal Information**  
    - This information is visible in the **Personal Information** box.
 
-   ![Personal Info](Img/Page_Profil(Info_perso).png)
+   ![Personal Info](../img/Page_Profil(Info_perso).png)
 
 2. **Change Your Password**  
    - Click the **"Change Password"** button to open a form.  
@@ -219,9 +219,9 @@ At the top of the page, you will find a navigation bar that allows you to access
      - Your new password.  
      - The new password (entered a second time for confirmation).
 
-   ![Change Password Form](Img/Page_Profil(Form_ChangeMDP).png)
+   ![Change Password Form](../img/Page_Profil(Form_ChangeMDP).png)
 
-![Profile History](Img/Page_Profil(Historique).png)
+![Profile History](../img/Page_Profil(Historique).png)
 
 3. **View History**  
    - In this section, you can check the following details:  
@@ -231,15 +231,15 @@ At the top of the page, you will find a navigation bar that allows you to access
        - **View results**:
          - Click the button to open a form detailing the attributes and data obtained.
          - Example form:  
-           ![View Result Form](Img/Page_Profil(Form_Vision).png)
+           ![View Result Form](../img/Page_Profil(Form_Vision).png)
        - **Download results**:
          - Click the button to download the results.  
          - Example after clicking:  
-           ![Download File](Img/Page_Profil(Téléchargement_File).png)
+           ![Download File](../img/Page_Profil(Téléchargement_File).png)
        - **Delete results**:
          - Click the button to delete the results.  
          - Example after confirmation:  
-           ![Delete Confirmation](Img/Page_Profil(Conf_Effacement).png)
+           ![Delete Confirmation](../img/Page_Profil(Conf_Effacement).png)
 
 ## <a name="p3c"></a> C. Additional Actions
 
@@ -250,9 +250,9 @@ Three buttons are available during the use of the pages:
 ### 1. **Logout**  
 - Allows you to log out of your user account.  
 - A confirmation will be requested to validate your request:  
-  ![Logout](Img/Déconnection.png)  
+  ![Logout](../img/Déconnection.png)  
 - Once confirmed, you will be redirected to the **Home** page:  
-  ![Logout Button](Img/Déconnection_Button.png)
+  ![Logout Button](../img/Déconnection_Button.png)
 
 ---
 
@@ -261,15 +261,15 @@ Three buttons are available during the use of the pages:
 - When activated, a form will appear asking for:  
   - **Login** of the connected user.  
   - **Password** associated with the login.  
-  ![Unsubscribe](Img/Désinscription.png)  
+  ![Unsubscribe](../img/Désinscription.png)  
 - After confirmation, the user will be removed from the database:  
-  ![Unsubscribe Button](Img/Désinscription_Button.png)
+  ![Unsubscribe Button](../img/Désinscription_Button.png)
 
 ---
 
 ### 3. **Paralix**  
 - Allows you to return directly to the **Home** page.  
-  ![Home Button](Img/Paralix_Button.png)
+  ![Home Button](../img/Paralix_Button.png)
 
 # <a name="p4"></a> IV - Administrator
 
@@ -282,15 +282,15 @@ In addition to viewing their information, changing their password, and viewing h
   - Allows viewing current calculations.
   - Cancelling calculations.
   - Refreshing the list (to display other calculations not present).
-  - ![Process Control](Img/Page_Profil(Process).png)
+  - ![Process Control](../img/Page_Profil(Process).png)
 
 - "Statistics":
   - Allows viewing the number of uses for each module:
-    - ![Module Usage](Img/Page_Profil(Usage_Module).png)
+    - ![Module Usage](../img/Page_Profil(Usage_Module).png)
   - Viewing the number of uses for each module per user:
-    - ![User Usage](Img/Page_Profil(Usage_User).png)
+    - ![User Usage](../img/Page_Profil(Usage_User).png)
   - Viewing the general history of all users:
-    - ![History User](Img/Page_Profil(History_User).png)
+    - ![History User](../img/Page_Profil(History_User).png)
 
 <br><br><br>
 
