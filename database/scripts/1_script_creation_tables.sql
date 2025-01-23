@@ -1,7 +1,7 @@
 -- Création de la table UTILISATEUR 
 CREATE TABLE USERS (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
-    login VARCHAR(20) NOT NULL UNIQUE,
+    login VARCHAR(20) UNIQUE,
     role VARCHAR(50) NOT NULL,
     last_login_user_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
     last_login_user_ip VARCHAR(15),
