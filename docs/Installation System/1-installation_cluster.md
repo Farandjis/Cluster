@@ -305,7 +305,7 @@ This command lists all network interfaces and their assigned IP addresses, allow
 
 ---
 
-## <a name="p4"></a> ## IV - System Service for Automatic Shutdown
+## <a name="p4"></a> IV - System Service for Automatic Shutdown
 
 To ensure that the Cluster HAT shuts down automatically when the Raspberry Pi 4 is powered off, we can create a systemd service. This service will trigger the necessary commands to power down the Cluster HAT along with the Raspberry Pi 4. This ensures that the Cluster HAT does not remain active after the main system has shut down, conserving energy and reducing wear on the devices.
 
@@ -350,7 +350,7 @@ To ensure that the Cluster HAT shuts down automatically when the Raspberry Pi 4 
 
 ---
 
-## <a name="p5"></a> ## V - Automation of Cluster Startup
+## <a name="p5"></a> V - Automation of Cluster Startup
 
 Modify the `rc.local` file to include commands that turn on the Cluster HAT automatically when the Raspberry Pi 4 boots up. This ensures that the cluster is immediately operational after a restart without manual intervention.
 
