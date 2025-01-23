@@ -1,4 +1,4 @@
-Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS<br>
+Florent VASSEUR-BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS  
 INF3-FI
 
 <div align="center">
@@ -11,7 +11,6 @@ This document contains all the important information we need to know in order to
 
 </div>
 
-
 <br><br><br><br><br><br><br>
 
 ## Plan
@@ -22,12 +21,12 @@ This document contains all the important information we need to know in order to
     - <u>[i. List of objects, actors, and actions](#p1bi) </u>
     - <u>[ii. The different levels](#p1bii) </u>
     - <u>[iii. A descriptive diagram of the levels](#p1biii) </u>
-    - <u>[iiii. Use case diagram](#p1biiii) </u>
+    - <u>[iv. Use case diagram](#p1biv) </u>
 ### [II – Terminology / Glossary](#p2)
 ### [III – Use Cases](#p3)
-- <b>[a) Main actors and their general objectives](#p3a).</b>
-- <b>[b) Strategic use cases.](#p3b)</b>
-- <b>[c) User and system use cases.](#p3c)</b>
+- <b>[a) Main actors and their general objectives](#p3a)</b>
+- <b>[b) Strategic use cases](#p3b)</b>
+- <b>[c) User and system use cases](#p3c)</b>
 ### [IV – Technology Used](#p4)
 - <b>[a) What are the technological requirements for this system?](#p4a)</b>
 - <b>[b) With which systems will this system interface, and with what requirements?](#p4b)</b>
@@ -45,23 +44,22 @@ This document contains all the important information we need to know in order to
 - <b>[d) Usability and user-friendliness](#p5d)</b>
 - <b>[e) Maintenance and portability](#p5e)</b>
 ### [VI – Human Resources, Legal, Political, and Organizational Issues](#p6)
-- <b>[a) What human resources are needed for system operation?](#p6a)
+- <b>[a) What human resources are needed for system operation?](#p6a)</b>
 - <b>[b) What are the legal and political requirements?](#p6b)</b>
 - <b>[c) What are the human consequences of implementing the system?](#p6c)</b>
 - <b>[d) What are the training needs?](#p6d)</b>
 - <b>[e) What assumptions and dependencies affect the human environment?](#p6e)</b>
 ### [VII - Project Management and Organization](#p7)
-- <b>[a) Roles and responsibilities](#p7a)
+- <b>[a) Roles and responsibilities](#p7a)</b>
 - <b>[b) Life cycle](#p7b)</b>
 - <b>[c) Task distribution report S3](#p7c)</b>
 - <b>[d) Task distribution report S4](#p7d)</b>
 
 ### [Appendix 1: Use Case](#a1)
 
-
 <br><br><br><br><br><br><br>
 
-------------------------------------------------------------------------------------------------------------------------
+---
 
 ### <a name="p1"></a>I – Objective and Scope
 - <b><a name="p1a"></a>a) What are the scope and general objectives?</b>
@@ -69,10 +67,11 @@ This document contains all the important information we need to know in order to
     - <u><a name="p1bi"></a>i. List of objects, actors, and actions </u>
     - <u><a name="p1bii"></a>ii. The different levels</u>
     - <u><a name="p1biii"></a>iii. A descriptive diagram of the levels </u>
-    - <u><a name="p1biiii"></a>iiii. Use case diagram</u>
+    - <u><a name="p1biv"></a>iv. Use case diagram</u>
 
 <br><br><br><br><br><br><br>
-------------------------------------------------------------------------------------------------------------------------
+
+---
 
 ### <a name="p2"></a>II – Terminology / Glossary
 
@@ -80,13 +79,12 @@ This document contains all the important information we need to know in order to
 |:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | CNIL                 | National Commission for Information Technology and Civil Liberties. An independent French administrative authority responsible for ensuring that information technology serves the citizen.                                                |
 | Failed login attempt | The failure of an attempt to log into a system or user account due to incorrect information or a technical issue.                                                                                                                         |
-| Cookie               | (in computing): A small file stored by a server on a user's device (computer, phone, etc.) and associated with a web domain.                                                                                                             |
-| Support request      | A request submitted by a user to report a problem or technical difficulty that requires intervention or resolution (Ticket) by the IT support team.                                                                                       |
+| Cookie               | (In computing): A small file stored by a server on a user's device (computer, phone, etc.) and associated with a web domain.                                                                                                             |
+| Support request      | A request submitted by a user to report a problem or technical difficulty that requires intervention or resolution (ticket) by the IT support team.                                                                                       |
 | SQL Injection        | A technique that allows SQL elements to be injected into web form fields or page links, aiming to send them to the web server to modify elements in a database.                                                                           |
 | Labels               | Tags or keywords assigned to an IT ticket to categorize, organize, and facilitate the search for similar issues or support requests.                                                                                                      |
 | GDPR                 | General Data Protection Regulation. The reference text on personal data protection. It strengthens and unifies data protection for individuals within the European Union.                                                                 |
 | RPi4                 | Raspberry Pi 4, a small single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                                   |
-| RPi Zero             | Raspberry Pi Zero, a small, low-cost single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                      |
 | RPi Zero             | Raspberry Pi Zero, a small, low-cost single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                      |
 | Cluster HAT v2.5     | A hardware add-on that allows up to four Raspberry Pi Zero boards to be used in a cluster setup, providing a platform for cluster computing and testing.                                                                                 |
 | DBMS                 | Database Management System.                                                                                                                                                                                                              |
@@ -127,7 +125,7 @@ This document contains all the important information we need to know in order to
 
 #### Use Case 1: Administration
 **Name:** Administration  
-**Usage Context:** The platform must allow administrators to manage elements external to the tickets.  
+**Usage Context:** The platform must allow administrators to manage elements.  
 **Scope:** Black box organization  
 **Level:** Strategic  
 **Primary Actor:** Administrator  
@@ -181,21 +179,21 @@ This document contains all the important information we need to know in order to
 **Trigger**: User's request.<br>
 
 **Normal Scenario**:
-1. The user requests a calculation to be performed.
-2. The system processes the requested calculation.
-3. The page displays the result.
+1. The user requests a calculation to be performed.<br>
+2. The system processes the requested calculation.<br>
+3. The page displays the result.<br>
 
 **Extensions**:
-2. a. Calculation too long:
-    1. The calculation is stopped.
-    2. An information message is displayed stating that the calculation is taking too long.
+2. a. Calculation too long:<br>
+    1. The calculation is stopped.<br>
+    2. An information message is displayed stating that the calculation is taking too long.<br>
 
 **Exceptions**:
-1. a. The request was not successful:
-    1. An error message is displayed explaining the failure.
+1. a. The request was not successful:<br>
+    1. An error message is displayed explaining the failure.<br>
 
 3. a. Display failed:
-   1. An error message.
+   1. An error message.<br>
   
 ***
 
@@ -348,21 +346,21 @@ This document contains all the important information we need to know in order to
 ***
 
 #### Use Case 10: Perform a Calculation
-**Name**: Perform a Calculation
-**Usage**: The system executes the calculation.
-**Scope**: White box system.
-**Level**: User.
-**Actor**: System.
-**Precondition**: A calculation request has been made.
-**Guarantee**: The calculation produces a result.
-**Trigger**: The system receives a calculation request.
+**Name**: Perform a Calculation<br>
+**Usage**: The system executes the calculation.<br>
+**Scope**: White box system.<br>
+**Level**: User.<br>
+**Actor**: System.<br>
+**Precondition**: A calculation request has been made.<br>
+**Guarantee**: The calculation produces a result.<br>
+**Trigger**: The system receives a calculation request.<br>
 
 **Normal Scenario**:
-1. The system receives a calculation request.
-2. The system distributes the calculation to various Raspberry Pi Zero devices.
-3. The Raspberry Pi Zero devices process the calculation and return a result.
-4. The system processes the results obtained from the Raspberry Pi Zero devices.
-5. The system displays the final result.
+1. The system receives a calculation request.<br>
+2. The system distributes the calculation to various Raspberry Pi Zero devices.<br>
+3. The Raspberry Pi Zero devices process the calculation and return a result.<br>
+4. The system processes the results obtained from the Raspberry Pi Zero devices.<br>
+5. The system displays the final result.<br>
 
 **Exceptions**:<br>
 2. a. No Raspberry Pi Zero devices are available:<br>
@@ -371,21 +369,118 @@ This document contains all the important information we need to know in order to
 ***
 
 #### Use Case 11: Perform a Calculation
-**Name**: View History
-**Usage**: The user views the calculation history of their profile.
-**Scope**: Black box system.
-**Level**: User.
-**Actor**: User.
-**Minimal Guarantee**: Calculation histories are not disclosed to unauthorized parties.
-**Success Guarantee**: The calculation history is displayed.
-**Trigger**: The user wishes to view their calculation history.
+**Name**: View History<br>
+**Usage**: The user views the calculation history of their profile.<br>
+**Scope**: Black box system.<br>
+**Level**: User.<br>
+**Actor**: User.<br>
+**Minimal Guarantee**: Calculation histories are not disclosed to unauthorized parties.<br>
+**Success Guarantee**: The calculation history is displayed.<br>
+**Trigger**: The user wishes to view their calculation history.<br>
 
 **Normal Scenario**:
-1. The calculation history is displayed on the user's page.
+1. The calculation history is displayed on the user's page.<br>
 
 **Extensions**:
-1. a. No record of ticket creation activity is found:
-    1. A table with a message informing the system administrator is displayed.
+1. a. No record of ticket creation activity is found:<br>
+    1. A table with a message informing the system administrator is displayed.<br>
+
+---
+#### Use Case 12: View Result
+**Name**: View Result<br>
+**Usage**: The user views the result of an operation or calculation.<br>
+**Scope**: System-wide.<br>
+**Level**: User.<br>
+**Actor**: User.<br>
+**Precondition**: The operation or calculation has been completed.<br>
+**Guarantee**: The result of the operation is displayed to the user.<br>
+**Trigger**: The user requests to view the result.<br>
+
+**Normal Scenario**:
+1. The user initiates a request to view the result of an operation.
+2. The system retrieves the result from the operation.
+3. The system displays the result in a user-friendly format (text, list, or graphic).
+
+**Exceptions**:<br>
+3. a. The result cannot be displayed:<br>
+    1. An error message informs the user that the result is unavailable.<br>
+
+---
+
+#### Use Case 13: Delete File
+**Name**: Delete File<br>
+**Usage**: The user deletes a specified file from the system.<br>
+**Scope**: File management.<br>
+**Level**: User.<br>
+**Actor**: User.<br>
+**Precondition**: The file exists and is accessible.<br>
+**Guarantee**: The file is deleted from the system.<br>
+**Trigger**: The user requests to delete the file.<br>
+
+**Normal Scenario**:
+1. The user selects the file they want to delete.
+2. The system prompts the user for confirmation.
+3. The user confirms the deletion.
+4. The system deletes the file from the specified location.
+
+**Exceptions**:<br>
+3. a. The file cannot be deleted:<br>
+    1. An error message informs the user that the deletion was unsuccessful.<br>
+
+---
+
+#### Use Case 14: Stop Process
+**Name**: Stop Process<br>
+**Usage**: The user stops a running process on the system.<br>
+**Scope**: System-wide.<br>
+**Level**: User or System Administrator.<br>
+**Actor**: User or System Administrator.<br>
+**Precondition**: The process is currently running.<br>
+**Guarantee**: The process is stopped and system resources are freed.<br>
+**Trigger**: The user or system administrator requests to stop the process.<br>
+
+**Normal Scenario**:
+1. The user identifies the process they wish to stop (via task manager or system monitoring tool).
+2. The user selects the process to be stopped.
+3. The system confirms the request.
+4. The system stops the process and frees associated resources.
+
+**Exceptions**:<br>
+3. a. The process cannot be stopped:<br>
+    1. An error message informs the user that the process cannot be terminated.<br>
+
+---
+#### Use Case 15: Download a File
+**Name**: Download a File<br>
+**Usage Context**: The user wants to download a file from the platform.<br>
+**Scope**: Platform's file system.<br>
+**Level**: User-level.<br>
+**Primary Actor**: User.<br>
+
+**Preconditions**:
+- The user is logged in.
+- The user has access to the requested file.
+
+**Guarantee in Case of Success**:
+- The file is successfully downloaded to the user's device.
+
+**Trigger**:
+- The user selects the download option for a specific file.
+
+**Normal Scenario**:
+1. The user browses the platform and selects the file they wish to download.
+2. The system checks if the user has permission to download the file.
+3. The user clicks on the "Download" button.
+4. The system starts the file download process.
+5. The file is downloaded to the user's device.
+
+**Exceptions**:<br>
+3. a. The user does not have permission to download the file:<br>
+    1. An error message informs the user that they do not have access to the file.<br>
+
+3. b. The download fails:<br>
+    1. An error message informs the user that the download could not be completed due to network or system issues.<br>
+
 
 ------------------------------------------------------------------------------------------------------------------------
 
