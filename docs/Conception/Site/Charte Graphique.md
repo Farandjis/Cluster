@@ -16,52 +16,70 @@ This document contains all the graphic information about the website.
 
 ## Plan
 
-### [I – Color choices](#p1)
-- <b>[a) List of colors](#p1a)</b>
-- <b>[b) Palettes](#p1b) </b>
+### [I - Brand Identity](#p1)
+- <b>[a) List of Colors and Palettes](#p1a)</b>
+- <b>[b) The Name "Paralix"](#p1b)</b>
+- <b>[c) The Logo](#p1c)</b>
 ### [II – Font selection](#p2)
 ### [III – Other stylistic decisions](#p3)
 - <b>[a) Button](#p3a).</b>
 - <b>[b) Nav Barre.](#p3b)</b>
 - <b>[c) Global style.](#p3c)</b>
-### [IV – The values conveyed by the website](#p4)
+### [IV – Technical Aspects](#p4)
+- <b>[a) Platform Security and Maintenance](#p4a)</b>
+- <b>[b) Performance and Longevity](#p4b)</b>
+### [V – The Values Conveyed by the Website](#p5)
 
 
 <br><br><br><br><br><br><br>
 
 ------------------------------------------------------------------------------------------------------------------------
 
-
-### <a name="p1"></a>I – Color choices
-- <b><a name="p1a"></a>a) List of colors</b>
+### <a name="p1"></a>I- Brand Identity
+- <b><a name="p1a"></a>a) List of Colors and Palettes</b>
 <br><br>
 
-We chose orange as the main color for our web application.<br>
-Salmon was also chosen as the secondary color.<br>
-For the background of our site, a soft gray color was selected.<br>
-Dark gray was also chosen to contrast with the aforementioned colors.<br>
+The color palette has been carefully selected to reflect the brand's core values of innovation, clarity, and professionalism. The primary colors include:
 
-<br><br>
-- <b><a name="p1b"></a>b) Palettes</b>
-<br><br>
+- **Navy Blue (#001F3F):** Represents trust, stability, and professionalism.
+- **White (#FFFFFF):** Symbolizes clarity, simplicity, and transparency.
+- **Coral (#FF6B6B):** Adds warmth, creativity, and energy.
+- **Orange (#FFA500):** Evokes positivity, enthusiasm, and innovation.
+- **Shades of Gray (#D3D3D3 to #A9A9A9):** Provide neutral balance and modern minimalism.
+These colors will be consistently used throughout the website to create a harmonious visual identity, ensuring clear communication and a modern aesthetic. The primary palette will be applied to key elements such as headers, buttons, and highlights, while the secondary palette will be used for background and text areas. Gradients and minimal patterns may be incorporated to enhance the modern look.
 
-The shade of orange chosen is the one with the HEX code #ff914d. Additionally, the dark orange shade is #287127.<br>
-For the salmon color, the chosen shades are #fa8072 and #fdada4.<br>
-The soft gray chosen has the HEX code #e4e2dd, and the dark gray is #4d4641.<br>
-<br><br>
 
 <img height="500" width="500" src="/img/palette_couleur.png" title="palettes"/>
 <br><br>
 
+- <b><a name="p1b"></a>b) The Name "Paralix"</b>
+<br><br>
+
+The name "Paralix" is derived from "Parallèle" (parallel) and "ix", referencing complex calculations and optimization. The "ix" sound also reflects maximizing performance, similar to the word "maximize".
+
+- <b><a name="p1c"></a>c) The Logo</b>
+<br><br>
+
+The logo will feature a futuristic, robotic font, and two circles representing simultaneous parallel calculations. These circles also evoke a galaxy, emphasizing the platform's vast capabilities. The primary palette will be used for key elements such as headers, buttons, and highlights, while the secondary palette will be applied to background and text areas. Gradients and minimal patterns may also be used to enhance the modern aesthetic of the logo.
+
+
 ### <a name="p2"></a>II – Font selection
 
-<b>Poppins :</b> The Poppins font will be used for all the text on the site, including buttons, descriptions, and the content of the navigation bar.<br>
+## II – Sélection des Polices
 
-<b>Cosmic Octo :</b> The Comic Octo font will be used for the logo and the name of the site.<br>
+## II – Font Selection
 
-<b>Comic sans MS :</b> The Comic Sans MS font will be used for displaying calculations due to the presence of mathematical symbols supported by this font.<br>
+The chosen fonts for the site are as follows:
 
-<b>Horizon :</b> The Horizon font will be used for the titles of the web pages.<br>
+- **Poppins**: This font will be used for all the text on the site, including buttons, descriptions, and the content of the navigation bar. It was chosen for its readability and modern appearance.
+
+- **Cosmic Octo**: This font will be used for the logo and the site name. It adds a futuristic and distinctive touch, aligning with the visual identity of the site.
+
+- **Comic Sans MS**: This font will be used for displaying calculations due to its support for mathematical symbols, making it ideal for representing complex equations or expressions.
+
+- **Horizon**: This font will be used for the titles of web pages. Its elegant and modern look makes it perfect for drawing attention to key elements on the site.
+
+
 
 ### <a name="p3"></a>III – Other stylistic decisions
 - <b><a name="p3a"></a>a) Button</b>
@@ -91,7 +109,20 @@ Below is an example of the style layout:
 <img height="500" width="500" src="/img/test_style.png" title="test style"/>
 <br><br>
 
-### <a name="p4"></a>IV - The values conveyed by the website
+### <a name="p4"></a>V - The values conveyed by the website
+- <b><a name="p4a"></a>a) Platform Security and Maintenance</b>
+<br><br>
+
+The platform will use Docker for containerization to ensure clean instances and protect the Master server. If a module is corrupted or deleted, the Master server remains unaffected. In case of hacking, only the Node server is exposed, keeping the Master and MariaDB secure.
+
+
+- <b><a name="p4b"></a>b) Performance and Longevity</b>
+<br><br>
+
+The platform will utilize mature and popular technologies such as Node.js, ensuring long-term support and availability of developers.
+
+
+### <a name="p5"></a>V - Technical Aspects
 
 The values we want to convey through our site are:<br>
     - Scientific seriousness<br>
