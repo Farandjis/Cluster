@@ -9,7 +9,8 @@ const session = require('express-session');
 const serverRoutes_InscCo = require('./action_inscription_connexion.js');
 const serverRoutes_ExecMod = require('./action_execution_module.js');
 const serverRoutes_TabBord = require('./tableau_bord.js');
-
+const serverRoutes_Prof = require('./profil.js');
+const serverRoutes_Index = require('./index.js');
 
 // PREPARATION
 const app = express();
@@ -38,9 +39,11 @@ app.use(session({
 app.use('/', serverRoutes_InscCo);
 app.use('/', serverRoutes_ExecMod);
 app.use('/', serverRoutes_TabBord);
-
+app.use('/', serverRoutes_Prof);
+app.use('/', serverRoutes_Index);
 
 // REDIRECTION DE L'UTILISATEUR
+/*
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
 });
@@ -48,10 +51,16 @@ app.get('/', (req, res) => {
 app.get('/inscription_connexion', (req, res) => {
     res.sendFile(path.join(__dirname, '../inscription_connexion.html'));
 });
+*/
 
 app.get('/profil', (req, res) => {
     res.sendFile(path.join(__dirname, '../profil.html'));
 });
+
+app.get('/profil_Admin', (req, res) => {
+    res.sendFile(path.join(__dirname, '../profil_Admin.html'));
+});
+
 
 // LANCEMENT DU SERVEUR
 app.listen(PORT, () => {

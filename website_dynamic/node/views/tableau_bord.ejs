@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" href="style/main_style.css">
+    <link rel="stylesheet" href="style/navigation.css">
+    <link rel="stylesheet" href="style/tableau_bord.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/logo_icone.png" type="image/png">
+    <script src="js/hamburger.js"></script>
+    <script src="js/checkbox.js"></script>
+    <script src="js/popupNotification.js"></script>
+</head>
+<body>
+    <%- topMenu %>
+
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <p>Chargement en cours...</p>
+        <p id="chronometer">Temps écoulé : 0s</p>
+        <a id="end" value="Annuler le calcul" href="/terminate_calculation" onclick="stopWaiting()">Annuler le calcul</a>
+      </div>
+
+      <div class="notification-container" id="notificationContainer"></div>
+
+    <h1 id="title">Les modules de calcul</h1>
+    <div id="section_title_module">
+        <a href="#section_module" class="l_title_module"><div class="title_module test"><img src="img/module_test.png" class="img_module" alt="module_1"><p class="subtitle">Hello World</p></div></a>
+        <a href="#section_module" class="l_title_module"><div class="title_module prime"><img src="img/module_premier.png" class="img_module" alt="module_1"><p class="subtitle">Les nombres <span>Premiers</span></p></div></a>
+        <a href="#section_module" class="l_title_module"><div class="title_module pi"><img src="img/module_pi.png" class="img_module" alt="module_2"><p class="subtitle">Pi</p></div></a>
+        <a href="#section_module" class="l_title_module" style="pointer-events: none; opacity: 0.5;" tabindex="-1"><div class="title_module fibonnaci"><img src="img/module_coming_soon.png" class="img_module" alt="module_3"><p class="subtitle">A venir</p></div></a>
+    </div>
+
+    <div id="section_module">
+
+        <div id="section_form">
+            <form id="test-form" class="module test">
+                <input id="distributedText" 
+       class="inputForm" 
+       type="text" 
+       placeholder="Texte à distribué" 
+       value="Hello World !"
+       minlength="4"
+       required>
+	            <select id="nbProc" class="inputForm">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <br>
+                <fieldset>
+                    <legend>Sélection d'options :</legend>
+                  
+                    <div class="checkbox-section">
+                        <label>
+                        <input type="checkbox" name="checkbox1" id="checkbox1-section1" class="checkbox1" <%= sus_as %>>
+                        Sauvegarder le résultat dans l'historique</label><br>
+                    
+                        <label>
+                        <input type="checkbox" name="checkbox2" id="checkbox2-section1" class="checkbox2" onclick="linkCheckboxes()" <%= sus_ad %>>
+                        Supprimer automatiquement le calcule le plus ancien (si nécessaire)</label>
+                    </div>
+                </fieldset>
+                    <div class="bouton_intput">
+                        <input class="button" type="submit" value="Exécuter">
+                        <input class="button" type="reset" value="Reset">
+                    </div>
+            </form>
+
+            <form id="prime-form" class="module prime">
+                <input id="end-number" class="inputForm" type="number" placeholder="Valeur de Fin">
+        <select id="nbProc" class="inputForm">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <br>
+                <fieldset>
+                    <legend>Sélection d'options :</legend>
+                  
+                    <div class="checkbox-section">
+                        <label>
+                        <input type="checkbox" name="checkbox1" id="checkbox1-section2" class="checkbox1" <%= sus_as %>>
+                        Sauvegarder le résultat dans l'historique</label><br>
+                    
+                        <label>
+                        <input type="checkbox" name="checkbox2" id="checkbox2-section2" class="checkbox2" onclick="linkCheckboxes()" <%= sus_ad %>>
+                        Supprimer automatiquement le calcule le plus ancien (si nécessaire)</label>
+                    </div>
+                </fieldset>
+                <div class="bouton_intput">
+                    <input id="execute-prime" class="button" type="submit" value="Exécuter">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+            </form>
+            <form id="pi-form"  class="module pi">
+                <input id="nbIt" class="inputForm" type="number" placeholder="Nombre de point">
+        <select id="nbProc" class="inputForm">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <br>
+                <fieldset>
+                    <legend>Sélection d'options :</legend>
+                  
+                    <div class="checkbox-section">
+                        <label>
+                        <input type="checkbox" name="checkbox1" id="checkbox1-section3" class="checkbox1" <%= sus_as %>>
+                        Sauvegarder le résultat dans l'historique</label><br>
+                    
+                        <label>
+                        <input type="checkbox" name="checkbox2" id="checkbox2-section3" class="checkbox2" onclick="linkCheckboxes()" <%= sus_ad %>>
+                        Supprimer automatiquement le calcule le plus ancien (si nécessaire)</label>
+                    </div>
+                </fieldset>
+                <div class="bouton_intput">
+                    <input class="button" type="submit" value="Exécuter">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+            </form>
+            <form id="fibonnaci-form" class="module fibonnaci">
+                <input id="end-number-fibo" class="inputForm" type="number" placeholder="Valeur de Fin">
+        <select id="nbProc" class="inputForm">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <div class="bouton_intput">
+                    <input class="button" type="submit" value="Exécuter">
+                    <input class="button" type="reset" value="Reset">
+                </div>
+            </form>
+            <div id="section_form_import">
+            </div>
+            <button id="generate-button">Générer un formulaire</button>
+
+
+        </div>
+
+        <script src="js/genForm.js"></script>
+
+
+        <div id="section_res">
+            <div id="testRes" class="test res"><p></p><p id="bis"></p></div>
+            <div id="primeRes" class="prime res"><p></p><p id="bis"></p></div>
+            <div id="piRes" class="pi res"><p></p><p id="bis"></p></div>
+            <div id="fibonnaciRes" class="fibonnaci res"><p></p><p id="bis"></p></div>
+        </div>
+    </div>
+
+    
+
+    <script src="js/modules_calcul.js" charset="utf-8"></script>
+</body>
+</html>

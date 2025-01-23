@@ -28,8 +28,32 @@ p {
     font-weight: 500;
     font-size: clamp(16px, 1vw + .1rem, 25px);
 }
+
+.titre_page{
+    font-size: 48px;
+}
+
 .subtitle{
     text-align: center;
+}
+
+.Profil a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    min-width: 90px;
+    padding: 10px 5px;
+    margin: 0 5px;
+    border: solid 1px #1c1c1c;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Profil a{
+    background: #ff4e4e;
+    color: #1c1c1c;
 }
 
 
@@ -48,7 +72,7 @@ p {
     text-align: center;
 }
 
-h1{
+#title{
     font-size: clamp(3rem, 5vw + .5rem, 6rem);
     color: var(--col-dark-gray);
 }
@@ -86,7 +110,7 @@ h3 {
     box-shadow: 0 7px 0 0 var(--col-dark-gray);
 
 }
-a {
+a, button {
     text-shadow: 0px 1px 15px var(--col-pink);
 }
 

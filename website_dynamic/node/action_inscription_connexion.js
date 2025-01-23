@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 const router = express.Router();
 const mysql = require('mysql2');
 const session = require('express-session');
-const { getIp, chiffre, tokenCreation, validatePassword, connectUser, getRoleOf } = require('./node_functions');
+const { exec } = require('child_process');
+const { getIp, chiffre, tokenCreation, validatePassword, connectUser, getRoleOf, userIsConnected } = require('./node_functions');
+
 
 // Configuring middleware to process form data
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -33,13 +35,13 @@ router.post('/login', async (req, res) => {
         return res.redirect(`/inscription_connexion?loginMessage=${encodeURIComponent(loginMessage)}`);
     }
 
-    
     const dbFiCoDB = mysql.createConnection({
         host: 'mariadb',
         user: 'fictif_connexionDB', // fictive user to get the ID user from the login
         password: 't!nt1n_connexionDB241745414',
         database: 'Paralix',
     });
+
     dbFiCoDB.connect(err => {
         if (err) {
             console.error('Erreur de connexion à la base de données FiCo lors du login:', err);
@@ -66,6 +68,7 @@ router.post('/login', async (req, res) => {
     }
     
     const userId = id_user[0].id_user;
+
 
     dbUser2 = await connectUser(userId, password, req);
     if (dbUser2 != false) {
@@ -195,8 +198,8 @@ router.post('/register', async (req, res) => {
 
 
         // Create the MariaDB user and give user rights
-        const createUserQuery = `CREATE USER '${userId}'@'172.20.0.3' IDENTIFIED BY '${password}';`;
-        const grantRoleQuery = `GRANT 'role_utilisateur' TO '${userId}'@'172.20.0.3';`;  // Appliquer le rôle par défaut pour l'utilisateur
+        const createUserQuery = `CREATE USER '${userId}'@'%' IDENTIFIED BY '${password}';`;
+        const grantRoleQuery = `GRANT 'role_utilisateur' TO '${userId}'@'%';`;  // Appliquer le rôle par défaut pour l'utilisateur
 
         await dbFiInscDB.promise().query(createUserQuery);
         await dbFiDrDB.promise().query(grantRoleQuery); 
@@ -238,7 +241,7 @@ router.post('/register', async (req, res) => {
         console.error(`Erreur lors de l\'inscription de user id : '${userId}', login : '${login}':`, err);
 
         if (userId != null){
-            await dbFiInscDB.promise().query(`DROP USER IF EXISTS '${userId}'@'172.20.0.3';`);
+            await dbFiInscDB.promise().query(`DROP USER IF EXISTS '${userId}'@'%';`);
             dbFiInscDB.end();
         }
 
@@ -248,6 +251,86 @@ router.post('/register', async (req, res) => {
 
     
 });
+
+router.get('/deconnexion_site', (req, res) => {
+    if (req.session.jeton) {
+        req.session.jeton = "xxxxxxxxxxxxxx";
+        req.session.destroy((err) => {
+            if (err) {
+                console.error('Error destroying session:', err);
+                res.redirect('/');
+                return;
+            }
+            res.clearCookie('connect.sid');
+            res.redirect('/');
+        });
+    } else {
+        res.redirect('/');
+    }
+});
+
+
+
+router.post('/delete-account', async (req, res) => {
+    try {
+        const dbUser = await userIsConnected(req, res);
+        
+        if (dbUser != undefined) {
+            const userIdQuery = `SELECT id_user FROM view_USER_PROFILE`;
+            dbUser.query(userIdQuery, async (error, results) => {
+                if (error || results.length === 0) {
+                    return res.redirect(`/profil?loginMessage=${encodeURIComponent('Erreur lors de la récupération des informations utilisateur')}`);
+                }
+
+                const userId = results[0].id_user;
+
+                // Connect with fictif_inscriptionDB user for deletion
+                const dbFiInscDB = mysql.createConnection({
+                    host: 'mariadb',
+                    user: 'fictif_inscriptionDB',
+                    password: 't!nt1n_inscriptionDB17053417',
+                    database: 'Paralix',
+                });
+
+                dbFiInscDB.query(`DROP USER '${userId}'@'%'`, (error) => {
+                    if (error) {
+                        console.error('Error dropping user:', error);
+                        return res.redirect(`/profil?loginMessage=${encodeURIComponent('Erreur lors de la suppression du compte')}`);
+                    }
+
+                    const deleteCommand = `rm -rf /home/moi/DATA_USER/${userId}`;
+                    exec(deleteCommand, (error) => {
+                        if (error) {
+                            console.error('Error deleting user directory:', error);
+                        }
+                        
+                        dbFiInscDB.end();
+                        req.session.destroy((err) => {
+                            if (err) {
+                                console.error('Error destroying session:', err);
+                            }
+                            res.redirect('/inscription_connexion?successMessage=' + encodeURIComponent('Votre compte a été supprimé avec succès'));
+                        });
+                    });
+                });
+            });
+        } else {
+            res.redirect('/inscription_connexion?loginMessage=' + encodeURIComponent('Vous devez être connecté pour effectuer cette action'));
+        }
+    } catch (error) {
+        console.error('Connection error:', error);
+        res.redirect('/inscription_connexion?loginMessage=' + encodeURIComponent('Erreur lors de la suppression du compte'));
+    }
+});
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
 

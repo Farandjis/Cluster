@@ -7,7 +7,56 @@ const router = express();
 const { crypt, decrypt} = require('./node_CRYPTOfunctions');
 
 
+function generateTopMenu(isConnected, pageName){
+    let pages = ``;
+    let currpage_index = "", currpage_tdb = "", currpage_profil = "";
 
+    if (pageName == "index")
+        currpage_index = `id="current_page"`;
+    else if (pageName == "tableau_bord")
+        currpage_tdb = `id="current_page"`;
+    else if (pageName == "profil")
+        currpage_profil = `id="current_page"`;
+
+    if (isConnected == true){
+        pages = 
+        `
+            <div id="nav_conteneur">
+                <a href="/" class="nav_link" ${currpage_index}>Accueil</a>
+                <a href="/tableau_bord" class="nav_link" ${currpage_tdb}>Tableau de Bord</a>
+                <a href="/profil" class="nav_link" ${currpage_profil}>Profil</a>
+            </div>
+        `
+        if (pageName == "profil"){
+            boutonCoInscrDeco = `<div id="button_profile"><a id="butDeconnexion" tabindex="0" onclick="if(confirm('Voulez-vous vraiment vous déconnecter ?')) window.location.href='/deconnexion_site'">Déconnexion</a><button id="butDesincription" onclick="togglePopupSup()">Désinscription</button></div>`;
+        }else{
+            boutonCoInscrDeco = `<div id="button_profile"><a id="butDeconnexion" onclick="if(confirm('Voulez-vous vraiment vous déconnecter ?')) window.location.href='/deconnexion_site'">Déconnexion</a></div>`;
+        }
+    } 
+    else {
+        boutonCoInscrDeco = `<div id="button_profile"><a id="butConnexion" href="/inscription_connexion">Rejoindre Paralix</a></div>`;
+    }
+        
+
+
+    html = `
+    <nav>
+        <div id="logo"><a href="/"><img src="img/logo_origin.png"></a></div>
+
+        ${pages}
+        
+        ${boutonCoInscrDeco}
+
+        <div class="hamburger-menu" tabindex="0" onclick="hamburger()" onkeydown="hamburger()">
+            <div class="slice"></div>
+            <div class="slice"></div>
+            <div class="slice"></div>
+        </div>
+    </nav>
+    `;
+
+    return html
+}
 
 
 
@@ -23,36 +72,10 @@ function getIp(req) {
     return (req.headers['x-forwarded-for'] || req.connection.remoteAddress).replace('::ffff:', '');
 }
 
-/*
-function chiffre(ip, echeance, mdpDechiffrer) {
-    const algorithm = 'aes-256-cbc';
-    
-    // Créer une clé de 32 octets à partir de l'IP et de l'échéance
-    let key = `${ip}-${echeance}`;
-    key = Buffer.from(key, 'utf-8');
-    
-    // Si la clé est plus courte que 32 octets, on la complète avec des zéros
-    if (key.length < 32) {
-        key = Buffer.concat([key, Buffer.alloc(32 - key.length)]);
-    }
-    
-    // Si la clé est plus longue que 32 octets, on la tronque à 32 octets
-    if (key.length > 32) {
-        key = key.slice(0, 32);
-    }
-    
-    const iv = crypto.randomBytes(16); // Générer un vecteur d'initialisation aléatoire
 
-    const cipher = crypto.createCipheriv(algorithm, key, iv);
-    let encrypted = cipher.update(mdpDechiffrer, 'utf8', 'hex');
-    encrypted += cipher.final('hex');
-
-    return iv.toString('hex') + ':' + encrypted; // Retourner IV + texte chiffré
-}
-*/
 
 // Fonction de création du jeton
-function tokenCreation(req, idMariaDB, pwdDecrypted) {
+function tokenCreation(req, idMariaDB, pwdDecrypted, timeSeconds = 600) {
     /**
     * PRINCIPLE : 
     *       Create a session cookie with connexion information
@@ -64,7 +87,7 @@ function tokenCreation(req, idMariaDB, pwdDecrypted) {
 
 
     // Set deadline (600 seconds = 10 minutes)
-    const echeance = Math.floor(Date.now() / 1000) + 600;
+    const echeance = Math.floor(Date.now() / 1000) + timeSeconds;
 
     // Recover IP address
     const ip = getIp(req);
@@ -87,7 +110,7 @@ function tokenCreation(req, idMariaDB, pwdDecrypted) {
 }
 
 
-async function userIsConnected(req, res){
+async function userIsConnected(req, res, userWillCalculate = false){
     /**
     * PRINCIPLE : 
     *       Function to check if the user has a valid token
@@ -115,6 +138,11 @@ async function userIsConnected(req, res){
 
         dbUser = await connectUser(req.session.jeton["id"], pwdDecrypted, req);
         
+        if (dbUser == undefined){
+            // if the account has been deleted, or there is a problem with the password (like the cookie session deleted)
+            const loginMessage = "Vous êtes déconnecté de la base de données de Paralix, veuillez vous reconnecter à la plateforme.";
+            return res.redirect(`/inscription_connexion?loginMessage=${encodeURIComponent(loginMessage)}`);
+        }
 
         if (getIp(req) != req.session.jeton["ip"]){
             // if the ip in token does not correspond to the ip of the computer currently used
@@ -123,7 +151,13 @@ async function userIsConnected(req, res){
             return res.redirect(`/inscription_connexion?loginMessage=${encodeURIComponent(loginMessage)}`);
         }
         
-        tokenCreation(req, req.session.jeton["id"], pwdDecrypted); // updating the toekn
+        if (userWillCalculate){
+            tokenCreation(req, req.session.jeton["id"], pwdDecrypted, 11400); // updating the toekn 11400s = 3h10 (because a calculation takes 3 hours)
+        }
+        else {
+            tokenCreation(req, req.session.jeton["id"], pwdDecrypted); // updating the toekn
+        }
+
 
         return dbUser;
     }
@@ -252,4 +286,4 @@ async function connectUser(idMariaDB, pwdMariaDB, req){
 
 
 // Export functions
-module.exports = { getIp, crypt, decrypt, creationJeton: tokenCreation, validatePassword, connectUser, getRoleOf, userIsConnected};
+module.exports = { getIp, crypt, decrypt, creationJeton: tokenCreation, validatePassword, connectUser, getRoleOf, userIsConnected, generateTopMenu };

@@ -12,31 +12,20 @@
 <body>
 
 
-<nav>
-    <div id="logo"><a href="/"><img src="img/logo_origin.png"></a></div>
-    <div id="nav_conteneur">
-        <a href="/" class="nav_link" id="current_page">Accueil</a>
-        <a href="/tableau_bord" class="nav_link">Tableau de Bord</a>
-    </div>
-    <div id="button_profile"><a href="/inscription_connexion">Rejoindre Paralix</a></div>
-
-    <div class="hamburger-menu" tabindex="0" onclick="hamburger()" onkeydown="hamburger()">
-        <div class="slice"></div>
-        <div class="slice"></div>
-        <div class="slice"></div>
-    </div>
-</nav>
+<%- topMenu %>
 
 
 <div id="section_presentation">
     <div id="text_hero">
-        <h1>Bienvenue chez <span class="paralix">Paralix</span></h1>
+        <h1 id="title">Bienvenue chez <span class="paralix">Paralix</span></h1>
         <h2>Des calculs rapides, faciles et en parallèle sur Cluster Hat.</h2>
         <p class="subtitle">Avec <span class="paralix">Paralix</span>, exécutez des modules de calcul en quelques clics.<br>
-            Simplifiez vos tâches mathématiques en profitant de la puissance
-            du calcul distribué, sans avoir à vous soucier de la technique.</p>
+        Simplifiez vos tâches mathématiques en profitant de la puissance
+        du calcul distribué, sans avoir à vous soucier de la technique.</p>
     </div>
-    <a href="/inscription_connexion" id="button_hero">Commencez maintenant</a>
+    <% if (!userConnected) { %>
+        <a href="/inscription_connexion" id="button_hero">Commencez maintenant</a>
+    <% } %>
 </div>
 
 <div id="presentation">

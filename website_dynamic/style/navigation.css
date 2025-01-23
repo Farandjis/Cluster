@@ -96,37 +96,46 @@ nav {
     transform: scaleX(1);
 }
 
-#button_profile a {
+#button_profile a, #button_profile button {
     text-align: center;
     text-decoration: none;
     font-size: 24px;
     font-weight: 700;
 
-    color: var(--col-black);
-    background: var(--col-white);
-    width: 300px;
+    color: var(--col-white);
     height: auto;
     min-width: 90px;
     padding: 10px 10px;
     margin: 0 5px;
     border: solid 1px var(--col-black);
     outline: none;
-    border-radius: 10px;
+    border-radius: 10px; 
     cursor: pointer;
 }
 
-
-#button_profile a {
-    color: var(--col-white);
+#button_profile #butConnexion{
     background: var(--col-gradient-orange);
 }
 
+#button_profile #butDeconnexion{
+    background-color: var(--col-red);
+}
+
+#button_profile #butDesincription{
+    background-color: var(--col-black);
+}
 
 #button_profile a:hover, #button_profile a:focus {
     background: var(--col-black);
     color: var(--col-white);
 }
+#button_profile #butDeconnexion:hover,#button_profile #butDeconnexion:focus{
+    background-color: var(--col-black);
+}
 
+#button_profile #butDesincription:hover, #button_profile #butDesincription:focus{
+    background-color: var(--col-red);
+}
 
 #page_actuelle {
     color: var(--col-white);
