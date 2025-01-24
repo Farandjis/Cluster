@@ -38,7 +38,7 @@ It explores the different aspects of the project's structure and the behaviors a
 
 <i><a id="fg2"></a>Figure 3: Class Diagram.</i>
 
-<img height="800" width="800" src="Modèle UML/ClassDiagramV1.png" title="UML design of the site"/><br><br>
+<img height="800" width="800" src="Modèle UML/ClassDiagramV2.png" title="UML design of the site"/><br><br>
 
 
 #### <a id="p1.2"></a>Programmation Form
@@ -53,6 +53,8 @@ The project consists of 4 directories:
 The dynamic code is written in Node.js.  
 We have chosen an object-oriented programming paradigm.  
 As a result, the code is represented in the form of methods belonging to an object, which is an instance of the Express class.
+
+We have separated our methods into several files. Thus, we import the auxiliary files related to each feature of the site into the `server.js` file.
 
 **Frontend**: The user interface is managed using HTML/CSS/JavaScript files.
 
