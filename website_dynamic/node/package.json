@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "prime": "mpirun -n 1 python3",
+    "python": "python"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1", 
+    "mysql2": "^3.12.0"
+  }
+}

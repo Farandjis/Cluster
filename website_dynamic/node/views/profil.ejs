@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil</title>
+  <link rel="stylesheet" href="style/main_style.css">
+  <link rel="stylesheet" href="style/navigation.css">
+  <link rel="stylesheet" href="style/tableau_bord.css">
+  <link rel="stylesheet" href="style/profil.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/logo_icone.png" type="image/png">
+  <script src="js/hamburger.js"></script>
+  <script src="js/infoHistory.js"></script>
+  <script src="js/tableau_profil.js"></script>
+  <script src="js/profil_nuke.js"></script>
+  <script src="js/action_inscription_connexion.js"></script>
+  <script src="js/afficherMDP.js" charset="UTF-8"></script>
+</head>
+<body>
+  <%- topMenu %>
+  <h1 class="titre_page">Mon compte</h1>
+  <div class="info_profile" style="display: grid;">
+    <div class="info_perso">
+      <h2>Informations Personnelles</h2>
+      <br><br>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <h3>Login :</h3>
+          <p><%= nomUser %></p>
+        </div>
+        <div>
+          <h3>Mot de passe :</h3>
+          <div class="Button_profil">
+            <button onclick="togglePopup()">Changer Mot de passe</button>
+          </div>
+        </div>
+      </div>
+      <%- loginMessage %>
+      <%- successMessage %>
+    </div>
+    <br><br>
+    <div class="demandes">
+      <h2>Historique</h2>
+      <div class="conteneur_table-demandes-perso conteneur_table">
+        <table class="table-demandes-perso table-popup" style="text-align: center;" id="Historique">
+          <thead>
+            <tr>
+              <th onclick="sortTable('Historique', 0)">Time<span class="sort-arrow"> ↕</span></th>
+              <th onclick="sortTable('Historique', 1)">Module<span class="sort-arrow"> ↕</span></th>
+              <th>Vision Résultat</th>
+              <th>Téléchargement Fichier</th>
+              <th>Effacer Fichier</th>
+            </tr>
+          </thead>
+          <tbody class="table-ticket-profil">
+            <% data1.forEach(row => {
+              let date = new Date(row.time);
+              let formattedDate = date.toLocaleString('fr-FR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+              });
+            %>
+              <tr>
+                <td><%= formattedDate %></td>
+                <td><%= row.module %></td>
+                <td>
+                  <div class="Button_profil">
+                    <button onclick="handleButtonhistory('<%=id_user %>', '<%= row.filename %>','<%=row.module %>')">Vision</button>
+                  </div>
+                </td>
+                <td>
+                  <div class="Button_profil">
+                    <button onclick="télechargementButton('<%=id_user %>', '<%= row.filename %>')">Téléchargement</button>
+                  </div>
+                </td>
+                <td>
+                  <div class="Button_profil">
+                    <button onclick="confirmDelete('<%= row.filename %>','<%=id_user %>')">Effacer</button>
+                  </div>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <% if (typeof data2 !== 'undefined') { %>
+    <br><br>
+    <div class="nuke-controls">
+      <h3>Contrôle des Processus</h3>
+      <div class="select-search-container">
+          <input type="text" id="userSearch" placeholder="Search users..." onkeyup="filterUsers()">
+          <select id="userSelect" size="5">
+            <option value="" class="nuke-all-option">Nuke All</option>
+            <%
+            const uniqueUsers = new Set();
+            data5.forEach(row => {
+                if (!uniqueUsers.has(row.login)) {
+                    uniqueUsers.add(row.login);
+            %>
+                <option value="<%= row.id_user %>" style="display: none;"><%= row.login %></option>
+            <%
+                }
+            });
+            %>
+        </select>        
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveUsers();
+        });
+      </script>
+      <button onclick="nukeSelected()" class="nuke-btn">Tuer Processus</button>
+    <button onclick="updateActiveUsers()" class="refresh-btn">
+        <span>↻</span> Rafraîchir
+    </button>
+    </div>
+  
+    <br><br>
+    <div class="demandes">
+      <h2>Statistique</h2>
+      <br>
+      <div class="Stat">
+        <div class="Button_profil">
+          <input type="radio" id="Usage_Module" name="stat" value="Usage_Module" checked />
+          <label for="Usage_Module">Usage Module</label>
+        </div>
+        <div class="Button_profil">
+          <input type="radio" id="Usage_User" name="stat" value="Usage_User" />
+          <label for="Usage_User">Usage User</label>
+        </div>
+        <div class="Button_profil">
+          <input type="radio" id="History_User" name="stat" value="History_User" />
+          <label for="History_User">History User</label>
+        </div>
+      </div>
+      <br><br>
+
+      <!-- Tableau Usage Module -->
+      <div class="conteneur_table-demandes-perso conteneur_table" id="Usage_Module_tab">
+        <table class="table-demandes-perso table-popup" style="text-align: center;">
+          <thead>
+            <tr>
+                <th onclick="sortTable('Usage_Module_tab', 0)">Module<span class="sort-arrow"> ↕</span></th>
+                <th onclick="sortTable('Usage_Module_tab', 1)">Utilisation<span class="sort-arrow"> ↕</span></th>
+            </tr>
+          </thead>
+          <tbody class="table-ticket-profil">
+            <% data2.forEach(row => { %>
+              <tr>
+                <td><%= row.module %></td>
+                <td><%= row.total_uses %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tableau Usage User -->
+      <div class="conteneur_table-demandes-perso conteneur_table" id="Usage_User_tab" style="display: none;">
+        <table class="table-demandes-perso table-popup" style="text-align: center;">
+          <thead>
+            <tr>
+                <th onclick="sortTable('Usage_User_tab', 0)">User<span class="sort-arrow"> ↕</span></th>
+                <th onclick="sortTable('Usage_User_tab', 1)">Module<span class="sort-arrow"> ↕</span></th>
+                <th onclick="sortTable('Usage_User_tab', 2)">Utilisation<span class="sort-arrow"> ↕</span></th>
+            </tr>
+          </thead>
+          <tbody class="table-ticket-profil">
+            <% data3.forEach(row => { %>
+              <tr>
+                <td><%= row.login %></td>
+                <td><%= row.module %></td>
+                <td><%= row.usage_count %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tableau History User -->
+      <div class="conteneur_table-demandes-perso conteneur_table" id="History_User_tab" style="display: none;">
+        <table class="table-demandes-perso table-popup" style="text-align: center;">
+          <thead>
+            <tr>
+              <th onclick="sortTable('History_User_tab', 0)">Time<span class="sort-arrow"> ↕</span></th>
+              <th onclick="sortTable('History_User_tab', 1)">Module<span class="sort-arrow"> ↕</span></th>
+              <th onclick="sortTable('History_User_tab', 2)">Utilisation<span class="sort-arrow"> ↕</span></th>
+            </tr>
+          </thead>
+          <tbody class="table-ticket-profil">
+            <% data4.forEach(row => {
+              let date = new Date(row.time);
+              let formattedDate = date.toLocaleString('fr-FR', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+              });
+            %>
+              <tr>
+                <td><%= formattedDate %></td>
+                <td><%= row.module %></td>
+                <td><%= row.login %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      // Fonction JavaScript qui réagit à la sélection d'une option
+      function showSelectedOption() {
+          // Récupérer tous les boutons radio avec le même nom
+          const radios = document.getElementsByName('stat');
+          let selectedOption = '';
+          
+          for (let radio of radios) {
+              if (radio.checked) {
+                  document.getElementById(radio.id + "_tab").style.display = "block"
+              }else{
+                  document.getElementById(radio.id + "_tab").style.display = "none"
+              }
+          }
+      
+      }
+  
+      // Attacher la fonction à chaque bouton radio
+      const radios = document.getElementsByName('stat');
+      for (let radio of radios) {
+          radio.addEventListener('change', showSelectedOption);
+      }
+    </script>
+  <% } %>
+  
+  <div id="popupOverlay" class="overlay-container">
+    <div class="popup-box">
+      <h2 id="popup-title">Modification mot de passe</h2>
+      <form class="form-container" action="/changeMDP" method="post">
+        <div class="champs-password">
+          <div class="info-bulle">
+            <label class="form-label" for="anpassword">Mot de passe actuel:</label>
+            <input class="form-input" type="password" placeholder="Entrer votre ancien mot de passe" id="anpassword" name="anpassword" required>
+          </div>
+          <div class="password-show" onclick="showPassword(this)">
+            <img src="img/visible.png">
+          </div>
+          <div class="password-hide" onclick="hidePassword(this)">
+            <img src="img/hidden.png">
+          </div>
+        </div>  
+
+        <div class="champs-password">
+          <div class="info-bulle">
+            <label class="form-label" for="newpassword">Nouveau mot de passe:</label>
+            <input class="form-input" type="password" placeholder="Entrer votre nouveau mot de passe" id="newpassword" name="newpassword" required>
+          </div>
+          <div class="password-show" onclick="showPassword(this)">
+            <img src="img/visible.png">
+          </div>
+          <div class="password-hide" onclick="hidePassword(this)">
+            <img src="img/hidden.png">
+          </div>
+        </div> 
+
+        <div class="champs-password">
+          <div class="info-bulle">
+            <label class="form-label" for="Conpassword">Confirmer le mot de passe:</label>
+            <input class="form-input" type="password" placeholder="Confirmer votre mot de passe" id="Conpassword" name="Conpassword" required>
+          </div>
+          <div class="password-show" onclick="showPassword(this)">
+            <img src="img/visible.png">
+          </div>
+          <div class="password-hide" onclick="hidePassword(this)">
+            <img src="img/hidden.png">
+          </div>
+        </div> 
+
+        <button class="btn-submit" type="submit" tabindex="1">Modifier</button>
+      </form>
+
+      <button class="btn-close-popup" onclick="togglePopup()" tabindex="1">Close</button>
+    </div>
+  </div>
+
+
+  <div id="popupOverlaySup" class="overlay-container">
+    <div class="popup-box">
+      <h2 id="popup-title">Suppression du compte</h2>
+      <form class="form-container" action="/delete-account" method="post">
+        <label class="form-label" for="login">Login:</label>
+        <input class="form-input" type="text" placeholder="Entrer votre login" id="login" name="login" required>
+
+        <label class="form-label" for="suppassword">Mot de passe:</label>
+        <input class="form-input" type="password" placeholder="Entre votre mot de passe" id="suppassword" name="suppassword" required>
+
+        <button class="btn-submit" type="submit" tabindex="1">Suppression</button>
+      </form>
+
+      <button class="btn-close-popup" onclick="togglePopupSup()" tabindex="1">Close</button>
+    </div>
+  </div>
+
+  <div id="ViewFile" class="overlay-container">
+    <div class="popup-box">
+      <h2>Informations d'exécutions</h2>
+      <label class="form-label" for="attribut_File">Attribut :</label>
+      <div class="form-input scrollable" id="attribut_File" name="attribut_File"></div>
+
+      <label class="form-label" for="data_File">Data File:</label>
+      <div class="form-input scrollable" id="data_File" name="data_File"></div>
+
+      <button class="btn-close-popup" onclick="togglePopupFile()">Close</button>
+    </div>
+  </div>
+
+  <p id="jsonData"></p>
+
+  <script>
+    function togglePopup() {
+      const overlay = document.getElementById('popupOverlay');
+      overlay.classList.toggle('show');
+    }
+
+    function togglePopupSup() {
+      const overlay = document.getElementById('popupOverlaySup');
+      overlay.classList.toggle('show');
+    }
+
+    function togglePopupFile() {
+      const overlay = document.getElementById('ViewFile');
+      overlay.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
