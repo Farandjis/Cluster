@@ -37,6 +37,11 @@ This document describes in detail the installation process of the RPi4 and RPi0 
 - [**a) Starting the Cluster HAT**](#p3a)
 - [**b) SSH Connection Between All Raspberry Pis**](#p3b)
 
+
+- ### [IV - System Services for Automatic Shutdown](#p4)
+  
+- ### [V - Automation of Cluster Startup](#p5)
+
 <br><br><br>
 
 ---
@@ -300,3 +305,75 @@ This command lists all network interfaces and their assigned IP addresses, allow
 
 ---
 
+## <a name="p4"></a> IV - System Service for Automatic Shutdown
+
+To ensure that the Cluster HAT shuts down automatically when the Raspberry Pi 4 is powered off, we can create a systemd service. This service will trigger the necessary commands to power down the Cluster HAT along with the Raspberry Pi 4. This ensures that the Cluster HAT does not remain active after the main system has shut down, conserving energy and reducing wear on the devices.
+
+### 4.1 Creating the systemd Service
+
+1. **Create a New Service File**:
+   ```bash
+   sudo nano /etc/systemd/system/clusterhat-shutdown.service
+   ```
+
+2. **Add the Following Content to the Service File**:
+   ```ini
+   [Unit]
+   Description=Shutdown Cluster HAT Pi Zeros on system shutdown
+   DefaultDependencies=no
+   Before=shutdown.target reboot.target halt.target
+
+   [Service]
+   Type=oneshot
+   ExecStart=/usr/sbin/clusterhat off all
+   RemainAfterExit=yes
+
+   [Install]
+   WantedBy=halt.target reboot.target shutdown.target
+   ```
+
+3. **Enable and Start the Service**:
+   ```bash
+   sudo systemctl enable clusterhat-shutdown.service
+   sudo systemctl start clusterhat-shutdown.service
+   ```
+
+4. **Testing the Service**:
+   - Shut down your Raspberry Pi 4 to verify that the Cluster HAT and all connected Raspberry Pi Zero devices also shut down.
+
+5. **Troubleshooting**:
+   - If the Cluster HAT does not shut down as expected, check the logs to diagnose any issues:
+     ```bash
+     sudo journalctl -u clusterhat-shutdown.service
+     ```
+   - Ensure that the path to the `clusterhat` command is correct and that the service is configured to execute before the system shutdown processes begin.
+
+---
+
+## <a name="p5"></a> V - Automation of Cluster Startup
+
+Modify the `rc.local` file to include commands that turn on the Cluster HAT automatically when the Raspberry Pi 4 boots up. This ensures that the cluster is immediately operational after a restart without manual intervention.
+
+### 5.1 Modifying the `rc.local` File
+
+1. **Open the `rc.local` File**:
+   ```bash
+   sudo nano /etc/rc.local
+   ```
+
+2. **Add the Following Lines Before `exit 0`**:
+   ```bash
+   /usr/sbin/clusterhat on
+   sleep 10  # Gives time for Cluster HAT to activate properly
+   sudo ifdown brint
+   sudo ifup brint
+   ```
+
+3. **Save and Close the File**:
+   - Ensure that `rc.local` is executable:
+     ```bash
+     sudo chmod +x /etc/rc.local
+     ```
+
+4. **Testing the Setup**:
+   - Reboot your Raspberry Pi 4 to verify that the Cluster HAT turns on and that the network interfaces (`brint`) are configured correctly automatically.
