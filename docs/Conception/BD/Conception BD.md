@@ -1,4 +1,4 @@
-Matthieu FARANDJIS, Tom BOGAERT, Florent VASSEUR--BERLIOUX, William HERUBEL, Baptiste FOURNIÉ, Lucas DA SILVA FERREIRA<br>
+Matthieu FARANDJIS, Tom BOGAERT, Florent VASSEUR--BERLIOUX, William HERUBEL, Baptiste FOURNIÉ, Lucas DA SILVA FERREIRA  
 INF3-FI
 
 <div align="center">
@@ -197,6 +197,7 @@ These views are designed to simplify access to specific data from the `USERS` an
     - **Actions**
       - Distribute the user role to a MariaDB user.
       - View the structure of DB_TIX.
+
     - **Rights**
       - SHOW VIEW ON Paralix.*
       - GRANT role_utilisateur ... WITH ADMIN OPTION;
