@@ -2,6 +2,68 @@
 Matthieu FARANDJIS, Tom BOGAERT, Florent VASSEUR--BERLIOUX, William HERUBEL, Baptiste FOURNIÉ, Lucas DA SILVA FERREIRA
 # README - Paralix
 
+## Liens
+
+### Système
+- Installation du cluster : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/1-installation_cluster.md
+- Présentation du fonctionnement de MPI sur le cluster : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/2-fonctionnement_calculs_paralleles_distribues.md
+- Installation de NodeJS + MariaDB + Docker : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/3-installation_node_mariadb_docker.md
+- Explications de comment on arrête un calcul trop long : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/Gestion%20des%20processus%20de%20calcul.md
+
+### Docker
+- Dockerfile :
+- docker-compose.yml :
+- package.js :
+- Script qui executé compose down et compose up build (en tâche de fond) :
+- hosts-clusters comportant l'adresse des Pi0 (abandonné ?) :
+
+### Base de données
+- Scripts SQL : https://github.com/Farandjis/Cluster/tree/main/database/scripts
+- Conception : https://github.com/Farandjis/Cluster/tree/main/docs/Conception/BD
+- Tests : https://github.com/Farandjis/Cluster/tree/main/docs/Test
+
+### Site web
+- Conception : https://github.com/Farandjis/Cluster/tree/main/docs/Conception/Site
+- Site statique : https://github.com/Farandjis/Cluster/tree/main/website_static
+- Site dynamique : https://github.com/Farandjis/Cluster/tree/main/website_dynamic
+- Tests : https://github.com/Farandjis/Cluster/tree/main/docs/Test
+
+### Scripts Python MPI utilisés par Paralix
+- Script bash pour copier du Pi4 sur les Pi0 (copieur.sh) : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/copieur.sh
+- Script Python Nombres Premiers : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/prime.py
+- Script Python Nombres Premiers version Blinkt (inutilisé) : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/prime-blinkt.py
+- Script Python Pi Monte-Carlo : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/montecarlo.py
+- Script Python Hello World (rainboew-text) : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/hello.py
+
+
+### Scalabilités et performances (préparations et études)
+- Installation et fonctionnement du multi-cluster RPi4 + RPi0 : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/4-Comprehensive_Multi-Cluster_Installation_Report.md
+- MPI sur les PC de la E51 : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/5-MPI_Test_on_E51_Computers.md
+- Analyse de performance du RPi : Calcul des nombres premiers : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/Gestion%20des%20processus%20de%20calcul.md
+- Rapport pour Pi Monte-Carlo (MPI) : https://github.com/Farandjis/Cluster/blob/main/docs/scalabilite/rapportMPIMonteCarlo.md
+- Rapport pour les nombres Premiers (MPI) : https://github.com/Farandjis/Cluster/blob/main/docs/scalabilite/rapportPrime.md
+- Script Python Scalabité pour Monte-Carlo 1 : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/mcscala.py
+- Script Python Scalabité pour Monte-Carlo 2 : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/mcscala2.py
+- Script Python Scalabilité pour Nombres Premiers 1 : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/prime_scalability.py
+- Script Python Scalabilité pour Nombres Premiers 2 : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/prime_scalability2.py
+- Script Python Scalabilité pour Nombre Premiers verison Eratosthene : https://github.com/Farandjis/Cluster/blob/main/website_dynamic/cluster-prime-master/prime_scalability_eratosthene.py
+
+### Gestion du projet
+- Cahier des charges : https://github.com/Farandjis/Cluster/blob/main/docs/Management/Cahier%20des%20Charges.md
+- Recueil des besoins : https://github.com/Farandjis/Cluster/blob/main/docs/Management/Recueil%20des%20Besoins.md
+- Les livrables : https://github.com/Farandjis/Cluster/blob/main/docs/Management/les%20livrables.txt
+- Gestion des risques : https://github.com/Farandjis/Cluster/blob/main/docs/Management/Gestion%20des%20Risques.pdf
+- Cas d'utilisation : https://github.com/Farandjis/Cluster/blob/main/docs/Management/CU_V3.png
+
+
+### Manuel d'utilisateur
+- Manuel d'utilisateur : https://github.com/Farandjis/Cluster/blob/main/docs/manuel.md
+
+
+
+
+---------------------------
+
 ## Introduction
 
 **Paralix** est une plateforme dédiée à la réalisation de modules mathématiques, permettant d'effectuer des calculs complexes en utilisant un cluster de Raspberry Pi. Ce système permet des calculs parallèles via un ensemble de **Raspberry Pi 4** et **Raspberry Pi Zero** pour optimiser les performances.
