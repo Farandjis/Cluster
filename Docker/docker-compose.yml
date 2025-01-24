@@ -1,0 +1,56 @@
+version: "3.8"
+
+networks:
+  app_network:
+    driver: bridge
+
+services:
+  nodejs:
+    build: . # Utilise le dockerfile
+    #image: node:latest
+    #working_dir: /app
+    volumes:
+      - /var/log/web:/war/log/web
+      - /usr/bin/mpirun:/usr/bin/mpirun # On importe la commande mpirun (on partage le fichier en le pi4 et docker)
+      - /usr/lib/openmpi:/usr/lib/openmpi
+      - /usr/share/openmpi:/usr/share/openmpi
+      - /usr/lib/arm-linux-gnueabihf:/usr/lib/arm-linux-gnueabihf # Pour importer les librairies, sinon mpirun ne marche pas
+      - /etc/hosts:/etc/hosts
+      - /home/moi/.ssh:/root/.ssh
+      - /home/moi/DATA_USERS:/DATA_USERS
+      # - /home/moi/docker-app/Paralix:/app/node
+    #command: "npm start"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mariadb
+    restart: always
+    networks:
+      - app_network
+
+  mariadb:
+    image: tobi312/rpi-mariadb:10.6-alpine
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./my-custom-config.cnf:/etc/mysql/conf.d/custom.cnf
+      - mariadb_data:/var/lib/mysql
+      - /var/log/db:/var/log/mysql
+    command:
+      [
+        "--general-log=1",
+        "--general-log-file=/var/log/mysql/mysql.log"
+      ]
+    environment:
+      MYSQL_DATABASE: Paralix
+      MYSQL_USER: moi
+      MYSQL_PASSWORD: je
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+      MYSQL_ROOT_PASSWORD: septembre
+      MYSQL_GENERAL_LOG: '1'
+    networks:
+      - app_network
+
+volumes:
+  mariadb_data:
