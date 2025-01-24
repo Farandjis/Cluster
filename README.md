@@ -9,13 +9,14 @@ Matthieu FARANDJIS, Tom BOGAERT, Florent VASSEUR--BERLIOUX, William HERUBEL, Bap
 - Présentation du fonctionnement de MPI sur le cluster : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/2-fonctionnement_calculs_paralleles_distribues.md
 - Installation de NodeJS + MariaDB + Docker : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/3-installation_node_mariadb_docker.md
 - Explications de comment on arrête un calcul trop long : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/Gestion%20des%20processus%20de%20calcul.md
+- Script bash pour arrêter un calcul trop long : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/deleteLongModule.sh
 
 ### Docker
-- Dockerfile :
-- docker-compose.yml :
-- package.js :
-- Script qui executé compose down et compose up build (en tâche de fond) :
-- hosts-clusters comportant l'adresse des Pi0 (abandonné ?) :
+- Dockerfile : https://github.com/Farandjis/Cluster/blob/main/Docker/Dockerfile
+- docker-compose.yml : https://github.com/Farandjis/Cluster/blob/main/Docker/docker-compose.yml
+- package.js : https://github.com/Farandjis/Cluster/blob/main/Docker/package.json
+- Script qui executé compose down et compose up build (en tâche de fond) : https://github.com/Farandjis/Cluster/blob/main/Docker/r.sh
+- hosts-clusters comportant l'adresse des Pi0 (abandonné ?) : https://github.com/Farandjis/Cluster/blob/main/Docker/hosts_cluster
 
 ### Base de données
 - Scripts SQL : https://github.com/Farandjis/Cluster/tree/main/database/scripts
