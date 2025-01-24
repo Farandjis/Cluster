@@ -2,7 +2,7 @@
 Matthieu FARANDJIS, Tom BOGAERT, Florent VASSEUR--BERLIOUX, William HERUBEL, Baptiste FOURNIÉ, Lucas DA SILVA FERREIRA
 # README - Paralix
 
-## Liens
+# [Sommaire du rapport (cliquez ici)](https://github.com/Farandjis/Cluster/blob/main/sommaire_du_rapport.md)
 
 ### Système
 - Installation du cluster : https://github.com/Farandjis/Cluster/blob/main/docs/Installation%20System/1-installation_cluster.md
