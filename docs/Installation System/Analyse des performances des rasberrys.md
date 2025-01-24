@@ -1,5 +1,10 @@
 Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS, Lucas DA SILVA FERREIRA<br>
 INF3-FI
+<br>
+<div align="center">
+<img height="95" width="400" src="https://www.uvsq.fr/medias/photo/iut-velizy-villacoublay-logo-2020-ecran_1580904185110-jpg?ID_FICHE=214049" title="logo uvsq vélizy"/>
+</div>
+<br>
 
 # Performance Analysis of Raspberry Pi Configurations for Prime Number Calculation
 
