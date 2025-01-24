@@ -2,43 +2,49 @@ Florent VASSEUR-BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthi
 INF3-FI
 
 <div align="center">
-<img height="95" width="400" src="/img/IUT_Velizy_Villacoublay_logo_2020_ecran.png" title="logo uvsq vélizy"/>
+<img height="95" width="400" src="https://www.uvsq.fr/medias/photo/iut-velizy-villacoublay-logo-2020-ecran_1580904185110-jpg?ID_FICHE=214049" title="logo uvsq vélizy"/>
 
 # SAÉ S3 - Recueil des besoins
 
-<br><br>
+---
+
+<br>
 This document contains all the important information we need to know in order to successfully complete this project.
 
 </div>
 
+
+
 <br><br><br><br><br><br><br>
 
-## Plan
+---
+
+## Summary
+
+<a id="summary"></a>
 
 ### [I – Objective and Scope](#p1)
 - <b>[a) What are the scope and general objectives?](#p1a)</b>
 - <b>[b) Review of the project brief](#p1b) </b>
-    - <u>[i. List of objects, actors, and actions](#p1bi) </u>
-    - <u>[ii. The different levels](#p1bii) </u>
-    - <u>[iii. A descriptive diagram of the levels](#p1biii) </u>
-    - <u>[iv. Use case diagram](#p1biv) </u>
+- <b>[c) Visual Diagrams and Charts](#p1c) </b>
 ### [II – Terminology / Glossary](#p2)
 ### [III – Use Cases](#p3)
 - <b>[a) Main actors and their general objectives](#p3a)</b>
 - <b>[b) Strategic use cases](#p3b)</b>
-- <b>[c) User and system use cases](#p3c)</b>
+- <b>[c) User use cases](#p3c)</b>
+- <b>[d) System use cases](#p3d)</b>
 ### [IV – Technology Used](#p4)
 - <b>[a) What are the technological requirements for this system?](#p4a)</b>
 - <b>[b) With which systems will this system interface, and with what requirements?](#p4b)</b>
 - <b>[c) What hardware is used to support the system?](#p4c)</b>
 ### [V – Other Requirements](#p5)
 - <b>[a) Development process](#p5a)</b>
-    - <u>[i. Who are the project participants?](#p5ai)</u>
-    - <u>[ii. What values should be prioritized? (e.g., simplicity, availability, speed, flexibility, etc.)](#p5aii)</u>
-    - <u>[iii. What feedback or visibility do users and sponsors expect on the project?](#p5aiii)</u>
-    - <u>[iv. What can be purchased? What must be built? Who are our competitors?](#p5aiv)</u>
-    - <u>[v. What are the other process requirements? (e.g., testing, installation, etc.)](#p5av)</u>
-    - <u>[vi. What dependencies does the project have?](#p5avi)</u>
+    - <b>[i. Who are the project participants?](#p5ai)</b>
+    - <b>[ii. What values should be prioritized? (e.g., simplicity, availability, speed, flexibility, etc.)](#p5aii)</b>
+    - <b>[iii. What feedback or visibility do users and sponsors expect on the project?](#p5aiii)</b>
+    - <b>[iv. What can be purchased? What must be built? Who are our competitors?](#p5aiv)</b>
+    - <b>[v. What are the other process requirements? (e.g., testing, installation, etc.)](#p5av)</b>
+    - <b>[vi. What dependencies does the project have?](#p5avi)</b>
 - <b>[b) Performance](#p5b)</b>
 - <b>[c) Operations, security, documentation](#p5c)</b>
 - <b>[d) Usability and user-friendliness](#p5d)</b>
@@ -50,53 +56,102 @@ This document contains all the important information we need to know in order to
 - <b>[d) What are the training needs?](#p6d)</b>
 - <b>[e) What assumptions and dependencies affect the human environment?](#p6e)</b>
 ### [VII - Project Management and Organization](#p7)
-- <b>[a) Roles and responsibilities](#p7a)</b>
-- <b>[b) Life cycle](#p7b)</b>
-- <b>[c) Task distribution report S3](#p7c)</b>
-- <b>[d) Task distribution report S4](#p7d)</b>
+- **[a) Roles and responsibilities](#p7a)**
+- **[b) Life cycle](#p7b)**
 
-### [Appendix 1: Use Case](#a1)
-
-<br><br><br><br><br><br><br>
+<br>
 
 ---
 
-### <a name="p1"></a>I – Objective and Scope
-- <b><a name="p1a"></a>a) What are the scope and general objectives?</b>
-- <b><a name="p1b"></a>b) Review of the project brief </b>
-    - <u><a name="p1bi"></a>i. List of objects, actors, and actions </u>
-    - <u><a name="p1bii"></a>ii. The different levels</u>
-    - <u><a name="p1biii"></a>iii. A descriptive diagram of the levels </u>
-    - <u><a name="p1biv"></a>iv. Use case diagram</u>
+### <a name="p1" id="p1"></a>I – Objective and Scope
 
-<br><br><br><br><br><br><br>
+- #### <a id="p1a"></a>a) What are the scope and general objectives?
+
+  - **General Objectives:**
+    - Develop a robust, user-friendly web application that allows users to perform calculations using distributed computing with Raspberry Pi clusters.
+    - Ensure the system is secure, maintainable, and scalable, with compliance to GDPR and other relevant regulations.
+    - Improve the computational efficiency and accessibility for users without extensive technical knowledge in cluster computing.
+
+  - **Scope:**
+    - **Inclusion:**
+      - Design and implementation of a web-based interface that allows users to submit and manage computational tasks.
+      - Development of backend services to handle task distribution, processing, and aggregation of results from multiple Raspberry Pi Zero devices.
+      - Implementation of user authentication, session management, and admin controls for system oversight.
+      - Compliance measures for data protection and privacy according to GDPR.
+      - Preparation of user documentation and system maintenance guidelines.
+
+  - **Exclusion:**
+    - Mobile application version of the platform is out of scope for the initial release.
+    - Integration with other third-party services not mentioned in the technical requirements.
+    - Legacy browser support (e.g., Internet Explorer).
+
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- #### <a id="p1b"></a>b) Review of the project brief
+
+  - **Project Importance:**
+    - This project aims to provide a practical solution to educational institutions and researchers requiring distributed computing resources for complex computations, making technology accessible and manageable at a lower cost.
+    - By leveraging Raspberry Pi technology, the project contributes to sustainable technological education and research, promoting hands-on learning experiences.
+
+  - **Expected Outcomes:**
+    - A fully functional web platform that efficiently distributes, processes, and retrieves computational tasks using a cluster of Raspberry Pi devices.
+    - Enhanced security and user management features that safeguard user data and ensure system integrity and reliability.
+    - Documentation and guidelines that will assist users and system administrators in effectively utilizing and maintaining the system.
+
+  - **Review Process:**
+    - Regular reviews will be conducted at each phase of the project to ensure alignment with the outlined objectives and scope. Feedback from initial testing phases will be incorporated to refine the system before the final rollout.
+
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- #### <a id="p1c"></a>c) Visual Diagrams and Charts
+
+  - **Descriptive Diagram of Levels:** Visual breakdown of system architecture, showing how different components interact and data flows through the system.
+  - **Use Case Diagram:** Illustrates interactions between users (both administrators and end-users) and the system, highlighting the main functionalities and control flows.
+
+<div align="center">
+    <img height="400" width="900" src="CU_V3.png" title="diagramme CU"/>
+</div>
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
 ---
 
-### <a name="p2"></a>II – Terminology / Glossary
+### <a id="p2"></a>II – Terminology / Glossary
 
-| Words                | Definition                                                                                                                                                                                                                               |
-|:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CNIL                 | National Commission for Information Technology and Civil Liberties. An independent French administrative authority responsible for ensuring that information technology serves the citizen.                                                |
-| Failed login attempt | The failure of an attempt to log into a system or user account due to incorrect information or a technical issue.                                                                                                                         |
-| Cookie               | (In computing): A small file stored by a server on a user's device (computer, phone, etc.) and associated with a web domain.                                                                                                             |
-| Support request      | A request submitted by a user to report a problem or technical difficulty that requires intervention or resolution (ticket) by the IT support team.                                                                                       |
-| SQL Injection        | A technique that allows SQL elements to be injected into web form fields or page links, aiming to send them to the web server to modify elements in a database.                                                                           |
-| Labels               | Tags or keywords assigned to an IT ticket to categorize, organize, and facilitate the search for similar issues or support requests.                                                                                                      |
-| GDPR                 | General Data Protection Regulation. The reference text on personal data protection. It strengthens and unifies data protection for individuals within the European Union.                                                                 |
-| RPi4                 | Raspberry Pi 4, a small single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                                   |
-| RPi Zero             | Raspberry Pi Zero, a small, low-cost single-board computer developed by the Raspberry Pi Foundation.                                                                                                                                      |
-| Cluster HAT v2.5     | A hardware add-on that allows up to four Raspberry Pi Zero boards to be used in a cluster setup, providing a platform for cluster computing and testing.                                                                                 |
-| DBMS                 | Database Management System.                                                                                                                                                                                                              |
-| IT Support           | Technical assistance that handles support requests, troubleshoots technical problems, and resolves IT-related questions.                                                                                                                  |
-| Dashboard            | An online interface that displays summary information and key data to help users monitor and manage operations related to tickets and IT support.                                                                                         |
-| W3C                  | World Wide Web Consortium. An international organization that defines technical web standards and the rules that all developers worldwide must follow.                                                                                   |
-| Wave                 | A browser extension that evaluates the accessibility of a web page for people with disabilities.                                                                                                                                         |
+| Words                | Definition                                                                                                                                                                                  |
+|:---------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CNIL                 | National Commission for Information Technology and Civil Liberties. An independent French administrative authority responsible for ensuring that information technology serves the citizen. |
+| Failed login attempt | The failure of an attempt to log into a system or user account due to incorrect information or a technical issue.                                                                           |
+| Cookie               | (In computing): A small file stored by a server on a user's device (computer, phone, etc.) and associated with a web domain.                                                                |
+| Support request      | A request submitted by a user to report a problem or technical difficulty that requires intervention or resolution (ticket) by the IT support team.                                         |
+| SQL Injection        | A technique that allows SQL elements to be injected into web form fields or page links, aiming to send them to the web server to modify elements in a database.                             |
+| Labels               | Tags or keywords assigned to an IT ticket to categorize, organize, and facilitate the search for similar issues or support requests.                                                        |
+| GDPR                 | General Data Protection Regulation. The reference text on personal data protection. It strengthens and unifies data protection for individuals within the European Union.                   |
+| RPi4                 | Raspberry Pi 4, a small single-board computer developed by the Raspberry Pi Foundation.                                                                                                     |
+| RPi Zero             | Raspberry Pi Zero, a small, low-cost single-board computer developed by the Raspberry Pi Foundation.                                                                                        |
+| Cluster HAT v2.5     | A hardware add-on that allows up to four Raspberry Pi Zero boards to be used in a cluster setup, providing a platform for cluster computing and testing.                                    |
+| DBMS                 | Database Management System.                                                                                                                                                                 |
+| IT Support           | Technical assistance that handles support requests, troubleshoots technical problems, and resolves IT-related questions.                                                                    |
+| Dashboard            | An online interface that displays summary information and key data to help users monitor and manage operations related to tickets and IT support.                                           |
+| W3C                  | World Wide Web Consortium. An international organization that defines technical web standards and the rules that all developers worldwide must follow.                                      |
+| Wave                 | A browser extension that evaluates the accessibility of a web page for people with disabilities.                                                                                            |
 
-------------------------------------------------------------------------------------------------------------------------
-### <a name="p3"></a>III – Use Cases
-- <b><a name="p3a"></a>a) Main actors and their general objectives.</b>
-  <br>
+<br>
+
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+---
+
+### <a id="p3"></a>III – Use Cases
+
+- **<a id="p3a"></a>a) Main actors and their general objectives.**
 
     - <u>The visitor (one or more):</u>
         > - Registers
@@ -105,7 +160,7 @@ This document contains all the important information we need to know in order to
   <br>
 
   To differentiate a user from a visitor, visitors must register and fill out a form to become users.
-
+    
     - <u>The user (one or more):</u>
         > - Logs in, logs out
         > - Performs calculations
@@ -114,486 +169,460 @@ This document contains all the important information we need to know in order to
         > - Create a Request
     
   <br>
-  <br>
 
     - <u>The system administrator (one only):</u>
         > - Is a user, but with additional administrative rights
         > - Accesses and uses activity logs
 
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- **<a id="p3b"></a>b) Strategic use cases.**
+
+  - #### Use Case 1: Administration
+    - **Name:** Administration
+    - **Usage Context:** The platform must allow administrators to manage elements.
+    - **Scope:** Black box organization
+    - **Level:** Strategic
+    - **Primary Actor:** Administrator
+    - **Guarantee in case of success:** Metadata update
+    - **Trigger:** Need to update the platform's metadata
+    - **Normal Scenario:**
+      1. The administrator accesses the metadata
+      2. The metadata is modified by the administrator
+    - **Exceptions:**
+      1. Unable to access the database:
+         - A failure message is sent for loading metadata (FAILURE)
       
-- <b><a name="p3b"></a>b) Strategic use cases.</b>
+      2. Error during modification:
+         - A failure message is sent for modifying metadata (FAILURE)
 
-#### Use Case 1: Administration
-**Name:** Administration  
-**Usage Context:** The platform must allow administrators to manage elements.  
-**Scope:** Black box organization  
-**Level:** Strategic  
-**Primary Actor:** Administrator  
-**Guarantee in case of success:** Metadata update  
-**Trigger:** Need to update the platform's metadata
+  - #### Use Case 2: Manage Users
+    - **Name:** Manage Users
+    - **Usage Context:** The platform must allow administrators to manage user accounts.
+    - **Scope:** White box organization
+    - **Level:** Strategic
+    - **Primary Actor:** Administrator
+    - **Precondition:** The administrator is logged in
+    - **Guarantee in case of success:** Creation of a user account
+    - **Trigger:** Receipt of a user creation form
+    - **Normal Scenario:**
+      1. Receipt of the form.
+      2. Access to the database.
+      3. Creation of the new user account.
+    - **Exceptions:**
+      1. Mandatory fields of the form are not all filled out:
+         - A failure message is sent for user account creation (FAILURE).
+      2. Unable to access the database:
+         - A failure message is sent for user account creation (FAILURE).
+      3. Error during account creation:
+         - A failure message is sent for user account creation (FAILURE).
 
-**Normal Scenario:**
-1. The administrator accesses the metadata
-2. The metadata is modified by the administrator
+  - #### Use Case 3: Calculation Management
+    - **Name:** Calculation Management
+    - **Usage Context:** The platform must allow managing a calculation and displaying a result.
+    - **Scope:** Black box organization.
+    - **Level:** Strategic.
+    - **Primary Actor:** User.
+    - **Guarantee:** Calculation performed and result successfully displayed.
+    - **Trigger:** User's request.
+    - **Normal Scenario:**
+      1. The user requests a calculation to be performed.
+      2. The system processes the requested calculation.
+      3. The page displays the result.
+    - **Extensions:**
+      1. Calculation too long:
+         - The calculation is stopped.
+         - An information message is displayed stating that the calculation is taking too long.
+    - **Exceptions:**
+      1. The request was not successful:
+         - An error message is displayed explaining the failure.
+      2. Display failed:
+         - An error message.
 
-**Exceptions:**
-1. a. Unable to access the database:
-    1. A failure message is sent for loading metadata (FAILURE)
-2. a. Error during modification:
-    1. A failure message is sent for modifying metadata (FAILURE)
-       
-***
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-#### Use Case 2: Manage Users
-**Name:** Manage Users  
-**Usage Context:** The platform must allow administrators to manage user accounts.  
-**Scope:** White box organization  
-**Level:** Strategic  
-**Primary Actor:** Administrator  
-**Precondition:** The administrator is logged in  
-**Guarantee in case of success:** Creation of a user account  
-**Trigger:** Receipt of a user creation form
+---
 
-**Normal Scenario:**
-1. Receipt of the form
-2. Access to the database
-3. Creation of the new user account
+- <b><a id="p3c"></a>c) User use cases.</b>
 
-**Exceptions:**
-1. a. The mandatory fields of the form are not all filled out:
-    1. A failure message is sent for user account creation (FAILURE)
-2. a. Unable to access the database:
-    1. A failure message is sent for user account creation (FAILURE)
-3. a. Error during account creation:
-    1. A failure message is sent for user account creation (FAILURE)
-       
-***
+  - #### Use Case 4: Registration
+    - **Name:** Register
+    - **Usage Context:** The data provided in a registration form is used to create a new account on the platform.
+    - **Scope:** Black box system
+    - **Level:** User
+    - **Primary Actor:** User
+    - **Precondition:** User is not registered
+    - **Minimum Guarantee:** Data will be kept private and the password will be encrypted
+    - **Guarantee in case of success:** Creation of a user account in the database
+    - **Trigger:** Receipt of a registration form filled out by the user
+    - **Normal Scenario:**
+      1. Receipt of the registration form.
+      2. Encrypting the password.
+      3. Insertion of the form data into the database => Creation of a new account on the platform.
+      4. Sending a confirmation message of registration to the user.
+    - **Exceptions:**
+      1. The user has not filled out all required fields in the form:
+         - A failure message is sent to the user for account creation (FAILURE).
+      2. The user's login is already present in the database:
+         - A failure message is sent to the user for account creation (FAILURE).
+      3. Unable to access the database:
+         - A failure message is sent to the user for account creation (FAILURE).
 
-#### Use Case 8: Calculation Management
-**Name**: Calculation Management<br>
-**Usage**: The platform must allow managing a calculation and displaying a result.<br>
-**Scope**: Black box organization.<br>
-**Level**: Strategic.<br>
-**Actor**: User.<br>
-**Guarantee**: Calculation performed and result successfully displayed.<br>
-**Trigger**: User's request.<br>
+  - #### Use Case 5: View Failed Login Activity Logs
+    - **Name:** View Failed Login Activity Logs
+    - **Usage Context:** The administrator views the failed login activity log.
+    - **Scope:** Subsystem
+    - **Level:** User
+    - **Primary Actor:** Administrator
+    - **Minimum Guarantee:** Failed login activity logs are not disclosed.
+    - **Guarantee in case of success:** Failed login activity logs are displayed.
+    - **Trigger:** The administrator wants to view a failed login activity log.
+    - **Normal Scenario:**
+      1. The failed login activity logs are displayed on the administrator's page.
+    - **Extensions:**
+      1. No failed login activity logs are recorded:
+         - A table with a message informing the administrator is displayed.
 
-**Normal Scenario**:
-1. The user requests a calculation to be performed.<br>
-2. The system processes the requested calculation.<br>
-3. The page displays the result.<br>
+  - #### Use Case 6: Create a Request
+    - **Name**: Create a Request
+    - **Usage**: The user requests a calculation to be performed.
+    - **Scope**: White box system.
+    - **Level**: User.
+    - **Actor**: User.
+    - **Precondition**: The user is logged in.
+    - **Guarantee**: The calculation request is sent to the system.
+    - **Trigger**: The user makes a calculation request.
+    - **Normal Scenario**:
+      1. The user selects the category of the calculation to be performed.
+      2. The user enters the variables for the selected category.
+      3. The request is created based on the provided information.
+    - **Exceptions**:
+      1. The request could not be created:
+         - An error message informs the user.
 
-**Extensions**:
-2. a. Calculation too long:<br>
-    1. The calculation is stopped.<br>
-    2. An information message is displayed stating that the calculation is taking too long.<br>
+  - #### Use Case 7: Perform a Calculation
+    - **Name**: Perform a Calculation
+    - **Usage**: The system executes the calculation.
+    - **Scope**: White box system.
+    - **Level**: User.
+    - **Actor**: System.
+    - **Precondition**: A calculation request has been made.
+    - **Guarantee**: The calculation produces a result.
+    - **Trigger**: The system receives a calculation request.
+    - **Normal Scenario**:
+      1. The system receives a calculation request.
+      2. The system distributes the calculation to various Raspberry Pi Zero devices.
+      3. The Raspberry Pi Zero devices process the calculation and return a result.
+      4. The system processes the results obtained from the Raspberry Pi Zero devices.
+      5. The system displays the final result.
+    - **Exceptions**:
+      1. No Raspberry Pi Zero devices are available:
+         - The calculation is canceled.
 
-**Exceptions**:
-1. a. The request was not successful:<br>
-    1. An error message is displayed explaining the failure.<br>
+  - #### Use Case 8: View History
+    - **Name**: View History
+    - **Usage**: The user views the calculation history of their profile.
+    - **Scope**: Black box system.
+    - **Level**: User.
+    - **Actor**: User.
+    - **Minimal Guarantee**: Calculation histories are not disclosed to unauthorized parties.
+    - **Success Guarantee**: The calculation history is displayed.
+    - **Trigger**: The user wishes to view their calculation history.
+    - **Normal Scenario**:
+      1. The calculation history is displayed on the user's page.
+    - **Extensions**:
+      1. No record of ticket creation activity is found:
+         - A table with a message informing the system administrator is displayed.
 
-3. a. Display failed:
-   1. An error message.<br>
-  
-***
+  - #### Use Case 10: Delete File
+    - **Name**: Delete File
+    - **Usage**: The user deletes a specified file from the system.
+    - **Scope**: File management.
+    - **Level**: User.
+    - **Actor**: User.
+    - **Precondition**: The file exists and is accessible.
+    - **Guarantee**: The file is deleted from the system.
+    - **Trigger**: The user requests to delete the file.
+    - **Normal Scenario**:
+      1. The user selects the file they want to delete.
+      2. The system prompts the user for confirmation.
+      3. The user confirms the deletion.
+      4. The system deletes the file from the specified location.
+    - **Exceptions**:
+      1. The file cannot be deleted:
+         - An error message informs the user that the deletion was unsuccessful.
 
-- <b><a name="p3c"></a>c) User and system use cases.</b>
-#### Use Case 3: Registration
-**Name:** Register  
-**Usage Context:** The data provided in a registration form is used to create a new account on the platform.  
-**Scope:** Black box system  
-**Level:** User  
-**Primary Actor:** User  
-**Precondition:** User is not registered  
-**Minimum Guarantee:** Data will be kept private and the password will be encrypted  
-**Guarantee in case of success:** Creation of a user account in the database  
-**Trigger:** Receipt of a registration form filled out by the user
+  - #### Use Case 11: Stop Process
+    - **Name**: Stop Process
+    - **Usage**: The user stops a running process on the system.
+    - **Scope**: System-wide.
+    - **Level**: User.
+    - **Actor**: User or System Administrator.
+    - **Precondition**: The process is currently running.
+    - **Guarantee**: The process is stopped and system resources are freed.
+    - **Trigger**: The user or system administrator requests to stop the process.
+    - **Normal Scenario**:
+      1. The user identifies the process they wish to stop (via task manager or system monitoring tool).
+      2. The user selects the process to be stopped.
+      3. The system confirms the request.
+      4. The system stops the process and frees associated resources.
+    - **Exceptions**:
+      1. The process cannot be stopped:
+         - An error message informs the user that the process cannot be terminated.
 
-**Normal Scenario:**
-1. Receipt of the registration form
-2. Encrypting the password
-3. Insertion of the form data into the database => Creation of a new account on the platform
-4. Sending a confirmation message of registration to the user
+  - #### Use Case 12: Download a File
+    - **Name**: Download a File
+    - **Usage Context**: The user wants to download a file from the platform.
+    - **Scope**: Platform's file system.
+    - **Level**: User.
+    - **Primary Actor**: User.
+    - **Preconditions**:
+      - The user is logged in.
+      - The user has access to the requested file.
+    - **Guarantee in Case of Success**:
+      - The file is successfully downloaded to the user's device.
+    - **Trigger**:
+      - The user selects the download option for a specific file.
+    - **Normal Scenario**:
+      1. The user browses the platform and selects the file they wish to download.
+      2. The system checks if the user has permission to download the file.
+      3. The user clicks on the "Download" button.
+      4. The system starts the file download process.
+      5. The file is downloaded to the user's device.
+    - **Exceptions**:
+      1. The user does not have permission to download the file:
+         - An error message informs the user that they do not have access to the file.
+      2. The download fails:
+         - An error message informs the user that the download could not be completed due to network or system issues.
 
-**Exceptions:**
-1. a. The user has not filled out all required fields in the form:
-    1. A failure message is sent to the user for account creation (FAILURE)
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-2. a. The user's login is already present in the database:
-    1. A failure message is sent to the user for account creation (FAILURE)
+---
 
-   b. Unable to access the database:
-    1. A failure message is sent to the user for account creation (FAILURE)
-       
-***
+- <b><a id="p3d"></a>d) System use cases.</b>
 
-#### Use Case 4: View Failed Login Activity Logs
-**Name:** View Failed Login Activity Logs  
-**Usage Context:** The administrator views the failed login activity log.  
-**Scope:** Subsystem  
-**Level:** User  
-**Primary Actor:** Administrator  
-**Minimum Guarantee:** Failed login activity logs are not disclosed.  
-**Guarantee in case of success:** Failed login activity logs are displayed.  
-**Trigger:** The administrator wants to view a failed login activity log.
+  - #### Use Case 13: Authentication
+    - **Name:** Authentication
+    - **Usage Context:** A user wants to switch between logged in and logged out states.
+    - **Scope:** Subsystem
+    - **Level:** Sub-function
+    - **Primary Actor:** System
+    - **Participants:** User
+    - **Precondition:** User is registered
+    - **Minimum Guarantee:** Data will be private and the password will be encrypted
+    - **Guarantee in case of success:** User login/logout
+    - **Trigger:** Receipt of an authentication request
+    - **Normal Scenario LOGIN:**
+      1. Receipt of the login form.
+      2. Access the database.
+      3. Verify the form information with the data in the database.
+      4. Log in to the user account.
+    - **Exceptions LOGIN:**
+      1. The user has not filled out all required fields in the form:
+         - A failure message is sent to the user (FAILURE).
+         - A failed login attempt is logged.
+      2. Unable to access the database:
+         - A failure message is sent to the user (FAILURE).
+         - A failed login attempt is logged.
+      3. The user's login is not in the database:
+         - A failure message is sent to the user (FAILURE).
+         - A failed login attempt is logged.
+      4. The provided password is not validated:
+         - A failure message is sent to the user (FAILURE).
+         - A failed login attempt is logged.
+      5. Login failure:
+         - A failure message is sent to the user (FAILURE).
+         - A failed login attempt is logged.
+    - **Normal Scenario LOGOUT:**
+      1. Receipt of the logout request.
+      2. Log out from the user account.
+      3. Send a confirmation message of logout to the user.
+    - **Exceptions LOGOUT:**
+      1. Logout failure:
+         - A failure message is sent to the user (FAILURE).
 
-**Normal Scenario:**
-1. The failed login activity logs are displayed on the administrator's page.
+  - #### Use Case 14: Failed Login Activity Log
+    - **Name:** Log Failed Login Activity
+    - **Usage Context:** Recording a failed login attempt in a log
+    - **Scope:** Subsystem
+    - **Level:** Sub-function
+    - **Primary Actor:** System
+    - **Participants:** User
+    - **Precondition:** A login attempt has failed
+    - **Guarantee in case of success:** A failed login activity log is recorded
+    - **Trigger:** Failed login
+    - **Normal Scenario:**
+      1. Receipt of a failed login attempt.
+      2. Creation of a failed login activity log.
+      3. Recording of the log.
+    - **Exceptions:**
+      1. Failure to create the activity log:
+         - The information is not stored (FAILURE).
 
-**Extensions:**
-1. a. No failed login activity logs are recorded:
-    1. A table with a message informing the administrator is displayed.
-       
-***
+  - #### Use Case 15 : Go to the Website
+    - **Name:** Go to the Website
+    - **Usage Context:** Ensuring connection to the website.
+    - **Scope:** Subsystem
+    - **Level:** Sub-function
+    - **Guarantee in case of success:** Successful connection to the website.
 
-#### Use Case 5: Authentication
-**Name:** Authentication  
-**Usage Context:** A user wants to switch between logged in and logged out states.  
-**Scope:** Subsystem  
-**Level:** Sub-function  
-**Primary Actor:** System  
-**Participants:** User  
-**Precondition:** User is registered  
-**Minimum Guarantee:** Data will be private and the password will be encrypted  
-**Guarantee in case of success:** User login/logout  
-**Trigger:** Receipt of an authentication request
+  - #### Use Case 9 : View Result
+    - **Name**: View Result
+    - **Usage**: The user views the result of an operation or calculation.
+    - **Scope**: System-wide.
+    - **Level**: Sub-function.
+    - **Actor**: User.
+    - **Precondition**: The operation or calculation has been completed.
+    - **Guarantee**: The result of the operation is displayed to the user.
+    - **Trigger**: The user requests to view the result.
+    - **Normal Scenario**:
+      1. The user initiates a request to view the result of an operation.
+      2. The system retrieves the result from the operation.
+      3. The system displays the result in a user-friendly format (text, list, or graphic).
+    - **Exceptions**:
+      1. The result cannot be displayed:
+         - An error message informs the user that the result is unavailable.
 
-**Normal Scenario LOGIN:**
-1. Receipt of the login form
-2. Access the database
-3. Verify the form information with the data in the database
-4. Log in to the user account
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-**Exceptions LOGIN:**
-1. a. The user has not filled out all required fields in the form:
-    1. A failure message is sent to the user (FAILURE)
-    2. A failed login attempt is logged
-2. a. Unable to access the database:
-    1. A failure message is sent to the user (FAILURE)
-    2. A failed login attempt is logged
-3. a. The user's login is not in the database:
-    1. A failure message is sent to the user (FAILURE)
-    2. A failed login attempt is logged
+---
 
-   b. The provided password is not validated:
-    1. A failure message is sent to the user (FAILURE)
-    2. A failed login attempt is logged
-4. a. Login failure:
-    1. A failure message is sent to the user (FAILURE)
-    2. A failed login attempt is logged
+### <a id="p4"></a>IV – Technology Used
 
-**Normal Scenario LOGOUT:**
-1. Receipt of the logout request
-2. Log out from the user account
-3. Send a confirmation message of logout to the user
+- **<a id="p4a"></a>a) What are the technological requirements for this system?**  <br><br>
+    The application must use: SQL, HTML, CSS, and other programming languages for the
+    algorithmic part. This other language will be decided based on the requirements 
+    from our professors.<br><br>
+    - SQL is the language used for working with a DBMS such as MariaDB.<br>
+    - HTML and CSS are used to create the web pages of the website.<br>
+    - The other languages will be used to implement mathematical algorithms.<br><br>
 
-**Exceptions LOGOUT:** <br>
-2. a Logout failure:<br>
-     1. A failure message is sent to the user (FAILURE)<br>
+    The server must be protected from intrusions, particularly SSH, using the fail2ban 
+    software and should automatically archive activity logs using the CRON software.
+    <br><br>
+    We will use Jetbrains'WebStorm software.<br> These tools are not mandatory, but they will help improve the quality of the submitted code.<br>
 
-***
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-#### Use Case 6: Failed Login Activity Log
-**Name:** Log Failed Login Activity  
-**Usage Context:** Recording a failed login attempt in a log  
-**Scope:** Subsystem  
-**Level:** Sub-function  
-**Primary Actor:** System  
-**Participants:** User  
-**Precondition:** A login attempt has failed  
-**Guarantee in case of success:** A failed login activity log is recorded  
-**Trigger:** Failed login
+- **<a id="p4b"></a>b) Which systems will be interfaced with this system, and what are their requirements?**<br><br>
 
-**Normal Scenario:**
-1. Receipt of a failed login attempt
-2. Creation of a failed login activity log
-3. Recording of the log
+    To ensure the proper functioning of the final web application, it will be necessary to make sure that the web server is ready for use on a micro SD card.<br>
+    Additionally, it will be necessary to ensure the website works correctly on the computers in the machine rooms of the IUT in Vélizy.<br>
+    The SD card must contain a web server (Apache is recommended) as well as a DBMS server.<br>
+    Also, the server hosting the web application will be deployed on a Raspberry Pi 0 cluster and accessible via SSH connection.<br>
+    The platform must allow remote configuration of fail2ban and management of its jails. Therefore, Apache must be able to interact with the system for fail2ban.<br><br>
 
-**Exceptions:**<br>
-2. a. Failure to create the activity log:<br>
-    1. The information is not stored (FAILURE)<br>
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- **<a id="p4c"></a>c) What hardware is used to support the system?**<br><br>
+
+    We are working on a Raspberry Pi 0 Cluster using a Raspberry Pi 4 and a Cluster HAT v2.5.
     
-***
-
-#### Use Case 7: Go to the Website
-**Name:** Go to the Website  
-**Usage Context:** Ensuring connection to the website.  
-**Scope:** Subsystem  
-**Level:** Sub-function  
-**Guarantee in case of success:** Successful connection to the website.
-
-***
-
-#### Use Case 9: Create a Request
-**Name**: Create a Request<br>
-**Usage**: The user requests a calculation to be performed.<br>
-**Scope**: White box system.<br>
-**Level**: User.<br>
-**Actor**: User.<br>
-**Precondition**: The user is logged in.<br>
-**Guarantee**: The calculation request is sent to the system.<br>
-**Trigger**: The user makes a calculation request.<br>
-
-**Normal Scenario**:
-1. The user selects the category of the calculation to be performed.
-2. The user enters the variables for the selected category.
-3. The request is created based on the provided information.
-
-**Exceptions**:<br>
-3. a. The request could not be created:<br>
-    1. An error message informs the user.<br>
+    Each Raspberry Pi 0 contains:
+    - <b>CPU</b>: Broadcom BCM2835, a single-core ARM11 processor clocked at 1 GHz.
+    - <b>RAM</b>: 512 MB of LPDDR2 SDRAM.
+    - <b>Storage</b>: Micro SD card.
+    - <b>Peripherals</b>: Micro USB ports, CSI connector, Mini HDMI port.
     
-***
+    The Raspberry Pi 4 contains:
+    - <b>CPU</b>: Broadcom BCM2711, a quad-core ARM Cortex-A72 processor clocked at 1.5 GHz.
+    - <b>RAM</b>: 4 GB.
+    - <b>Storage</b>: Micro SD card.
+    - <b>Peripherals</b>: USB ports, Gigabit Ethernet, micro-HDMI ports, 3.5 mm audio jack.
+    - <b>Others</b>: 802.11ac Wi-Fi, Bluetooth 5.0, power via USB-C.
 
-#### Use Case 10: Perform a Calculation
-**Name**: Perform a Calculation<br>
-**Usage**: The system executes the calculation.<br>
-**Scope**: White box system.<br>
-**Level**: User.<br>
-**Actor**: System.<br>
-**Precondition**: A calculation request has been made.<br>
-**Guarantee**: The calculation produces a result.<br>
-**Trigger**: The system receives a calculation request.<br>
+    The Cluster HAT contains:
+    - <b>Peripherals</b>: USB ports.    
 
-**Normal Scenario**:
-1. The system receives a calculation request.<br>
-2. The system distributes the calculation to various Raspberry Pi Zero devices.<br>
-3. The Raspberry Pi Zero devices process the calculation and return a result.<br>
-4. The system processes the results obtained from the Raspberry Pi Zero devices.<br>
-5. The system displays the final result.<br>
-
-**Exceptions**:<br>
-2. a. No Raspberry Pi Zero devices are available:<br>
-    1. The calculation is canceled.<br>
-    
-***
-
-#### Use Case 11: Perform a Calculation
-**Name**: View History<br>
-**Usage**: The user views the calculation history of their profile.<br>
-**Scope**: Black box system.<br>
-**Level**: User.<br>
-**Actor**: User.<br>
-**Minimal Guarantee**: Calculation histories are not disclosed to unauthorized parties.<br>
-**Success Guarantee**: The calculation history is displayed.<br>
-**Trigger**: The user wishes to view their calculation history.<br>
-
-**Normal Scenario**:
-1. The calculation history is displayed on the user's page.<br>
-
-**Extensions**:
-1. a. No record of ticket creation activity is found:<br>
-    1. A table with a message informing the system administrator is displayed.<br>
-
----
-#### Use Case 12: View Result
-**Name**: View Result<br>
-**Usage**: The user views the result of an operation or calculation.<br>
-**Scope**: System-wide.<br>
-**Level**: User.<br>
-**Actor**: User.<br>
-**Precondition**: The operation or calculation has been completed.<br>
-**Guarantee**: The result of the operation is displayed to the user.<br>
-**Trigger**: The user requests to view the result.<br>
-
-**Normal Scenario**:
-1. The user initiates a request to view the result of an operation.
-2. The system retrieves the result from the operation.
-3. The system displays the result in a user-friendly format (text, list, or graphic).
-
-**Exceptions**:<br>
-3. a. The result cannot be displayed:<br>
-    1. An error message informs the user that the result is unavailable.<br>
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
 ---
 
-#### Use Case 13: Delete File
-**Name**: Delete File<br>
-**Usage**: The user deletes a specified file from the system.<br>
-**Scope**: File management.<br>
-**Level**: User.<br>
-**Actor**: User.<br>
-**Precondition**: The file exists and is accessible.<br>
-**Guarantee**: The file is deleted from the system.<br>
-**Trigger**: The user requests to delete the file.<br>
+### <a id="p5"></a>V – Other Requirements
 
-**Normal Scenario**:
-1. The user selects the file they want to delete.
-2. The system prompts the user for confirmation.
-3. The user confirms the deletion.
-4. The system deletes the file from the specified location.
+- **<a id="p5a"></a>a) Development Process**
 
-**Exceptions**:<br>
-3. a. The file cannot be deleted:<br>
-    1. An error message informs the user that the deletion was unsuccessful.<br>
+    - <u><a id="p5ai"></a>i. Who are the project participants?</u><br><br>
 
----
-
-#### Use Case 14: Stop Process
-**Name**: Stop Process<br>
-**Usage**: The user stops a running process on the system.<br>
-**Scope**: System-wide.<br>
-**Level**: User or System Administrator.<br>
-**Actor**: User or System Administrator.<br>
-**Precondition**: The process is currently running.<br>
-**Guarantee**: The process is stopped and system resources are freed.<br>
-**Trigger**: The user or system administrator requests to stop the process.<br>
-
-**Normal Scenario**:
-1. The user identifies the process they wish to stop (via task manager or system monitoring tool).
-2. The user selects the process to be stopped.
-3. The system confirms the request.
-4. The system stops the process and frees associated resources.
-
-**Exceptions**:<br>
-3. a. The process cannot be stopped:<br>
-    1. An error message informs the user that the process cannot be terminated.<br>
-
----
-#### Use Case 15: Download a File
-**Name**: Download a File<br>
-**Usage Context**: The user wants to download a file from the platform.<br>
-**Scope**: Platform's file system.<br>
-**Level**: User-level.<br>
-**Primary Actor**: User.<br>
-
-**Preconditions**:
-- The user is logged in.
-- The user has access to the requested file.
-
-**Guarantee in Case of Success**:
-- The file is successfully downloaded to the user's device.
-
-**Trigger**:
-- The user selects the download option for a specific file.
-
-**Normal Scenario**:
-1. The user browses the platform and selects the file they wish to download.
-2. The system checks if the user has permission to download the file.
-3. The user clicks on the "Download" button.
-4. The system starts the file download process.
-5. The file is downloaded to the user's device.
-
-**Exceptions**:<br>
-3. a. The user does not have permission to download the file:<br>
-    1. An error message informs the user that they do not have access to the file.<br>
-
-3. b. The download fails:<br>
-    1. An error message informs the user that the download could not be completed due to network or system issues.<br>
-
-
-------------------------------------------------------------------------------------------------------------------------
-
-
-
-### <a name="p4"></a>IV – Technology Used
-
-- <b><a name="p4a"></a>a) What are the technological requirements for this system?</b>
-
-The application must use: SQL, HTML, CSS, and other programming languages for the algorithmic part. This other language will be decided based on the requirements from our professors.<br>
-- SQL is the language used for working with a DBMS such as MariaDB.<br>
-- HTML and CSS are used to create the web pages of the website.<br>
-- The other languages will be used to implement mathematical algorithms.<br>
-
-The server must be protected from intrusions, particularly SSH, using the fail2ban software and should automatically archive activity logs using the CRON software.<br> We will use Jetbrains'WebStorm software.<br> These tools are not mandatory, but they will help improve the quality of the submitted code.<br>
-<br>
-
-- <b><a name="p4b"></a>b) Which systems will be interfaced with this system, and what are their requirements?</b>
-
-To ensure the proper functioning of the final web application, it will be necessary to make sure that the web server is ready for use on a micro SD card.<br>
-Additionally, it will be necessary to ensure the website works correctly on the computers in the machine rooms of the IUT in Vélizy.<br>
-The SD card must contain a web server (Apache is recommended) as well as a DBMS server.<br>
-Also, the server hosting the web application will be deployed on a Raspberry Pi 0 cluster and accessible via SSH connection.<br>
-The platform must allow remote configuration of fail2ban and management of its jails. Therefore, Apache must be able to interact with the system for fail2ban.
-
-<br>
-
-- <b><a name="p4c"></a>c) What hardware is used to support the system?</b>
-
-We are working on a Raspberry Pi 0 Cluster using a Raspberry Pi 4 and a Cluster HAT v2.5 .
-
-Each Raspberry Pi 0 contains:
-- <b>CPU</b>: Broadcom BCM2835, a single-core ARM11 processor clocked at 1 GHz.
-- <b>RAM</b>: 512 MB of LPDDR2 SDRAM.
-- <b>Storage</b>: Micro SD card.
-- <b>Peripherals</b>: Micro USB ports, CSI connector, Mini HDMI port.
-
-The Raspberry Pi 4 contains:
-- <b>CPU</b>: Broadcom BCM2711, a quad-core ARM Cortex-A72 processor clocked at 1.5 GHz.
-- <b>RAM</b>: 4 GB.
-- <b>Storage</b>: Micro SD card.
-- <b>Peripherals</b>: USB ports, Gigabit Ethernet, micro-HDMI ports, 3.5 mm audio jack.
-- <b>Others</b>: 802.11ac Wi-Fi, Bluetooth 5.0, power via USB-C.
-
-The Cluster HAT contains:
-- <b>Peripherals</b>: USB ports.    
-
-<br><br><br><br><br><br><br>
-------------------------------------------------------------------------------------------------------------------------
-
-
-### <a name="p5"></a>V – Other Requirements
-
-- <b><a name="p5a"></a>a) Development Process</b>
-
-    - <u><a name="p5ai"></a>i. Who are the project participants?</u><br>
-
-      The members of our team are the main participants in the project. Our team consists of Tom BOGAERT, Matthieu FARANDJIS, William HERUBEL, Baptiste FOURNIÉ, and Florent VASSEUR-BERLIOUX.<br>
+      The members of our team are the main participants in the project.
+      Our team consists of Tom BOGAERT, Matthieu FARANDJIS, William HERUBEL,
+      Baptiste FOURNIÉ, Florent VASSEUR-BERLIOUX and Lucas DA SILVA FERREIRA.<br>
       <br>
   
-    - <u><a name="p5aii"></a>ii. What values should be prioritized? (e.g., simplicity, availability, speed, flexibility, etc.)</u><br>
-      <h3> Efficiency </h3>
-      We prioritize efficiency to ensure our algorithms achieve their best performance. Calculations must be executed as quickly as possible.
-      <h3> Flexibility </h3>
-      Our application should be extensible, allowing new features (calculations, etc.) to be added without rewriting the code.
-      <h3> Portability</h3>
-      The web platform must be hosted on a Cluster Hat Kit (connected to 4 Raspberry Pi Zeros) and have an SD card configured by the development team. Additionally, it must allow SSH access to the Raspberry Pi.
-      <h3> Security</h3>
-      Data must be protected, and the site should display only what each user is allowed to see. It is essential to secure the SQL queries made by the (Node JS) files to restrict access as much as possible and limit security vulnerabilities. Moreover, all passwords must be encrypted before being stored in the database to mitigate the effects of any potential data breach. We will also install fail2ban to moderate SSH connections, login attempts, and website registrations.<br>
+    - <u><a id="p5aii"></a>ii. What values should be prioritized? (e.g., simplicity, availability, speed, flexibility, etc.)</u><br>
+      - ### Efficiency
+        We prioritize efficiency to ensure our algorithms achieve their best performance. Calculations must be executed as quickly as possible.
+      - ### Flexibility
+        Our application should be extensible, allowing new features (calculations, etc.) to be added without rewriting the code.
+      - ### Portability
+        The web platform must be hosted on a Cluster Hat Kit (connected to 4 Raspberry Pi Zeros) and have an SD card configured by the development team. Additionally, it must allow SSH access to the Raspberry Pi.
+      - ### Security
+        Data must be protected, and the site should display only what each user is allowed to see. It is essential to secure the SQL queries made by the (Node JS) files to restrict access as much as possible and limit security vulnerabilities. Moreover, all passwords must be encrypted before being stored in the database to mitigate the effects of any potential data breach. We will also install fail2ban to moderate SSH connections, login attempts, and website registrations.<br>
       <br>
   
-    - <u><a name="p5aiii"> </a> iii. What feedback or visibility on the project do users and sponsors expect?</u><br><br>
+    - <u><a id="p5aiii"> </a> iii. What feedback or visibility on the project do users and sponsors expect?</u><br><br>
       Since this project is part of an evaluated academic work, the sponsors of this project are our instructors. They have significant visibility into the project's progress and will receive documentation on the project and its advancement at specific dates. Communication between team members and instructors is recommended to ensure the project meets their expectations.
       Communication with our professors will take place via email as well as in person.<br>
       Our client, Mr. HOGUIN, should have full access to the project: GitHub, Linux administrator account (sudoers).<br>
       Our second client, Mr. DUFAUD, should have access to the GitHub to track the progress of our project.<br><br>
   
-    - <u><a name="p5aiv"> </a>iv. What can be purchased? What needs to be built? Who are our competitors?</u><br><br>
+    - <u><a id="p5aiv"> </a>iv. What can be purchased? What needs to be built? Who are our competitors?</u><br><br>
       The project involves designing and developing software to perform various calculations. No purchases are required for software development, as the hardware (cluster kit) is provided by the client. We do not have direct competitors.<br><br>
   
-    - <u><a name="p5av"> </a>v. What are the other process requirements? (e.g., testing, installation, etc.)</u><br><br>
+    - <u><a id="p5av"> </a>v. What are the other process requirements? (e.g., testing, installation, etc.)</u><br><br>
       Project requirements include a testing phase to ensure the application functions correctly. We also expect the submission of appendices related to the team’s work organization and the graphic design of the application logo.
       The project will follow a waterfall or V-model approach for each project element. In the waterfall model, we will start with design, followed by development, and finish with testing. In the V-model, we will begin with design, followed by testing, and then development. Clients should have access to the Git repository to assess project progress and provide feedback if necessary.<br><br>
   
-    - <u><a name="p5avi"> </a>vi. What dependencies does the project have?</u><br><br>
+    - <u><a id="p5avi"> </a>vi. What dependencies does the project have?</u><br><br>
       This project has no major dependencies due to the stability of Node JS, JS and MariaDB. It also uses technologies such as HTML, CSS, JavaScript, Raspberry OS Lite, fail2ban, and CRON.<br><br>
 
-- <b><a name="p5b"> </a>b) Performance</b><br><br>
+- <b><a id="p5b"> </a>b) Performance</b><br><br>
   The software must be as efficient as possible to facilitate access. Programs will be optimized and tested to minimize the number of operations. Data storage systems will be chosen accordingly to maximize platform performance.<br><br>
 
-- <b><a name="p5c"> </a>c) Operations, Documentation</b><br><br>
-  All the code used in the project must be documented to ensure readability. All generated functions will be accompanied by a Docstring. Additionally, a test folder and code documentation will be included.<br>
+- <b><a id="p5c"> </a>c) Operations, Documentation</b><br><br>
+  All the code used in the project must be documented to ensure readability. All generated functions will be accompanied by a Docstring. Additionally, a test folder and code documentation will be included.<br><br>
 
-- <b><a name="p5d"> </a>d) Usability and User-friendliness</b><br><br>
+- <b><a id="p5d"> </a>d) Usability and User-friendliness</b><br><br>
   We will ensure the application is accessible by adhering to the W3C UAAG 2.1 standard. We will use the "Wave" browser extension to verify compliance. Any additional tools to further ensure accessibility are welcome.
-  A user guide for the website must be available, as well as a visual transcript of the presentation video. Our software can be used via a website or through terminal commands.
+  A user guide for the website must be available, as well as a visual transcript of the presentation video. Our software can be used via a website or through terminal commands.<br><br>
 
-- <b><a name="p5e"> </a>e) Maintenance and Portability</b><br><br>
+- <b><a id="p5e"> </a>e) Maintenance and Portability</b><br><br>
   The web application’s portability and maintenance will be checked using the W3C validator. This ensures compatibility across all browsers and verifies that the code complies with current standards. Node JS and MariaDB function on both Windows and Linux servers. We will conduct integration tests to ensure the correct integration of different modules into our project.
-<br><br><br><br><br><br><br>
 
-------------------------------------------------------------------------------------------------------------------------
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-### <a name="p6"></a>VI – Human Resources, Legal, Political, and Organizational Questions
+---
 
-- <b><a name="p6a"></a>a) What is the human involvement in the system's operation?</b><br>
+### <a id="p6"></a>VI – Human Resources, Legal, Political, and Organizational Questions
+
+- <b><a id="p6a"></a>a) What is the human involvement in the system's operation?</b><br><br>
 
   The hardware must be set up for each use. This will require qualified personnel for its installation.<br>
   However, this system could eventually be connected as a server.<br><br>
   The system startup and maintenance must be handled by competent personnel.<br>
   <br>
 
-- <b><a name="p6b"></a>b) What are the legal and political requirements?</b><br>
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- <b><a id="p6b"></a>b) What are the legal and political requirements?</b><br><br>
   The application must comply with the French law "Informatique et Liberté" of January 6, 1978, updated on June 1, 2019, regarding information technology, files, and liberties.<br>
   The application is also subject to the European regulation "General Data Protection Regulation" (GDPR) of April 27, 2016, concerning the protection of natural persons with regard to the processing of personal data and the free movement of such data, repealing Directive 95/46/EC.<br>
   <br>
@@ -608,7 +637,11 @@ The Cluster HAT contains:
       https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies <br>
       <br>
 
-- <b><a name="p6c"></a>c) What are the human impacts of the system's implementation?</b><br>
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- <b><a id="p6c"></a>c) What are the human impacts of the system's implementation?</b><br><br>
 
   The application will allow users to run programs requiring distributed or parallel computing in a more accessible way, without needing in-depth knowledge of cluster management and computing.<br><br>
 
@@ -617,7 +650,11 @@ The Cluster HAT contains:
   This data can be used for statistical studies, allowing administrators to monitor site traffic and the use of hardware resources during computations.<br>
   <br>
 
-- <b><a name="p6d"></a>d) What are the training requirements?</b><br>
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- <b><a id="p6d"></a>d) What are the training requirements?</b><br><br>
   In general, users need to know how to use a computer and an internet browser.<br>
   <br>
   A user guide, potentially including a presentation video to help users learn how to use the application, will be available.<br>
@@ -626,8 +663,11 @@ The Cluster HAT contains:
   It is possible to have a web page providing tips for users.<br>
   <br>
 
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-- <b><a name="p6e"></a>e) What hypothesis and dependencies affect the human environment?</b><br>
+- **<a id="p6e"></a>e) What hypothesis and dependencies affect the human environment?**<br><br>
     - We assume that:<br>
         - all students, teachers, and staff involved have an internet connection and know how to use a computer and an internet browser.<br>
         - the use of the application by individuals with disabilities may differ.<br>
@@ -638,32 +678,53 @@ The Cluster HAT contains:
           Changes to these laws may require a reevaluation of the application to ensure continued compliance.
         - the evolution of internet browsers. The application may become obsolete.
 
-  <br><br><br><br><br><br><br>
-------------------------------------------------------------------------------------------------------------------------
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-### <a name="p7"></a>VII - Project management and organization.
+---
 
-- <b><a name="p7a"></a>a) Roles and responsibilities</b><br>
-  The team is composed of:
+### <a id="p7"></a>VII - Project management and organization.
+
+- **<a id="p7a"></a>a) Roles and responsibilities**<br><br>
+  The team is composed of:<br><br>
+
     - **Matthieu FARANDJIS**  
-      Project Manager, Database Administrator, RaspberryPi 4 Administrator, Developer, GitHub Manager,  
-      responsible for communication between professors and the team.
-    - **Florent VASSEUR--BERLIOUX**  
-      Design Manager, RaspberryPi 4 Vice-Administrator, Developer
+      - Project Manager
+      - Database Administrator
+      - RaspberryPi 4 Administrator
+      - Developer
+      - GitHub Manager
+      - responsible for communication between professors and the team.<br><br>
+    - **Florent VASSEUR-BERLIOUX**  
+      - Design Manager
+      - RaspberryPi 4 Vice-Administrator
+      - Developer<br><br>
     - **Tom BOGAERT**  
-      Artistic Manager, HTML/CSS/JS Developer, Developer
+      - Artistic Manager
+      - HTML/CSS/JS Developer
+      - Developer<br><br>
     - **William HERUBEL**  
-      Redaction Manager, Developer
+      - Redaction Manager
+      - Developer<br><br>
     - **Baptiste FOURNIÉ**  
-      Mathematical Calculations Manager, Developer
-      - **Lucas Da silva Ferreira**
-        RaspberryPi 4 Administrator,Redaction Manager, Developer
-      <br><br>
+      - Mathematical Calculations Manager
+      - Developer<br><br>
+    - **Lucas Da Silva Ferreira**
+      - RaspberryPi 4 Administrator
+      - Mathematical Calculations Assistant
+      - Redaction Manager
+      - Developer
 
-- <b><a name="p7b"></a>b) Life cycle</b><br>
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- **<a id="p7b"></a>b) Life cycle**<br><br>
   As part of the project, we followed an iterative waterfall cycle.<br>
   For each task (like pages), we followed the pattern: Design -> Development -> Testing.<br>
-  However, we can always go back to the drawing board in case of bugs or design errors, for example.<br>
+  However, we can always go back to the drawing board in case of bugs or design errors.
 
-  <br><br><br>
-  **Life cycle V0.2:**
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
