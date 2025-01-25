@@ -17,19 +17,17 @@ This document describes how we succeed in making parallel and distributed calcul
 
 ---
 
+<a id="summary">
+
 ## Plan
 - ### [Definitions](#p0)
 - ### [I – MPI utilization](#p1)
   - [**a) MPI presentation**](#p1a)
   - [**b) mpi4py**](#p1b)
   - [**c) The hostfile for use mpriun on Master and/or Workers**](#p1c)
-  - [**d) Create a common repertory for all Pi**](#p1d)
 
-- ### [II – Test of MPI with prime.py](#p2)
-  - [**a) prime.py presentation**](#p2a)
-    <br><br><br>
 ---
-## <a name="p0"></a> Definitions
+## <a id="p0"></a> Definitions
 
 **calcul code:**<br>In a computer cluster, each node is an individual server that works in parallel with other nodes to process heavy tasks or run applications requiring high computing power.
 It must contain RAM, a local hard disk, several processors with several computing cores each <br><br>
@@ -44,9 +42,12 @@ Sequential calculation is a data processing model in which operations are execut
 **distributed memory:**<br>when memory is divided into several nodes, with each portion accessible only to certain processors.
 Distributed memory refers to a system where memory is shared between several nodes, each with its own physical memory. Nodes can be individual computers, servers or other processing devices. In this model, data can be distributed across multiple nodes, enabling greater scalability and redundancy.<br><br>
 
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
 ---
-## <a name="p1"></a> I - MPI utilization
+## <a id="p1"></a> I - MPI utilization
 
 _**Sources :**_
 - https://mpi4py.readthedocs.io/en/stable/<br>
@@ -54,7 +55,7 @@ _**Sources :**_
 - https://www.matrics.u-picardie.fr/documentation/mpi/
   <br><br>
   
-- ### <a name="p1a"></a> a) MPI presentation
+- ### <a id="p1a"></a> a) MPI presentation
   MPI (Message Passing Interface) is a library with an ensemble of standardized function for memory distributed architectures.<br>
   MPI allow of exploiting many calcul knots link by a network communication.<br>
   The objective it's to takes advantage of having more than a single core in CPU.<br>
@@ -82,11 +83,19 @@ _**Sources :**_
   - **-mca**
     - Description : allows you to configure specific MCA (Modular Component Architecture) parameters.
       <br><br>
-- ### <a name="p1b"></a> b) mpi4py
+
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+      
+- ### <a id="p1b"></a> b) mpi4py
   mpi4py (MPI for Python) allowing Python applications to exploit MPI.<br>
 
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-- ### <a name="p1b"></a> b) The hostfile for use mpriun on Master and/or Workers
+- ### <a id="p1c"></a> c) The hostfile for use mpriun on Master and/or Workers
   We have already explain the command `mpirun --hostfile hosts -np 8 python prime.py` in the part a).<br>
   So the hostfile is for example :<br>
   <br>
@@ -118,4 +127,6 @@ _**Sources :**_
 
   <img src="img\img_fonctionnement_calculs_paralleles_distribues\schema_cluster_illustration_transfert_donnees.png" width="300"/>
 
-# faire commande top et voir ce que ça donne, voir comment sont gérés les processus MPI voir quel quantité de mémoire est de part de processeur est utilisé
+  <div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
