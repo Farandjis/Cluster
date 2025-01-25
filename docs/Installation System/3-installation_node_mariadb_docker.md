@@ -24,9 +24,6 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
     - [**a) Docker**](#p1a)
     - [**b) MariaDB**](#p1b)
     - [**c) NodeJS**](#p1c)
-    - [**d) Project tree**](#p1c)
-      - [**i) File 1**](#p1ci)
-      - [**ii) File 2**](#p1cii)
 
 
 - ### [II – Installations](#p2)
@@ -51,14 +48,18 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
   - [**c) package**](#p4c)
 
 ---
-## <a name="p1"></a> I - Presentations
+## <a id="p1"></a> I - Presentations
 
-- ### <a name="p1a"></a> a) Docker
+- ### <a id="p1a"></a> a) Docker
   **Sources :**
   - https://aws.amazon.com/fr/docker/ <br><br>
    Docker is a software platform that allows you to design, test, and deploy applications quickly. Docker packages software into standardized units called containers, which bundle all the necessary components for the application to run: libraries, system tools, code, and runtime environment. With Docker, you can easily deploy and scale applications in any environment, with the assurance that your code will run correctly.
 
-- ### <a name="p1b"></a> b) MariaDB
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- ### <a id="p1b"></a> b) MariaDB
   **Sources :**
     - https://www.lemagit.fr/definition/MariaDB
   <br><br>
@@ -66,15 +67,25 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
  MariaDB is an open-source relational database management system (RDBMS) that serves as a compatible replacement for the widely used MySQL database technology. <br> MariaDB is based on SQL and supports data processing according to the ACID model, which guarantees atomicity, consistency, isolation, and durability of transactions.
 <br>
 
-- ### <a name="p1c"></a> c) NodeJS
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- ### <a id="p1c"></a> c) NodeJS
   **Sources :**
     - https://makina-corpus.com/front-end/introduction-nodejs
   <br><br>
 Node.js is a JavaScript development platform. It is neither a server nor a framework; it is simply the JavaScript language with libraries that allow performing actions such as writing to the standard output, opening/closing network connections, or creating a file.
----
-## <a name="p2"></a> II - Installations
 
-- ### <a name="p2a"></a> a) Docker
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+---
+
+## <a id="p2"></a> II - Installations
+
+- ### <a id="p2a"></a> a) Docker
     **Sources :**
     - https://www.raspberrypi-france.fr/installer-docker-sur-raspberry-pi/<br>
 
@@ -86,8 +97,13 @@ Node.js is a JavaScript development platform. It is neither a server nor a frame
 
     We can verify that Docker was installed successfully with `sudo systemctl ` and `sudo docker version`.<br>
     <br><br>
-    - ### <a name="p2b"></a> b) Images and containers Docker
-    - 
+    
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- ### <a id="p2b"></a> b) Images and containers Docker
+     
     **Sources :**
     - https://hub.docker.com/r/tobi312/rpi-mariadb/
     - https://blog.codetitans.pl/post/howto-mariadb-in-docker-on-raspberry-pi/
@@ -138,14 +154,16 @@ Node.js is a JavaScript development platform. It is neither a server nor a frame
   
   - **express module doesn't settle despite the --build**
 
-
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
  
-- ### <a name="p2c"></a> c) Website Test
+- ### <a id="p2c"></a> c) Website Test
 
   Wait for the next deliverable
 
 
-- ### <a name="p2d"></a> d) Integration and Testing of Fail2Ban
+- ### <a id="p2d"></a> d) Integration and Testing of Fail2Ban
 
   **1. Objective**
 
@@ -188,7 +206,7 @@ Node.js is a JavaScript development platform. It is neither a server nor a frame
     Logs from Fail2Ban provided insight into the banned IP addresses and the trigger that led to their banning, verifying that Fail2Ban was actively monitoring and responding to security threats as expected.
 
 
-- ### <a name="p2e"></a> e) MariaDB Docker with NodeJS Docker Test
+- ### <a id="p2e"></a> e) MariaDB Docker with NodeJS Docker Test
 
   **1. Objective**
 
@@ -226,12 +244,15 @@ Node.js is a JavaScript development platform. It is neither a server nor a frame
 
   Logs and system monitoring tools were used to observe the transactions and ensure no unwanted behaviors occurred during the queries.
 
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-## <a name="p3"></a> III - Use and Maintenance
+## <a id="p3"></a> III - Use and Maintenance
 
 In this section, we outline the procedures for regular operation and maintenance tasks essential for the proper functioning of the Docker-hosted Node.js and MariaDB services. This guide serves as a practical reference for routine checks and administrative tasks.
 
-- ### <a name="p3a"></a> a) Docker Instantiation
+- ### <a id="p3a"></a> a) Docker Instantiation
 
   **Starting and Stopping Containers:**
   To manage Docker containers efficiently, use the following commands:
@@ -243,8 +264,11 @@ In this section, we outline the procedures for regular operation and maintenance
   ```bash
   docker update --restart unless-stopped [container_name]
   ```
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-- ### <a name="p3b"></a> b) Tools Box
+- ### <a id="p3b"></a> b) Tools Box
 
   This toolbox section provides a collection of essential commands and checks for managing Docker environments effectively.
 
@@ -299,9 +323,13 @@ In this section, we outline the procedures for regular operation and maintenance
   - **Security Audits:**
     Conduct periodic security checks using tools like Fail2Ban to ensure no unauthorized access attempts succeed.
 
-## <a name="p4"></a> IV – Appendices
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
 
-- ### <a name="p4a"></a> a) Dockerfile (in the directory)
+## <a id="p4"></a> IV – Appendices
+
+- ### <a id="p4a"></a> a) Dockerfile (in the directory)
   Dockerfiles are crucial for defining the environments of our Docker containers. Below are the Dockerfiles used for setting up the Node.js and MariaDB containers.
 
   **Node.js Dockerfile:**
@@ -350,7 +378,11 @@ In this section, we outline the procedures for regular operation and maintenance
   **Explanation:**
   This Dockerfile configures a MariaDB server with a specified root password and user details, ready for database operations.
 
-- ### <a name="p4b"></a> b) Dockercompose (in the directory)
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- ### <a id="p4b"></a> b) Dockercompose (in the directory)
   The `docker-compose.yml` file simplifies the deployment of multi-container Docker applications. Here's how we set up our containers to work together:
 
   ```yaml
@@ -381,7 +413,11 @@ In this section, we outline the procedures for regular operation and maintenance
   **Explanation:**
   This file defines two services: `node-app` (our Node.js application) and `mariadb` (our database server). It sets up port mapping, volume management for data persistence, and ensures that both containers restart unless manually stopped.
 
-- ### <a name="p4c"></a> c) package
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
+
+- ### <a id="p4c"></a> c) package
   The `package.json` file specifies the Node.js project’s dependencies, scripts, and version information.
 
   ```json
@@ -403,3 +439,6 @@ In this section, we outline the procedures for regular operation and maintenance
   **Explanation:**
   This JSON file helps manage the Node.js application dependencies, ensuring all necessary libraries are installed for proper execution.
 
+<div align="right">
+    <a href="#summary">⮐ return to summary</a>
+</div>
