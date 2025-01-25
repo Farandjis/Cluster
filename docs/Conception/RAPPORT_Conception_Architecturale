@@ -1,0 +1,184 @@
+Florent VASSEUR--BERLIOUX, Tom BOGAERT, Baptiste FOURNIE, William HERUBEL, Matthieu FARANDJIS, Lucas DA SILVA FERREIRA<br>
+INF3-FI
+
+## Documentation de Conception Architecturale du Cluster Raspberry Pi
+
+<div align="center">
+<img height="95" width="400" src="../img/IUT_Velizy_Villacoublay_logo_2020_ecran.png" title="logo uvsq vélizy"/>
+
+# SAE 3.03 - Projet de Cluster Raspberry Pi
+
+Ce document approfondit la conception architecturale d'un cluster Raspberry Pi, en détaillant la configuration des nœuds, la structure réseau, l'emploi de conteneurs Docker, ainsi que les diverses applications et protocoles de communication utilisés.
+
+La redaction de ce document à été fait avec CHATGPT
+<br>
+
+</div>
+
+---
+
+## Table des Matières
+
+- ### [I – Vue d'ensemble du Projet](#p1)
+  - [**a) Description du Projet**](#p1a)
+  - [**b) Objectifs et Utilisations du Cluster**](#p1b)
+
+- ### [II – Configuration et Topologie Réseau](#p2)
+  - [**a) Schéma de Réseau**](#p2a)
+  - [**b) Détails de Configuration IP et Communication Inter-nœuds**](#p2b)
+  - [**c) Protocoles et Services Réseau**](#p2c)
+
+- ### [III - Détail des Nœuds du Cluster](#p3)
+  - [**a) Nœud Maître : Raspberry Pi 4**](#p3a)
+  - [**b) Nœuds Esclaves : Raspberry Pi Zero**](#p3b)
+
+- ### [IV - Implémentation de Docker](#p4)
+  - [**a) Utilisation de Docker sur le RPi 4**](#p4a)
+  - [**b) Configuration des Containers et Gestion des Images**](#p4b)
+
+- ### [V - Applications et Services](#p5)
+  - [**a) Applications Exécutées sur le Cluster**](#p5a)
+  - [**b) Supervision et Gestion des Ressources**](#p5b)
+  - [**c) Service d'Extinction Automatique**](#p5c)
+
+---
+
+## <a name="p1"></a> I - Vue d'ensemble du Projet
+
+- ### <a name="p1a"></a> a) Description du Projet
+  Le projet de cluster Raspberry Pi est conçu pour être un modèle d'apprentissage et de démonstration pour l'utilisation des technologies de cluster dans des environnements éducatifs et de recherche. Il illustre l'intégration de plusieurs Raspberry Pi pour former un réseau de calcul distribué, capable d'exécuter diverses applications de manière coordonnée.
+
+- ### <a name="p1b"></a> b) Objectifs et Utilisations du Cluster
+  Les objectifs principaux incluent le développement de compétences en systèmes distribués, l'exploration de la parallélisation des processus et l'amélioration des applications nécessitant une haute disponibilité. Le cluster sert également de plateforme pour tester des applications en conditions réelles de réseau informatique.
+
+---
+
+## <a name="p2"></a> II – Configuration et Topologie Réseau
+
+- ### <a name="p2a"></a> a) Schéma de Réseau
+  La topologie adoptée est celle d'un réseau en étoile où le Raspberry Pi 4 agit comme nœud central. Les Raspberry Pi Zero sont connectés via USB au Pi 4 et configurés pour communiquer à travers un pont réseau virtuel, facilitant ainsi la gestion et la distribution des tâches.
+
+- ### <a name="p2b"></a> b) Détails de Configuration IP et Communication Inter-nœuds
+  Chaque Raspberry Pi Zero est assigné une adresse IP statique pour garantir une communication stable et efficace. Ces adresses permettent au nœud maître de distribuer les tâches et de recueillir les résultats des calculs des nœuds esclaves.
+
+- ### <a name="p2c"></a> c) Protocoles et Services Réseau
+  Des protocoles tels que SSH pour la connexion sécurisée, MPI (Message Passing Interface) pour la communication entre processus et des scripts Python pour orchestrer les opérations sont utilisés. Ces technologies sont essentielles pour le déploiement efficace des applications et la maintenance du cluster.
+
+---
+
+## <a name="p3"></a> III - Détail des Nœuds du Cluster
+
+- ### <a name="p3a"></a> a) Nœud Maître : Raspberry Pi 4
+  Ce nœud gère le contrôle et la coordination du cluster. Il exécute des conteneurs Docker qui hébergent des applications serveur telles que Node.js pour des applications web et MariaDB pour les bases de données. Il joue un rôle crucial dans la gestion des ressources et la répartition des charges de travail.
+
+- ### <a name="p3b"></a> b) Nœuds Esclaves : Raspberry Pi Zero
+  Les nœuds esclaves exécutent des calculs distribués et supportent diverses tâches parallèles assignées par le nœud maître. Chaque Pi Zero est optimisé pour une performance maximale dans un espace compact, ce qui est idéal pour des environnements éducatifs où l'espace et les ressources sont souvent limités.
+
+---
+
+## <a name="p4"></a> IV - Implémentation de Docker
+
+- ### <a name="p4a"></a> a) Utilisation de Docker sur le Raspberry Pi 4
+  Le Raspberry Pi 4 joue le rôle de **nœud maître** dans le cluster et héberge plusieurs conteneurs Docker qui exécutent des services critiques. Ces conteneurs sont reliés via un réseau de type **bridge**, permettant une communication fluide et sécurisée entre eux tout en les isolant du reste du système.
+
+- ### <a name="p4b"></a> b) Configuration des Conteneurs et Réseau Docker
+
+  #### Conteneurs hébergés :
+  1. **Conteneur NodeJS** :
+     - **Fonction** : Gère les applications web et les API qui communiquent avec les autres services.
+     - **Applications hébergées** :
+       - Interface utilisateur pour la gestion du cluster.
+       - Interface RESTful permettant de lancer et de superviser des tâches sur les nœuds esclaves.
+     - **Ports exposés** : 
+       - `3000/tcp` pour l'accès à l'interface web.
+       - `172.0.0.2` pour les communications internes entre conteneurs.
+
+  2. **Conteneur MariaDB** :
+     - **Fonction** : Fournit la base de données relationnelle pour stocker les données des tâches, des résultats calculés et des journaux de performance.
+     - **Port exposé** :
+       - `3306/tcp` pour les requêtes SQL.
+       - `172.0.0.3` pour l'adresse interne sur le réseau bridge.
+     - **Communication** : Le conteneur NodeJS interagit directement avec MariaDB pour lire/écrire les données.
+
+  #### Réseau Docker en Bridge :
+  Les conteneurs NodeJS et MariaDB sont connectés via un réseau Docker personnalisé de type **bridge**. Ce réseau interne leur permet de communiquer directement entre eux sans exposer les services au réseau local ou à l'extérieur du cluster.
+
+  ##### Exemple de création du réseau bridge :
+  ```bash
+  docker network create \
+    --driver bridge \
+    cluster-network
+  ```
+
+  ##### Exemple de démarrage des conteneurs avec le réseau bridge :
+  1. **NodeJS** :
+     ```bash
+     docker run -d \
+       --name site-nodejs-1 \
+       --network cluster-network \
+       -p 3000:3000 \
+       nodejs:latest
+     ```
+
+  2. **MariaDB** :
+     ```bash
+     docker run -d \
+       --name site-mariadb-1 \
+       --network cluster-network \
+       -e MYSQL_ROOT_PASSWORD=root_password \
+       -e MYSQL_DATABASE=cluster_db \
+       -p 3306:3306 \
+       mariadb:latest
+     ```
+
+  #### Avantages du Réseau Docker en Bridge :
+  - **Isolation** : Les conteneurs sont isolés du réseau local, améliorant la sécurité.
+  - **Facilité de gestion** : Les adresses IP internes (exemple : `172.0.0.x`) permettent une communication directe entre conteneurs sans configurations réseau complexes.
+  - **Scalabilité** : Permet l'ajout futur de nouveaux services ou conteneurs, par exemple un serveur NGINX ou une couche de cache comme Redis, sans interférer avec le réseau principal.
+
+---
+
+## Cas d'utilisation réseau :
+- Le **conteneur NodeJS** interroge régulièrement MariaDB pour afficher des données dans son interface web.
+- Les **scripts Python** exécutés sur les Raspberry Pi Zero communiquent avec le serveur NodeJS pour envoyer des résultats ou recevoir des commandes.
+
+
+---
+
+## <a name="p5"></a> V - Applications et Services
+
+- ### <a name="p5a"></a> a) Applications Exécutées sur le Cluster
+  Le cluster exécute diverses applications allant de serveurs web simples à des bases de données complexes, ainsi que des calculs scientifiques qui nécessitent une puissance de traitement distribuée.
+
+- ### <a name="p5b"></a> b) Supervision et Gestion des Ressources
+  Des outils de surveillance réseau tels que Nagios ou Zabbix peuvent être utilisés pour surveiller en temps réel l'état et la performance de chaque nœud, assurant ainsi une gestion efficace des ressources et une détection rapide des problèmes.
+
+- ### <a name="p5c"></a> c) Service d'Extinction Automatique `clusterhat-shutdown.service`
+  Le service `clusterhat-shutdown.service` est spécialement configuré sur le Raspberry Pi 4 pour gérer l'extinction sécurisée et automatisée de l'ensemble du cluster lors de redémarrages ou d'arrêts du système. Ce service systemd est crucial pour assurer que tous les nœuds esclaves Raspberry Pi Zero sont correctement éteints avec le nœud maître, prévenant ainsi toute corruption de données ou dommage matériel qui pourrait survenir si les nœuds étaient simplement déconnectés de l'alimentation.
+
+  #### Fonctionnement du service :
+  - **Activation**: Le service est activé lorsqu'un signal d'arrêt ou de redémarrage est envoyé au système d'exploitation du Raspberry Pi 4.
+  - **Exécution**: Avant que le système commence le processus d'arrêt, le service exécute la commande `clusterhat off all`, qui envoie un signal pour éteindre proprement tous les Raspberry Pi Zero connectés via le Cluster HAT.
+  - **Sécurité**: Cette méthode d'extinction assure que tous les processus en cours d'exécution sur les nœuds esclaves sont terminés correctement et que les systèmes de fichiers sont synchronisés, minimisant les risques de corruption.
+
+  #### Configuration du service :
+  Voici un exemple de configuration du fichier de service pour `clusterhat-shutdown.service` :
+  ```ini
+  [Unit]
+  Description=Shutdown all Cluster HAT nodes on system shutdown
+  DefaultDependencies=no
+  Before=shutdown.target reboot.target halt.target
+
+  [Service]
+  Type=oneshot
+  ExecStart=/usr/sbin/clusterhat off
+  RemainAfterExit=true
+
+  [Install]
+  WantedBy=halt.target reboot.target shutdown.target
+  ```
+
+  #### Avantages :
+  - **Conservation des ressources**: L'extinction contrôlée aide à prolonger la durée de vie du matériel en évitant les arrêts brusques.
+  - **Fiabilité accrue**: Réduit les risques de dysfonctionnements au démarrage suivant, garantissant une reprise des opérations sans incident.
+  - **Maintenance simplifiée**: Minimise les besoins de vérification d'intégrité des systèmes après un redémarrage non planifié ou une panne de courant.
