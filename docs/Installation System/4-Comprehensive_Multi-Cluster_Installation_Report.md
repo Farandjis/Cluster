@@ -159,9 +159,12 @@ During the deployment and operational testing of the multi-cluster environment, 
 
 ### <a id="p6"></a> VI - Technical Differences Between Raspberry Pi 4 and Raspberry Pi Zero
 
-- ### <a id="p6a"></a> **Processor**: The Raspberry Pi 4 is equipped with a more powerful Broadcom BCM2711, Quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz processor, whereas the Raspberry Pi Zero utilizes a much less powerful Broadcom BCM2835, Single-core CPU @ 1GHz.
-- ### <a id="p6b"></a> **Memory**: Raspberry Pi 4 models come with multiple memory options up to 8GB of LPDDR4-3200 SDRAM, providing substantial multitasking capabilities, whereas the Raspberry Pi Zero has a fixed 512MB of LPDDR2 RAM, which limits its ability to handle complex or multiple simultaneous processes.
-- ### <a id="p6c"></a> **Network Connectivity**: Raspberry Pi 4 includes full Gigabit Ethernet and dual-band Wi-Fi, enhancing its network throughput significantly compared to the Raspberry Pi Zero, which lacks onboard Ethernet and offers only 802.11 b/g/n wireless networking capabilities.
+- ### <a id="p6a"></a> **Processor**:
+The Raspberry Pi 4 is equipped with a more powerful Broadcom BCM2711, Quad-core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz processor, whereas the Raspberry Pi Zero utilizes a much less powerful Broadcom BCM2835, Single-core CPU @ 1GHz.
+- ### <a id="p6b"></a> **Memory**:
+- Raspberry Pi 4 models come with multiple memory options up to 8GB of LPDDR4-3200 SDRAM, providing substantial multitasking capabilities, whereas the Raspberry Pi Zero has a fixed 512MB of LPDDR2 RAM, which limits its ability to handle complex or multiple simultaneous processes.
+- ### <a id="p6c"></a> **Network Connectivity**:
+- Raspberry Pi 4 includes full Gigabit Ethernet and dual-band Wi-Fi, enhancing its network throughput significantly compared to the Raspberry Pi Zero, which lacks onboard Ethernet and offers only 802.11 b/g/n wireless networking capabilities.
 
 <div align="right">
     <a href="#summary">⮐ return to summary</a>
