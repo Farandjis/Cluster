@@ -16,6 +16,10 @@ This document describes in detail the installation process of the RPi4 and RPi0 
 
 This report provides a detailed overview of the setup and deployment of a multi-cluster system utilizing Raspberry Pi 4 (RPi4) as master nodes and Raspberry Pi Zero devices as worker nodes. The objective is to create a scalable and efficient cluster network capable of supporting distributed computing tasks across 16 workers divided between two main clusters.
 
+---
+
+<a id="summary">
+
 ## Plan
 
 - ### [I – System Overview](#p1)
