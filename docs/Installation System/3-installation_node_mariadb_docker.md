@@ -18,6 +18,8 @@ We were helped by : WordReference, DeepL, ChatGPT (mainly to correct spelling an
 
 ---
 
+<a id="summary">
+
 ## Plan
 
 - ### [I – Presentations](#p1)
