@@ -48,6 +48,9 @@ La redaction de ce document à été fait avec CHATGPT
 - ### <a name="p1a"></a> a) Description du Projet
   Le projet de cluster Raspberry Pi est conçu pour être un modèle d'apprentissage et de démonstration pour l'utilisation des technologies de cluster dans des environnements éducatifs et de recherche. Il illustre l'intégration de plusieurs Raspberry Pi pour former un réseau de calcul distribué, capable d'exécuter diverses applications de manière coordonnée.
 
+
+<img height="95" width="400" src="/Composants/Modèle UML/Conception_Architecturale_V2.jpg" title="logo uvsq vélizy"/>
+
 - ### <a name="p1b"></a> b) Objectifs et Utilisations du Cluster
   Les objectifs principaux incluent le développement de compétences en systèmes distribués, l'exploration de la parallélisation des processus et l'amélioration des applications nécessitant une haute disponibilité. Le cluster sert également de plateforme pour tester des applications en conditions réelles de réseau informatique.
 
