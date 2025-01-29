@@ -339,12 +339,6 @@ En **scalabilité faible**, le speedup est observé en augmentant à la fois la 
 
 Il ya des scripts  permettant d'automatiser les tests pour évaluer les performances de **scalabilité forte** et **scalabilité faible**.
 
-- **Script `script_scalabilite_forte.bat`** :  
-  Ce script divise le nombre total de points (**$TOTAL_POINTS**) de manière fixe et fait varier le nombre de threads (**$THREAD_COUNTS**). Il exécute chaque configuration plusieurs fois (**$REPEAT_COUNT**) pour garantir des mesures fiables. Les résultats sont enregistrés dans des fichiers CSV distincts pour le programme  prime.py.
-
-- **Script `script_scalabilite_faible.bat`** :  
-  Ici, le script augmente proportionnellement le nombre total de points avec le nombre de threads. Chaque **thread** traite une charge de travail fixe (**$pointsParTravailleur**), simulant une augmentation uniforme de la taille du problème. Les fichiers CSV collectent les résultats pour analyser l'efficacité parallèle.
-
 Pour le traitement on utilise la classe AverageToCsv qui  permet de calculer la moyenne des résultats pour chaque configuration de test, en regroupant les 20 répétitions effectuées. Cela facilite l'analyse en lissant les données pour chaque expérience.
 
 Avec les résultats obtenus sous forme de fichiers CSV, j'utilise un code Python pour calculer le speed-up et tracer les graphes correspondants. Ce script extrait les données, calcule le speed-up en comparant le temps d'exécution avec un seul processeur à celui avec plusieurs processeurs, et génère un graphique montrant la scalabilité forte et faible, avec une courbe pour chaque valeur unique de Ntot. Les graphes incluent également une référence au speed-up idéal pour évaluer l'efficacité parallèle.
