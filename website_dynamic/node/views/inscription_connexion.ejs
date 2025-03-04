@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="style/inscription_connexion.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="icon" href="img/logo_icone.png" type="image/png">
-    <script src="js/afficherMDP.js" charset="UTF-8"></script>
-    <!--<script src="js/verifChamp.js" charset="UTF-8"></script>-->
+    <script src="js/afficherMDP.js"></script>
 </head>
 <body>
-<div id="return"><a href="/"><-</a></div>
+    <header></header>
+<div id="return"><a href="/">←</a></div>
 <div id="body_inscription_connexion">
-<div><img src="img/logo_origin_2.png" id="logoTitle" alt="Logo"></div>
+<div><img src="img/logo_origin_2.png" id="logoTitle" alt="Logo Paralix"></div>
 
 <div class="container" id="container">
     <div class="form_container">
@@ -38,11 +38,11 @@
                     </div>
 
 
-                    <div class="password-show" onclick="showPassword(this)">
-                        <img src="img/visible.png">
+                    <div class="password-show" onclick="showPassword(this)" onkeydown="showPassword(this)" tabindex="0">
+                        <img src="img/visible.png" alt="afficher le mot de passe">
                     </div>
-                    <div class="password-hide" onclick="hidePassword(this)">
-                        <img src="img/hidden.png">
+                    <div class="password-hide" onclick="hidePassword(this)" onkeydown="hidePassword(this)" tabindex="0">
+                        <img src="img/hidden.png" alt="cacher le mot de passe">
                     </div>
                 </div>
 
@@ -55,11 +55,11 @@
                         </label>
                     </div>
 
-                    <div class="password-show" onclick="showPassword(this)">
-                        <img src="img/visible.png">
+                    <div class="password-show" onclick="showPassword(this)" onkeydown="showPassword(this)" tabindex="0">
+                        <img src="img/visible.png" alt="afficher le mot de passe">
                     </div>
-                    <div class="password-hide" onclick="hidePassword(this)">
-                        <img src="img/hidden.png">
+                    <div class="password-hide" onclick="hidePassword(this)" onkeydown="hidePassword(this)" tabindex="0">
+                        <img src="img/hidden.png" alt="cacher le mot de passe">
                     </div>
                 </div>
 
@@ -89,11 +89,11 @@
                     </div>
 
 
-                    <div class="password-show" onclick="showPassword(this)">
-                        <img src="img/visible.png">
+                    <div class="password-show" onclick="showPassword(this)" onkeydown="showPassword(this)" tabindex="0">
+                        <img src="img/visible.png" alt="afficher le mot de passe">
                     </div>
-                    <div class="password-hide" onclick="hidePassword(this)">
-                        <img src="img/hidden.png">
+                    <div class="password-hide" onclick="hidePassword(this)" onkeydown="hidePassword(this)" tabindex="0">
+                        <img src="img/hidden.png" alt="cacher le mot de passe">
                     </div>
                 </div>
 
@@ -106,5 +106,7 @@
 
 </div>
 </div>
+
+<footer></footer>
 </body>
 </html>

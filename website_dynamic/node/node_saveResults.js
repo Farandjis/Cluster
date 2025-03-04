@@ -21,18 +21,23 @@ async function notifPreparation(saveAuthorization, deletionAuthorization, stdout
           let varNotif_message = "";
 
 
-          const resDB = await dbUser.promise().query(
-            'SELECT saveUserSettings_AutoSave, saveUserSettings_AutoDeletion FROM view_USER_SETTINGS'
-          );
+          
+          try{
+            const resDB = await dbUser.promise().query(
+              'SELECT saveUserSettings_AutoSave, saveUserSettings_AutoDeletion FROM view_USER_SETTINGS'
+            );
 
-          saveUserSettings_AutoSave = Boolean(resDB[0][0]['saveUserSettings_AutoSave'])
-          saveUserSettings_AutoDeletion = Boolean(resDB[0][0]['saveUserSettings_AutoDeletion'])
+            saveUserSettings_AutoSave = Boolean(resDB[0][0]['saveUserSettings_AutoSave'])
+            saveUserSettings_AutoDeletion = Boolean(resDB[0][0]['saveUserSettings_AutoDeletion'])
 
-          if (saveUserSettings_AutoSave != saveAuthorization || saveUserSettings_AutoDeletion != deletionAuthorization){
-            const updateInfo = `UPDATE view_USER_SETTINGS SET saveUserSettings_AutoSave = ?, saveUserSettings_AutoDeletion = ?`;
-            dbUser.promise().query(updateInfo, [saveAuthorization, deletionAuthorization]);
+            if (saveUserSettings_AutoSave != saveAuthorization || saveUserSettings_AutoDeletion != deletionAuthorization){
+              const updateInfo = `UPDATE view_USER_SETTINGS SET saveUserSettings_AutoSave = ?, saveUserSettings_AutoDeletion = ?`;
+              dbUser.promise().query(updateInfo, [saveAuthorization, deletionAuthorization]);
+            }
           }
-
+          catch(error){
+            console.error("⚠️ Pb lors de la sauvegarde des paramètres sauvegardes auto:", error.message);
+          }
 
 
           if(saveAuthorization){

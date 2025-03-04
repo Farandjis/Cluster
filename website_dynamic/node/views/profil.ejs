@@ -14,7 +14,7 @@
   <script src="js/tableau_profil.js"></script>
   <script src="js/profil_nuke.js"></script>
   <script src="js/action_inscription_connexion.js"></script>
-  <script src="js/afficherMDP.js" charset="UTF-8"></script>
+  <script src="js/afficherMDP.js"></script>
 </head>
 <body>
   <%- topMenu %>
@@ -45,8 +45,8 @@
         <table class="table-demandes-perso table-popup" style="text-align: center;" id="Historique">
           <thead>
             <tr>
-              <th onclick="sortTable('Historique', 0)">Time<span class="sort-arrow"> ↕</span></th>
-              <th onclick="sortTable('Historique', 1)">Module<span class="sort-arrow"> ↕</span></th>
+              <th onclick="sortTable('Historique', 0)" onkeydown="sortTable('Historique', 0)" onfocus="sortTable('Historique', 0)">Time<span class="sort-arrow" tabindex="0"> ↕</span></th>
+              <th onclick="sortTable('Historique', 1)" onkeydown="sortTable('Historique', 1)" onfocus="sortTable('Historique', 1)">Module<span class="sort-arrow" tabindex="0"> ↕</span></th>
               <th>Vision Résultat</th>
               <th>Téléchargement Fichier</th>
               <th>Effacer Fichier</th>
@@ -69,17 +69,17 @@
                 <td><%= row.module %></td>
                 <td>
                   <div class="Button_profil">
-                    <button onclick="handleButtonhistory('<%=id_user %>', '<%= row.filename %>','<%=row.module %>')">Vision</button>
+                    <button onclick="handleButtonhistory('<%=id_user %>', '<%= row.filename %>','<%=row.module %>')" tabindex="0">Vision</button>
                   </div>
                 </td>
                 <td>
                   <div class="Button_profil">
-                    <button onclick="télechargementButton('<%=id_user %>', '<%= row.filename %>')">Téléchargement</button>
+                    <button onclick="télechargementButton('<%=id_user %>', '<%= row.filename %>')" tabindex="0">Téléchargement</button>
                   </div>
                 </td>
                 <td>
                   <div class="Button_profil">
-                    <button onclick="confirmDelete('<%= row.filename %>','<%=id_user %>')">Effacer</button>
+                    <button onclick="confirmDelete('<%= row.filename %>','<%=id_user %>')" tabindex="0">Effacer</button>
                   </div>
                 </td>
               </tr>
@@ -95,9 +95,11 @@
     <div class="nuke-controls">
       <h3>Contrôle des Processus</h3>
       <div class="select-search-container">
-          <input type="text" id="userSearch" placeholder="Search users..." onkeyup="filterUsers()">
-          <select id="userSelect" size="5">
-            <option value="" class="nuke-all-option">Nuke All</option>
+          <label for="userSearch">Recherche de l'utilisateur</label>
+          <input type="text" id="userSearch" placeholder="Rechercher utilisateur..." onkeyup="filterUsers()" title="SearchUser">
+          <label for="userSelect">Sélection de l'utilisateur</label>
+          <select id="userSelect" size="5" title="SelectUser">
+            <option value="" class="nuke-all-option" lang="en">Nuke All</option>
             <%
             const uniqueUsers = new Set();
             data5.forEach(row => {
@@ -109,15 +111,15 @@
                 }
             });
             %>
-        </select>        
+        </select>       
       </div>
       <script>
         document.addEventListener('DOMContentLoaded', function() {
             updateActiveUsers();
         });
       </script>
-      <button onclick="nukeSelected()" class="nuke-btn">Tuer Processus</button>
-    <button onclick="updateActiveUsers()" class="refresh-btn">
+      <button onclick="nukeSelected()" class="nuke-btn" tabindex="0">Tuer Processus</button>
+    <button onclick="updateActiveUsers()" class="refresh-btn" tabindex="0">
         <span>↻</span> Rafraîchir
     </button>
     </div>
@@ -126,20 +128,21 @@
     <div class="demandes">
       <h2>Statistique</h2>
       <br>
-      <div class="Stat">
+      <fieldset class="Stat">
+        <legend>Statistique d'utilisation des Modules</legend>
         <div class="Button_profil">
-          <input type="radio" id="Usage_Module" name="stat" value="Usage_Module" checked />
-          <label for="Usage_Module">Usage Module</label>
+          <input type="radio" id="Usage_Module" name="stat" value="Usage_Module" tabindex="0" checked>
+          <label for="Usage_Module">Utilisation de Module</label>
         </div>
         <div class="Button_profil">
-          <input type="radio" id="Usage_User" name="stat" value="Usage_User" />
-          <label for="Usage_User">Usage User</label>
+          <input type="radio" id="Usage_User" name="stat" value="Usage_User" tabindex="0">
+          <label for="Usage_User">Utilisation par Utilisateurs</label>
         </div>
         <div class="Button_profil">
-          <input type="radio" id="History_User" name="stat" value="History_User" />
-          <label for="History_User">History User</label>
+          <input type="radio" id="History_User" name="stat" value="History_User" tabindex="0">
+          <label for="History_User">Historique par Utilisateurs</label>
         </div>
-      </div>
+      </fieldset>
       <br><br>
 
       <!-- Tableau Usage Module -->
@@ -147,8 +150,8 @@
         <table class="table-demandes-perso table-popup" style="text-align: center;">
           <thead>
             <tr>
-                <th onclick="sortTable('Usage_Module_tab', 0)">Module<span class="sort-arrow"> ↕</span></th>
-                <th onclick="sortTable('Usage_Module_tab', 1)">Utilisation<span class="sort-arrow"> ↕</span></th>
+                <th onclick="sortTable('Usage_Module_tab', 0)" onkeydown="sortTable('Usage_Module_tab', 0)">Module<span class="sort-arrow" tabindex="0"> ↕</span></th>
+                <th onclick="sortTable('Usage_Module_tab', 1)" onkeydown="sortTable('Usage_Module_tab', 1)">Utilisation<span class="sort-arrow" tabindex="0"> ↕</span></th>
             </tr>
           </thead>
           <tbody class="table-ticket-profil">
@@ -167,9 +170,9 @@
         <table class="table-demandes-perso table-popup" style="text-align: center;">
           <thead>
             <tr>
-                <th onclick="sortTable('Usage_User_tab', 0)">User<span class="sort-arrow"> ↕</span></th>
-                <th onclick="sortTable('Usage_User_tab', 1)">Module<span class="sort-arrow"> ↕</span></th>
-                <th onclick="sortTable('Usage_User_tab', 2)">Utilisation<span class="sort-arrow"> ↕</span></th>
+                <th onclick="sortTable('Usage_User_tab', 0)" onkeydown="sortTable('Usage_User_tab', 0)">User<span class="sort-arrow" tabindex="0"> ↕</span></th>
+                <th onclick="sortTable('Usage_User_tab', 1)" onkeydown="sortTable('Usage_User_tab', 1)">Module<span class="sort-arrow" tabindex="0"> ↕</span></th>
+                <th onclick="sortTable('Usage_User_tab', 2)" onkeydown="sortTable('Usage_User_tab', 2)">Utilisation<span class="sort-arrow" tabindex="0"> ↕</span></th>
             </tr>
           </thead>
           <tbody class="table-ticket-profil">
@@ -189,9 +192,9 @@
         <table class="table-demandes-perso table-popup" style="text-align: center;">
           <thead>
             <tr>
-              <th onclick="sortTable('History_User_tab', 0)">Time<span class="sort-arrow"> ↕</span></th>
-              <th onclick="sortTable('History_User_tab', 1)">Module<span class="sort-arrow"> ↕</span></th>
-              <th onclick="sortTable('History_User_tab', 2)">Utilisation<span class="sort-arrow"> ↕</span></th>
+              <th onclick="sortTable('History_User_tab', 0)" onkeydown="sortTable('History_User_tab', 0)">Time<span class="sort-arrow" tabindex="0"> ↕</span></th>
+              <th onclick="sortTable('History_User_tab', 1)" onkeydown="sortTable('History_User_tab', 1)">Module<span class="sort-arrow" tabindex="0"> ↕</span></th>
+              <th onclick="sortTable('History_User_tab', 2)" onkeydown="sortTable('History_User_tab', 2)">Utilisation<span class="sort-arrow" tabindex="0"> ↕</span></th>
             </tr>
           </thead>
           <tbody class="table-ticket-profil">
@@ -250,11 +253,11 @@
             <label class="form-label" for="anpassword">Mot de passe actuel:</label>
             <input class="form-input" type="password" placeholder="Entrer votre ancien mot de passe" id="anpassword" name="anpassword" required>
           </div>
-          <div class="password-show" onclick="showPassword(this)">
-            <img src="img/visible.png">
+          <div class="password-show" onclick="showPassword(this)" onkeydown="showPassword(this)" tabindex="0">
+            <img src="img/visible.png" alt="Mot de passe Visible">
           </div>
-          <div class="password-hide" onclick="hidePassword(this)">
-            <img src="img/hidden.png">
+          <div class="password-hide" onclick="hidePassword(this)" onkeydown="hidePassword(this)" tabindex="0">
+            <img src="img/hidden.png"  alt="Mot de passe Caché">
           </div>
         </div>  
 
@@ -263,11 +266,11 @@
             <label class="form-label" for="newpassword">Nouveau mot de passe:</label>
             <input class="form-input" type="password" placeholder="Entrer votre nouveau mot de passe" id="newpassword" name="newpassword" required>
           </div>
-          <div class="password-show" onclick="showPassword(this)">
-            <img src="img/visible.png">
+          <div class="password-show" onclick="showPassword(this)" onkeydown="showPassword(this)" tabindex="0">
+            <img src="img/visible.png" alt="Mot de passe Visible">
           </div>
-          <div class="password-hide" onclick="hidePassword(this)">
-            <img src="img/hidden.png">
+          <div class="password-hide" onclick="hidePassword(this)" onkeydown="hidePassword(this)" tabindex="0">
+            <img src="img/hidden.png"  alt="Mot de passe Caché">
           </div>
         </div> 
 
@@ -276,25 +279,25 @@
             <label class="form-label" for="Conpassword">Confirmer le mot de passe:</label>
             <input class="form-input" type="password" placeholder="Confirmer votre mot de passe" id="Conpassword" name="Conpassword" required>
           </div>
-          <div class="password-show" onclick="showPassword(this)">
-            <img src="img/visible.png">
+          <div class="password-show" onclick="showPassword(this)" onkeydown="showPassword(this)" tabindex="0">
+            <img src="img/visible.png" alt="Mot de passe Visible">
           </div>
-          <div class="password-hide" onclick="hidePassword(this)">
-            <img src="img/hidden.png">
+          <div class="password-hide" onclick="hidePassword(this)" onkeydown="hidePassword(this)" tabindex="0">
+            <img src="img/hidden.png"  alt="Mot de passe Caché">
           </div>
         </div> 
 
-        <button class="btn-submit" type="submit" tabindex="1">Modifier</button>
+        <button class="btn-submit" type="submit" tabindex="0">Modifier</button>
       </form>
 
-      <button class="btn-close-popup" onclick="togglePopup()" tabindex="1">Close</button>
+      <button class="btn-close-popup" onclick="togglePopup()" onkeydown="togglePopup()" tabindex="0">Close</button>
     </div>
   </div>
 
 
   <div id="popupOverlaySup" class="overlay-container">
     <div class="popup-box">
-      <h2 id="popup-title">Suppression du compte</h2>
+      <h2 id="popup-title-2">Suppression du compte</h2>
       <form class="form-container" action="/delete-account" method="post">
         <label class="form-label" for="login">Login:</label>
         <input class="form-input" type="text" placeholder="Entrer votre login" id="login" name="login" required>
@@ -302,23 +305,23 @@
         <label class="form-label" for="suppassword">Mot de passe:</label>
         <input class="form-input" type="password" placeholder="Entre votre mot de passe" id="suppassword" name="suppassword" required>
 
-        <button class="btn-submit" type="submit" tabindex="1">Suppression</button>
+        <button class="btn-submit" type="submit" tabindex="0">Suppression</button>
       </form>
 
-      <button class="btn-close-popup" onclick="togglePopupSup()" tabindex="1">Close</button>
+      <button class="btn-close-popup" onclick="togglePopupSup()" onkeydown="togglePopupSup()" tabindex="0">Close</button>
     </div>
   </div>
 
   <div id="ViewFile" class="overlay-container">
     <div class="popup-box">
       <h2>Informations d'exécutions</h2>
-      <label class="form-label" for="attribut_File">Attribut :</label>
-      <div class="form-input scrollable" id="attribut_File" name="attribut_File"></div>
+      <p class="form-label">Attribut :</p>
+      <div class="form-input scrollable" id="attribut_File"></div>
 
-      <label class="form-label" for="data_File">Data File:</label>
-      <div class="form-input scrollable" id="data_File" name="data_File"></div>
+      <p class="form-label">Data File:</p>
+      <div class="form-input scrollable" id="data_File"></div>
 
-      <button class="btn-close-popup" onclick="togglePopupFile()">Close</button>
+      <button class="btn-close-popup" onclick="togglePopupFile()" onkeydown="togglePopupFile()" tabindex="0">Close</button>
     </div>
   </div>
 

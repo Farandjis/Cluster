@@ -52,10 +52,6 @@ function displayData(data,module){
         return;
     }
 
-    console.log(data);
-    console.log(module);
-    console.log(module === 'rainbow-text');
-
     // Appel de la fonction pour afficher une pop-up (si nécessaire)
     togglePopupFile();
 
@@ -87,6 +83,17 @@ function displayData(data,module){
             </div>
         `;
         dataDisplay2.innerHTML = output_html2
+    } else if(module === 'prime') {
+        output_html2 = `
+                <h1 id="title_res">${data.message}</h1>
+                <p>Tous les nombres premiers jusqu'à : ${data.find_up_to}</p>
+                <p>Nombre de noeuds de calcul : ${data.nodes}</p>
+                <p>Temps de calcul : ${data.time_elapsed} seconds</p>
+                <p>Nombre de résultat : ${data.primes_found}</p>
+                <h2>Tous les nombres premiers :</h2>
+                <p>${data.all_primes.join(', ')}</p>
+            `;
+            dataDisplay2.innerHTML = output_html2
     } else {
     const filteredText = getFilteredKeyValuePairs(data, excludeKeys);
     // Joindre correctement les éléments sans virgules

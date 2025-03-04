@@ -41,7 +41,7 @@ function generateTopMenu(isConnected, pageName){
 
     html = `
     <nav>
-        <div id="logo"><a href="/"><img src="img/logo_origin.png"></a></div>
+        <div id="logo"><img src="img/logo_origin.png" alt="Logo Paralix"></div>
 
         ${pages}
         

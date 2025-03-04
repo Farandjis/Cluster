@@ -138,6 +138,31 @@ a, button {
     border: 1px solid var(--col-dark-gray);
 }
 
+/*video*/
+.conteneur_video{
+    display: flex;
+    flex-direction: column;
+}
+  
+  
+.video-presentation {
+    max-width: 1080px;
+}
+  
+.video-presentation iframe {
+    width: 720px;
+    height: 405px; /* rapport  */
+    margin-top: 25px;
+    box-shadow: 0 0 5px 5px var(--col-light-orange);
+}
+  
+.video-presentation video {
+    width: 720px;
+    height: 405px; /* rapport  */
+    margin-top: 25px;
+    box-shadow: 0 0 5px 5px var(--col-light-orange);
+}
+
 footer {
     height: 200px;
     margin-top: 80px;

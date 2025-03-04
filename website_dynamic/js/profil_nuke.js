@@ -4,8 +4,8 @@ function nukeSelected() {
     const selectedText = select.options[select.selectedIndex].text;
     
     const confirmMessage = userId === '' ? 
-        'Are you sure you want to terminate ALL processes?' :
-        `Are you sure you want to terminate processes for user ${selectedText}?`;
+        `Voulez vous stopper TOUS les processus en cours ( /!\\ cette action est irréversible) ?` :
+        `Voulez vous stopper TOUS les processus en cours de  ${selectedText} ( /!\\ cette action est irréversible) ?`;
         
     if (confirm(confirmMessage)) {
         fetch(`/nuke_someone?userId=${userId}`, {

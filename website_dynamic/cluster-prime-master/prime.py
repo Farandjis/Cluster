@@ -61,7 +61,7 @@ if my_rank == 0:
 
     data = {
     "parameters" : {"find_up_to" : end_number, "nodes" : cluster_size-1},
-    "message": "Detect all primes number",
+    "message": "Recherche des nombres premiers :",
     "find_up_to": end_number,
     "nodes": cluster_size,
     "time_elapsed": end,

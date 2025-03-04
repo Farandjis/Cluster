@@ -6,7 +6,7 @@
     --col-red: #e83939;
     --col-light-orange: #FF914D;/*FF914D*/
     --col-orange: #E87127;/*E87127*/
-    --col-dark-gray: #4D4641; /*4D4641*/
+    --col-dark-gray: #3f3732; /*4D4641*/
     --col-black: #333333;
     --col-gradient-orange: linear-gradient(90deg, var(--col-light-orange) 0%, var(--col-orange) 100%);
 }

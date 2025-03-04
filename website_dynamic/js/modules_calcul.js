@@ -5,7 +5,7 @@ let interval;
 function init() {
     document.querySelectorAll('input[type="submit"][value="Exécuter"]').forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelectorAll('p#bis').forEach(el => el.textContent = '');
+            document.querySelectorAll('p.bis').forEach(el => el.textContent = '');
         });
     });
 
@@ -13,7 +13,7 @@ function init() {
         e.preventDefault();
         const resultDivs = document.querySelectorAll('.res');
         resultDivs.forEach(div => {
-            div.innerHTML = `<p></p><p id="bis">Calcul Annulé</p>`;
+            div.innerHTML = `<p></p><p class="bis">Calcul Annulé</p>`;
         });
         stopWaiting();
     });
@@ -83,6 +83,7 @@ function init() {
         inputSelector: '#end-number',
         apiEndpoint: '/execute_prime',
         payloadKey: 'endNumber',
+        nameNbProc : '#nbProcPremier',
         resultSelector: '#primeRes p',
         resultKey: 'primes',
         successMessage: 'Nombres premiers',
@@ -92,6 +93,7 @@ function init() {
         inputSelector: '#nbIt',
         apiEndpoint: '/execute_montecarlo',
         payloadKey: 'nbIt',
+        nameNbProc : '#nbProcMonteCarlo',
         resultSelector: '#piRes p',
         resultKey: 'pi',
         successMessage: 'Pi',
@@ -101,6 +103,7 @@ function init() {
         inputSelector: '#distributedText',
         apiEndpoint: '/execute_hello',
         payloadKey: 'distributedText',
+        nameNbProc : '#nbProcHello',
         resultSelector: '#testRes p',
         resultKey: 'result',
         successMessage: 'Hello World',
@@ -148,7 +151,7 @@ function handleSubmit(event, config) {
         }
     }
 
-    const nbProc = parseInt(event.target.querySelector('#nbProc').value, 10);
+    const nbProc = parseInt(event.target.querySelector(config.nameNbProc).value, 10);
     const checkbox1Element = event.target.querySelector('.checkbox1');
     const checkbox2Element = event.target.querySelector('.checkbox2');
 

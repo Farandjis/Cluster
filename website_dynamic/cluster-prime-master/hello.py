@@ -37,7 +37,7 @@ def main():
         final_text = "".join([result['part_text'] for result in all_results])
         result = {
             "parameters" : {"text" : input_text, "nodes" : size},
-            "message": "Distributed Text Processing Complete",
+            "message": "Texte distribué sur des processeurs :",
             "nodes": size,
             "full_text": all_results
         }

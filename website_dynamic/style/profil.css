@@ -22,6 +22,12 @@
 .Button_profil button{
     color: #1c1c1c;
 }
+
+.Button_profil button:hover, .Button_profil button:focus{
+    background: #1c1c1c;
+    color: var(--col-white);
+}
+
 .Button_profil label{
     background-color: var(--col-light-orange);
     color: #1c1c1c;
@@ -175,7 +181,7 @@ tbody tr {
     transition: background-color 0.3s ease;
 }
 
-.btn-open-popup:hover {
+.btn-open-popup:hover, .btn-open-popup:focus {
     background-color: var(--col-dark-gray);
 }
 
@@ -299,7 +305,6 @@ tbody tr {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     width: 60%;
-    height: 350px;
     margin: 20px auto;
 }
 
@@ -334,7 +339,7 @@ tbody tr {
     cursor: pointer;
 }
 
-.nuke-btn:hover {
+.nuke-btn:hover, .nuke-btn:focus {
     background: var(--col-salmon);
 }
 
@@ -347,7 +352,6 @@ tbody tr {
     position: relative;
     border: var(--col-black) 1px solid;
     width: 100%;
-    height: 200px;
     margin-bottom: 10px;
 }
 
@@ -374,7 +378,7 @@ tbody tr {
     border-bottom: 2px solid var(--col-red);
 }
 
-.nuke-all-option:hover {
+.nuke-all-option:hover, .nuke-all-option:focus{
     background-color: var(--col-black);
 }
 
@@ -385,7 +389,7 @@ tbody tr {
 }
 
 .refresh-btn {
-    color: var(--col-white);;
+    color: var(--col-black);
     background: var(--col-light-orange);
     text-align: center;
     text-decoration: none;
@@ -411,4 +415,8 @@ tbody tr {
 
 .refresh-btn:active {
     transform: scale(0.98);
+}
+
+fieldset {
+    padding: 20px;
 }

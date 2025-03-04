@@ -36,7 +36,7 @@ def master(total_count, num_workers):
     
     data = {
         "parameters" : {"total_count" : total_count, "nodes" : num_workers + 1},
-        "message": "Monte Carlo estimation of Pi:",
+        "message": "Estimation de Pi via monte Carlo :",
         "nb_it": total_count * (num_workers + 1),
         "nodes": num_workers + 1,
         "time_elapsed": elapsed_time,
